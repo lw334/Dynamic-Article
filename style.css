@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic|Roboto+Slab:400,700|Yanone+Kaffeesatz);
+
 .form-control {
     outline: 0;
     border-color: #ECECEC;
@@ -32,7 +34,7 @@
 }
 
 .bp-autocomplete-searching {
-    color: #bp-acacac;
+    color: red;
     font-size: 14px;
 }
 
@@ -165,20 +167,20 @@ a{
     margin: auto;
 }
 
-#style-2::-webkit-scrollbar-track
+#style-2:-webkit-scrollbar-track
 {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     border-radius: 10px;
     background-color: #F5F5F5;
 }
 
-#style-2::-webkit-scrollbar
+#style-2:-webkit-scrollbar
 {
     width: 12px;
     background-color: #F5F5F5;
 }
 
-#style-2::-webkit-scrollbar-thumb
+#style-2:-webkit-scrollbar-thumb
 {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
@@ -516,7 +518,7 @@ h1 {
     bottom: 15px;
     left: 15px;
     font-size: 16px;
-    color: #bp-acACAC;
+    color: #acACAC;
 }
 
 .comment-details {
@@ -750,7 +752,7 @@ input:-webkit-autofill {
 
 .criterion-rating {
     padding: 2px;
-    background-color: #bp-acacac;
+    background-color: #acacac;
     border-radius: 0px;
     color: #ffffff;
     margin-left: 3px;
@@ -765,7 +767,7 @@ input:-webkit-autofill {
 .criterion-rating-dropdown {
     padding: 2px;
     border-radius: 0px;
-    color: #bp-acACAC;
+    color: #acacac;
     margin-left: 0px;
     font-size: 12px;
     margin-top: -3px;
@@ -1148,7 +1150,7 @@ input[type="checkbox"] {
     width: 30px;
     height: 30px;
     z-index: 9999;
-    color: #bp-acACAC;
+    color: #acacac;
     font-size: 20px;
     cursor: pointer;
     text-align: center;
