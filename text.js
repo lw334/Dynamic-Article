@@ -4,23 +4,24 @@ var COMMODITY = 2;
 var TRANSPORTATION = 3;
 var CONTINGENCY = 4;
 
-var keys;
+var school_data;
 var input;
 var dataset;
+var name_to_unit = {}
 
 //Autocomplete bar
 d3.csv("unitlist.csv",function (csv) {
-    keys=csv;
-    start();
+    school_data=csv;
+    init_autocomplete();
 });
 
 //Call back for when user selects a school
-function onSelect() {
+function select_school(school_name) {
   d3.json('Article1.json', function(data) {
+    
     dataset = data;
-    console.log(input);
   for (i = 0; i < dataset.length; i++){
-    if (dataset[i]['Unit Name'] == input) {
+    if (dataset[i]['Unit Name'] == school_name) {
       school = dataset[i];
       update_text(school);
     }
@@ -33,15 +34,24 @@ function retain(d){
 }
 
 //Setup and render the autocomplete
-function start() {
-    var mc = autocomplete(document.getElementById('user_school'))
-            .keys(keys)
-            .dataField("Unit Name")
-            .placeHolder("Search School - Start typing here")
-            .width(960)
-            .height(500)
-            .onSelected(retain)
-            .render();
+function init_autocomplete() {
+    var ac_data = [];
+
+    for (var i = 0; i < school_data.length; i++) {
+      //ac_data.push({label: school_data[i]['Unit Name'], value: school_data[i]['Unit']})
+      ac_data.push(school_data[i]['Unit Name'])
+      name_to_unit[school_data[i]['Unit Name']] = school_data[i]['Unit']
+    };
+
+    $("#user_school").autocomplete({
+      source: ac_data,
+      select: function( event, ui ) {
+        var school_name = event.target.value;
+        console.log("select handler üser selected " + school_name + "aka " + name_to_unit[school_name]);
+        select_school(school_name);
+      }
+    });
+    select_school('Stephen F Gale Community Academy');
 }
 
 function update_text(school){
