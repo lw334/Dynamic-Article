@@ -18,12 +18,12 @@ d3.csv("unitlist.csv",function (csv) {
 //Call back for when user selects a school
 function select_school(school_name) {
   d3.json('Article1.json', function(data) {
-    
     dataset = data;
   for (i = 0; i < dataset.length; i++){
     if (dataset[i]['Unit Name'] == school_name) {
       school = dataset[i];
-      update_text(school);
+      update_text(school); 
+
     }
   }
 });   
@@ -36,7 +36,6 @@ function retain(d){
 //Setup and render the autocomplete
 function init_autocomplete() {
     var ac_data = [];
-
     for (var i = 0; i < school_data.length; i++) {
       //ac_data.push({label: school_data[i]['Unit Name'], value: school_data[i]['Unit']})
       ac_data.push(school_data[i]['Unit Name'])
@@ -47,7 +46,7 @@ function init_autocomplete() {
       source: ac_data,
       select: function( event, ui ) {
         var school_name = event.target.value;
-        console.log("select handler üser selected " + school_name + "aka " + name_to_unit[school_name]);
+        console.log("select handler user selected " + school_name + " aka " + name_to_unit[school_name]);
         select_school(school_name);
       }
     });
