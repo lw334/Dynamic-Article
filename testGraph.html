@@ -44,8 +44,7 @@
   //behavior setup
   function zoomed() {
     svg.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
-
-    }
+  }
 
   var svg = d3.select("body")
               .append("svg")
@@ -58,8 +57,7 @@
 
  //supposed user input
   school_name ="Castellanos"
-
-
+                      
   ///draw dots
   d3.json('Article1.json', function(data) {
     dataset = data;
@@ -76,7 +74,6 @@
         }
       }
     }
-
   //draw X-axis
     svg.append("g")
         .attr("class", "x axis")
