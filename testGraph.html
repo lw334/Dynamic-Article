@@ -29,7 +29,7 @@
 
   <script>
 
-  // setups
+  //svg setup
   var margin = {top: 20, right: 20, bottom: 30, left: 80},
         width = 960 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
@@ -39,8 +39,24 @@
 
   var YScale = d3.scale.linear().domain([-1039726,1299933]).range([height,0]);
       yAxis = d3.svg.axis().scale(YScale).orient("left");
-    
+  
 
+  //behavior setup
+  function zoomed() {
+    svg.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+
+    }
+
+  var svg = d3.select("body")
+              .append("svg")
+              .attr("width", width + margin.left + margin.right)
+              .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+              .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+              .call(d3.behavior.zoom().scaleExtent([1, 10]).on("zoom", zoomed))
+            
+
+ //supposed user input
   school_name ="Castellanos"
 
 
@@ -60,50 +76,6 @@
         }
       }
     }
-
-
-    function zoom() {
-      console.log("CALLED ZZOOOOOMMM")
-      svg.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
-    }
-
-
-    // function dragstarted(d) {
-    //   d3.event.sourceEvent.stopPropagation();
-    //   d3.select(this).classed("dragging", true);
-
-    //   console.log("called dragstarted");
-    // }
-
-    // function dragged(d) {
-    //   d3.select(this).attr("cx", d["FY 16 Projected Enrollment"] = d3.event.x).attr("cy", d["Change in Per Pupil Enrollment Funding"]);
-
-    //   console.log("called dragged");
-    // }
-
-    // function dragended(d) {
-    //   d3.select(this).classed("dragging", false);
-
-    //   console.log("called draggended");
-    // }
-
-  // var drag = d3.behavior.drag()
-  //             .origin([school["FY 16 Projected Enrollment"],school["Change in Per Pupil Enrollment Funding"]])
-  //             .on("dragstart", dragstarted)
-  //             .on("drag", dragged)
-  //             .on("dragend", dragended);
-
-
-    //svg setup
-    var svg = d3.select("body")
-                .append("svg")
-                .attr("width", width + margin.left + margin.right)
-                .attr("height", height + margin.top + margin.bottom)
-                .append("g")
-                .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-                .call(d3.behavior.zoom().scaleExtent([1, 8]).on("zoom", zoom))
-                //.call(drag)
-                .append("g")
 
   //draw X-axis
     svg.append("g")
@@ -129,11 +101,10 @@
         .style("text-anchor", "end")
         .text("Change in Per Pupil Enrollment");
 
-    // add the tooltip area to the webpage
-    var tooltip = d3.select("body").append("div")
-        .attr("class", "tooltip")
-        .style("opacity", 0);
-
+  // add the tooltip area to the webpage
+  var tooltip = d3.select("body").append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0);
 
   //drawing dots
     svg.selectAll("circle")
@@ -157,9 +128,9 @@
               return "blue";
               }
           })
-
         //tooltips behaviors
         .on("mouseover", function(d) {
+          console.log("TIP")
               tooltip.transition()
                    .duration(200)
                    .style("opacity", .9);
