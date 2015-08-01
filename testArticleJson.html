@@ -8,13 +8,15 @@
         <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script src="http://d3js.org/d3.v3.min.js"></script>
         <script type='text/javascript' src='./text.js'></script>
-        <link rel="stylesheet" href="./style.css"/>
+       
+        <!-- <link rel="stylesheet" href="./style.css"/> -->
         <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz|Roboto+Slab:400,700,300|Roboto:400,300,300italic,400italic,700italic,700' rel='stylesheet' type='text/css'>
     </head>
 
 
     <body>      
         <a href="http://s1341.photobucket.com/user/patygomeslima/media/11709605_1034741693210912_1887130613372416015_n_zpsy3yh747v.jpg.html" target="_blank"><img src="http://i1341.photobucket.com/albums/o744/patygomeslima/11709605_1034741693210912_1887130613372416015_n_zpsy3yh747v.jpg" alt=" photo 11709605_1034741693210912_1887130613372416015_n_zpsy3yh747v.jpg"/></a>
+
 
         <p class="barandbutton">
             <input id="user_school">
@@ -27,6 +29,13 @@
 
     <div class='budget-2015'>
         <p>At this point, you may be wondering what the cash-strapped CPS will decide on the budget of <span id='custom-school-name1' class='custom-school-name'></span> and how that will impact your school. How has your school been spending money in the past years and what will be different given the imminent budget cut? In order to answer your question in detail, we want you to take a moment and rank: As a parent, what are your top priorities when it comes to your children's school? </p>
+    
+    <!--  game goes here -->
+        <div id = "priority"></div>
+        <button id ='rank'>I think I got it!</button>
+        <span id = "understanding"></span>
+        
+
 
         <p>Overall, in the past three years, the budget of <span id='custom-school-name2' class='custom-school-name'></span> has <span id = 'custom-consistency'></span>. This situation is <span id='custom-consistency-comparison'></span> what is happening with schools that serve the same grades and students with similar socioeconomic demographics.(Check our <a href='blankurl'>methodology</a> for more details)</p>
 
@@ -49,6 +58,9 @@
         <p>In the case of <span id='custom-school-name5' class='custom-school-name'></span>, the total budget for the next school year is estimated to be $<span id = 'custom-budget-2016'></span>, a number <span id='custom-2016-total-percent-change'></span>% than last years'. For per pupil enrollment funding, your school received $<span id='custom-2016-pupil'></span> than last year. In comparison to similar schools, your school is being <span id='custom-2016-overall'></span> affected by the current budget crisis as the majority of the similar schools are seeing (an increase/a decrease) in their budgets.</p>    
     </div>
 
+
+    <script type='text/javascript' src='./game.js'></script>
+    
     </body>
 
 </html>

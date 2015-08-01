@@ -11,6 +11,11 @@
 
   <body>      
 
+
+<div id="filter">
+    <b>Schools:</b>
+</div>
+
     <style>
     .axis path,
     .axis line {
@@ -41,6 +46,9 @@
       yAxis = d3.svg.axis().scale(YScale).orient("left");
   
 
+  var dropDown = d3.select("#filter").append("select")
+                    .attr("name", "school-list");
+
   //behavior setup
   function zoomed() {
     svg.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
@@ -59,7 +67,8 @@
   school_name ="Castellanos"
                       
   ///draw dots
-  d3.json('Article1.json', function(data) {
+  d3.json('Article1.json', function(error, data) {
+    if (error) throw error;
     dataset = data;
     var school;
     var similars;
@@ -74,6 +83,9 @@
         }
       }
     }
+
+  data = data.sort(function(a, b) { return d3.ascending(a["Unit Name"], b["Unit Name"]);})
+ 
   //draw X-axis
     svg.append("g")
         .attr("class", "x axis")
@@ -98,6 +110,17 @@
         .style("text-anchor", "end")
         .text("Change in Per Pupil Enrollment");
 
+
+  //options
+  var options = dropDown.selectAll("option")
+             .data([{"Unit Name":"All"}, {"Unit Name":"Your school and similar schools"}].concat(dataset))
+           .enter()
+             .append("option");
+
+  options.text(function (d) { return d["Unit Name"]; })
+         .attr("value", function (d) { return d["Unit Name"]; });
+
+         
   // add the tooltip area to the webpage
   var tooltip = d3.select("body").append("div")
       .attr("class", "tooltip")
@@ -115,6 +138,8 @@
           return YScale(+d["Change in Per Pupil Enrollment Funding"]);
          })
        .attr("r",2)
+       .attr("id", function(d) { return d["Unit Name"]; 
+        })
        .style("fill", function(d){
             if (d["Unit Name"] == school_name){
               console.log("school found!")
@@ -140,7 +165,49 @@
               tooltip.transition()
                    .duration(500)
                    .style("opacity", 0);
-          });
+          })
+
+  dropDown.on("change", function() {
+      var selected = d3.event.target.value;
+      var comparison = 0;
+
+      if (selected == 'Your school and similar schools'){
+        selected = school["Unit Name"];
+        comparison = 1;
+      }
+
+      displayOthers = d3.event.target.checked ? "inline" : "none";
+      display = d3.event.target.checked ? "none" : "inline";
+      console.log(display)
+      console.log(displayOthers)
+
+      if(selected == 'All'){
+        svg.selectAll("circle")
+            .attr("display", display);
+      }
+
+      else {
+        if (comparison == 1) {
+          svg.selectAll("circle")
+             .filter(function(d) { return (changed.indexOf(d["Unit Name"])!= -1);})
+             .attr("display", "inline");
+          svg.selectAll("circle")
+             .filter(function(d) { return changed.indexOf(d["Unit Name"]) == -1;})
+             .attr("display", "none");
+          svg.selectAll("circle")
+              .filter(function(d) {return selected == d["Unit Name"]; })
+              .attr("display", "inline");
+        } else {
+        svg.selectAll("circle")
+            .filter(function(d) { return selected != d["Unit Name"];})
+            .attr("display", displayOthers);
+            
+        svg.selectAll("circle")
+            .filter(function(d) {return selected == d["Unit Name"];})
+            .attr("display", display);
+        }
+      }
+  });
 
     });
 
