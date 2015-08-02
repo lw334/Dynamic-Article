@@ -33,7 +33,12 @@ pointer-events: none;
 </style>
 <body>
 
-<button class='btn' onclick="onSelect()">Only See My School And Similar Schools</button>
+
+
+<div id="lineFilter">
+    <b>Schools:</b>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 <script>
 
@@ -67,6 +72,10 @@ var line = d3.svg.line()
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.budget); });
 
+
+var dropDown = d3.select("#lineFilter").append("select")
+                  .attr("name", "school-list");
+
 var svg = d3.select("body").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -76,13 +85,8 @@ var svg = d3.select("body").append("svg")
 
 d3.csv("yearlyBudget.csv", function(error, data) {
   if (error) throw error;
-  console.log(d3.keys(data[0]))
 
   color.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
-
-  console.log(color)
-  console.log(data)
-  console.log(d3.keys)
 
   data.forEach(function(d) {
     d.date = parseDate(d.date);
@@ -125,6 +129,19 @@ d3.csv("yearlyBudget.csv", function(error, data) {
       .data(schools)
     .enter().append("g")
       .attr("class", "school");
+
+  schools = schools.sort(function(a, b) { return d3.ascending(a["name"], b["name"]);})
+  console.log(schools)
+  //options
+  var options = dropDown.selectAll("option")
+             .data([{"name":"All"}, {"name":"Your school and similar schools"}].concat(schools))
+           .enter()
+             .append("option");
+
+
+  options.text(function (d) { return d["name"]; })
+         .attr("value", function (d) { return d["name"]; });
+
 
 //draw lines
   school.append("path")
@@ -185,6 +202,45 @@ var tooltip = d3.select("body").append("div")
                  .duration(500)
                  .style("opacity", 0);
         });
+
+  dropDown.on("change", function() {
+      var selected = d3.event.target.value;
+      var comparison = 0;
+
+      if (selected == 'Your school and similar schools'){
+        selected = school_name;
+        comparison = 1;
+      }
+
+      displayOthers = d3.event.target.checked ? "inline" : "none";
+      display = d3.event.target.checked ? "none" : "inline";
+
+      if(selected == 'All'){
+        svg.selectAll(".line")
+            .attr("display", display);
+      }
+      else {
+        if (comparison == 1) {
+          svg.selectAll(".line")
+             .filter(function(d) { return (changed.indexOf(d["name"])!= -1);})
+             .attr("display", "inline");
+          svg.selectAll(".line")
+             .filter(function(d) { return changed.indexOf(d["name"]) == -1;})
+             .attr("display", "none");
+          svg.selectAll(".line")
+              .filter(function(d) {return selected == d["name"]; })
+              .attr("display", "inline");
+        } else {
+        svg.selectAll(".line")
+            .filter(function(d) { return selected != d["name"];})
+            .attr("display", displayOthers);
+            
+        svg.selectAll(".line")
+            .filter(function(d) {return selected == d["name"];})
+            .attr("display", display);
+        }
+      }
+    });
 
 });
 
