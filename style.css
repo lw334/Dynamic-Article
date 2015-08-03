@@ -7,12 +7,28 @@ body {
 
 img {
     display: block;
-    width: 100% !important;
-    height: auto !important;
+    width: 1400px;
+    height: 777px;
 }
 
-
 h1 {
+    position: relative;
+    font-size: 60px;
+    font-family: 'Stardos Stencil', cursive;
+    text-transform: uppercase;
+    margin-left: 900px;
+    margin-right: 100px;
+    margin-bottom: 500px;
+    color: #ffffff;
+    text-align: left;
+}
+
+h2 {
+
+
+}
+
+h3 {
     font-size: 36px;
     font-family: 'Roboto Slab', serif;
     margin-left: 300px;
@@ -21,7 +37,7 @@ h1 {
     text-align: left;
 }
 
-h2 {
+h4 {
     font-family: 'Roboto Slab', serif;
     margin-left: 300px;
     margin-top: 1px;
