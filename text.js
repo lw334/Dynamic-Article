@@ -5,32 +5,34 @@ var TRANSPORTATION = 3;
 var CONTINGENCY = 4;
 
 var school_data;
-var input;
 var dataset;
 var name_to_unit = {}
 
 //Autocomplete bar
-d3.csv("unitlist.csv",function (csv) {
+d3.csv("UnitList.csv",function (csv) {
     school_data=csv;
     init_autocomplete();
 });
 
 //Call back for when user selects a school
 function select_school(school_name) {
-  d3.json('Article1.json', function(data) {
-    dataset = data;
-  for (i = 0; i < dataset.length; i++){
-    if (dataset[i]['Unit Name'] == school_name) {
-      school = dataset[i];
+  d3.json('Article1.json', function(error, data) {
+    if (error) throw error;
+    window.dataset = data;
+    for (i = 0; i < dataset.length; i++){
+      if (dataset[i]['Unit Name'] == school_name) {
+        school = dataset[i];
+        simi = school["SimilarNames"];
+        similars = simi.trim().split(",");
+        for (j = 0; j < similars.length; j ++){
+        similars[j] = similars[j].trim().replace("'","").replace("[","").replace("]","").replace("'","");
+        }
       update_text(school); 
-
+      draw_scatter_plot(school,similars,dataset);
+      draw_line_chart(school_name,similars)
+      }
     }
-  }
-});   
-}
-
-function retain(d){
-  input = d["Unit Name"];
+  });   
 }
 
 //Setup and render the autocomplete
@@ -45,7 +47,7 @@ function init_autocomplete() {
     $("#user_school").autocomplete({
       source: ac_data,
       select: function( event, ui ) {
-        var school_name = event.target.value;
+        window.school_name = event.target.value;
         console.log("select handler user selected " + school_name + " aka " + name_to_unit[school_name]);
         select_school(school_name);
       }
@@ -150,3 +152,4 @@ function logic_word(s_service, avg, better, worse){
     return worse;
   }
 }
+
