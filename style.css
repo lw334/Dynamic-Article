@@ -1,8 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,700,700italic|Roboto+Slab:400,700|Yanone+Kaffeesatz);
-
+@import url(http://fonts.googleapis.com/css?family=Stardos+Stencil:400,700|Roboto+Slab:400,300|Roboto:400,300,300italic,500,500italic);
 
 body {
-    background-color: #f5fafa;
+    background-color: #fff9f9;
 }
 
 img {
@@ -12,18 +11,29 @@ img {
 }
 
 h1 {
+    font-size: 80px;
     position: relative;
-    font-size: 60px;
     font-family: 'Stardos Stencil', cursive;
     text-transform: uppercase;
-    margin-left: 900px;
+    margin-left: 750px;
     margin-right: 100px;
-    margin-bottom: 500px;
+    margin-top: -700px;
     color: #ffffff;
     text-align: left;
 }
 
 h2 {
+    font-size: 24px;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-align: left;
+    line-height: 1.5em;
+    margin-left: 750px;
+    margin-right: 100px;
+    margin-top: 50px;
+    color: #ffffff;
+
 
 
 }
