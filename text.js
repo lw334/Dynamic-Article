@@ -7,7 +7,6 @@ var CONTINGENCY = 4;
 var school_data;
 var dataset;
 var name_to_unit = {}
-
 //Autocomplete bar
 d3.csv("UnitList.csv",function (csv) {
     school_data=csv;
@@ -21,22 +20,24 @@ function select_school(school_name) {
     window.dataset = data;
     for (i = 0; i < dataset.length; i++){
       if (dataset[i]['Unit Name'] == school_name) {
-        school = dataset[i];
+        var school = dataset[i];
         simi = school["SimilarNames"];
         similars = simi.trim().split(",");
         for (j = 0; j < similars.length; j ++){
         similars[j] = similars[j].trim().replace("'","").replace("[","").replace("]","").replace("'","");
         }
-      update_text(school); 
-      draw_scatter_plot(school,similars,dataset);
-      draw_line_chart(school_name,similars)
       }
-    }
+    }   
+    update_text(school); 
+    draw_scatter_plot(school,similars,dataset);
+    draw_line_chart(school_name,similars);
+    draw_pie_chart(school_name);
   });   
 }
 
 //Setup and render the autocomplete
 function init_autocomplete() {
+    select_school('Stephen F Gale Community Academy');
     var ac_data = [];
     for (var i = 0; i < school_data.length; i++) {
       //ac_data.push({label: school_data[i]['Unit Name'], value: school_data[i]['Unit']})
@@ -47,12 +48,11 @@ function init_autocomplete() {
     $("#user_school").autocomplete({
       source: ac_data,
       select: function( event, ui ) {
-        window.school_name = event.target.value;
+        var school_name = event.target.value;
         console.log("select handler user selected " + school_name + " aka " + name_to_unit[school_name]);
         select_school(school_name);
       }
     });
-    select_school('Stephen F Gale Community Academy');
 }
 
 function update_text(school){
@@ -62,8 +62,8 @@ function update_text(school){
     pushText('custom-school-name4',school['Unit Name']);
     pushText('custom-school-name5',school['Unit Name']);
     pushText('custom-consistency', school['Consistency']);
-    pushText('custom-consistency-comparison', consistency_comparison_result());
-    pushText('custom-total-budget', school['FY2015ApprovedBudget']);
+    pushText('custom-consistency-comparison', consistency_comparison_result(school));
+    pushText('custom-total-budget', currencyFormat(school['FY2015ApprovedBudget']));
     pushText('custom-salary', toPercent(school['2015Salary%']));
     pushText('custom-benefits', toPercent(school['2015Benefit%']));
     pushText('custom-third', school['LargestSpending']);
@@ -85,29 +85,54 @@ function update_text(school){
     pushText('custom-transporation-exp', comparison_word(school['2015Transportation%'], school['AvgSpending'][TRANSPORTATION], "similar", "more than", "less than"));
 
     //2016
-    pushText('custom-budget-2016',school['FY 16 Budget    (Core and Supplemental)']);
-    pushText('custom-2016-total-percent-change',toPercent(school['% Change from FY 15']));
-    pushText('custom-2016-pupil',school['Change in Per Pupil Enrollment Funding']);
-    pushText('custom-2016-overall',school['Change in Per Pupil Enrollment Funding']);
+    pushText('custom-budget-2016',currencyFormat(school['FY 16 Budget    (Core and Supplemental)']));
+    pushText('custom-2016-total-percent-change',toPercent(school['% Change from FY 15']) + " " + logic_word(school['% Change from FY 15'], 0, "more", "less"));
+    pushText('custom-2016-pupil', currencyFormat(Math.abs(school['Change in Per Pupil Enrollment Funding'])) + " " + logic_word(school['Change in Per Pupil Enrollment Funding'], 0, "more", "less"));
 }
 
-  //helper functions
-function receive() {
-  var input = document.getElementById('user_school');
-  console.log(input);
-  return input;
+function currencyFormat(number)
+{
+   var decimalplaces = 0;
+   var decimalcharacter = "";
+   var thousandseparater = ",";
+   number = parseFloat(number);
+   var sign = number < 0 ? "-" : "";
+   var formatted = new String(number.toFixed(decimalplaces));
+   if( decimalcharacter.length && decimalcharacter != "." ) { formatted = formatted.replace(/\./,decimalcharacter); }
+   var integer = "";
+   var fraction = "";
+   var strnumber = new String(formatted);
+   var dotpos = decimalcharacter.length ? strnumber.indexOf(decimalcharacter) : -1;
+   if( dotpos > -1 )
+   {
+      if( dotpos ) { integer = strnumber.substr(0,dotpos); }
+      fraction = strnumber.substr(dotpos+1);
+   }
+   else { integer = strnumber; }
+   if( integer ) { integer = String(Math.abs(integer)); }
+   while( fraction.length < decimalplaces ) { fraction += "0"; }
+   temparray = new Array();
+   while( integer.length > 3 )
+   {
+      temparray.unshift(integer.substr(-3));
+      integer = integer.substr(0,integer.length-3);
+   }
+   temparray.unshift(integer);
+   integer = temparray.join(thousandseparater);
+   return "$" + sign + integer + decimalcharacter + fraction;
 }
+  //helper functions
 
 function pushText(id, text) {
   document.getElementById(id).innerHTML = text;
 }
 
 function toPercent(num){
-  return (num*100).toPrecision(2);
+  return (Math.abs(num)*100).toPrecision(2) + "%";
 }
 
 // customize texts
-function consistency_comparison_result(){
+function consistency_comparison_result(school){
   if (school['Consistency'] == school['MajorityConsistency']){
     return 'in line of';
   }
@@ -152,4 +177,3 @@ function logic_word(s_service, avg, better, worse){
     return worse;
   }
 }
-

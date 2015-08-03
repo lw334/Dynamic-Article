@@ -19,7 +19,7 @@ function draw_scatter_plot(school,similars,dataset){
   //   svg.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
   // }
 
-  var svg = d3.select("body")
+  var svg = d3.select("body").select("#scatterPlot")
               .append("svg")
               .attr("width", width + margin.left + margin.right)
               .attr("height", height + margin.top + margin.bottom)
@@ -50,8 +50,8 @@ function draw_scatter_plot(school,similars,dataset){
   //console.log(window.dataset);
 
   var scatterdata = dataset.sort(function(a, b) { return d3.ascending(a["Unit Name"], b["Unit Name"]);});
-  console.log(similars)
-  console.log(school)
+  //console.log(similars)
+  //console.log(school)
  // //supposed user input
  // console.log(window.school);
  //  console.log(school_name);
