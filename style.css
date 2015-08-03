@@ -47,11 +47,10 @@ p.barandbutton{
 }
 
 #user_school {
-  position: absolute;
+  position: relative;
   top: 100%;
   left: 0%;
   z-index: 1000;
-  display: inline;
   min-width: 300px;
   font-family: 'Roboto Slab', serif;
   font-size: 20px;
@@ -59,7 +58,7 @@ p.barandbutton{
   padding: 5px;
   margin: 2px 0 0 0;
   list-style: none;
-  background-color: white;
+  background-color: #c1272d;
   border-color: #ccc;
   border-color: rgba(0, 0, 0, 0.2);
   border-style: solid;
@@ -75,27 +74,46 @@ p.barandbutton{
   background-clip: padding-box;
   *border-right-width: 2px;
   *border-bottom-width: 2px;
+  color: #ffffff;
 }
 
-.ui-menu-item {
-    display: block;
-    padding: 3px 15px;
-    clear: both;
-    font-weight: normal;
-    line-height: 18px;
-    color: #191919;
-    white-space: nowrap;
-    font-family: 'Roboto Slab', serif;
-    font-size: 14px;
+.fixed-height {
+  padding: 1px;
+  max-height: 200px;
+  overflow: auto;
 }
 
-&.ui-state-hover, &.ui-state-active {
-  color: #b31217;
-  background-color: #E6E6E6;
+.ui-menu {
+  list-style:none;
+  padding: 2px;
+  margin: 0;
+  display:block;
+  float: left;
+  margin-top: -3px;
+  color: #ffffff; /*changes the color of the dropdown items*/
+}
+
+.ui-menu .ui-menu-item {
+  margin:0;
+  padding: 0;
+  zoom: 1;
+  float: left;
+  clear: left;
+  width: 100%;
+  color: #ffffff !important;
+  background: #AA3939 !important;  /*change the background of the dropdown list */
+}
+
+
+.ui-menu .ui-menu-item:hover {
+  background: #c1272d !important; /*change the background color of the item */
+  font-weight: normal;
+  margin: 1px;
+  border: none;
   border-radius: 0px;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
-  background-image: none;
+  white-space: nowrap;
 }
 
 .axis path,
@@ -154,4 +172,10 @@ pointer-events: none;
   text: 10px sans-serif;
 }
 
+#lineChart {
 
+}
+
+#search {
+  display: inline-block;
+}

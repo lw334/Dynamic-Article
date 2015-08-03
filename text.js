@@ -52,7 +52,7 @@ function init_autocomplete() {
         console.log("select handler user selected " + school_name + " aka " + name_to_unit[school_name]);
         select_school(school_name);
       }
-    });
+    }).autocomplete("widget").addClass("fixed-height");
 }
 
 function update_text(school){
