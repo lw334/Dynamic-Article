@@ -8,13 +8,21 @@ var CONTINGENCY_t =  "I want the school to have the resources to solve emergenci
 
 
  var l = [CONTRACT_t, COMMODITIES_t, CONTINGENCY_t, EQUIPMENT_t, SALARY_t, BENEFITS_t, TRANSPORTATION_t]
-     d3.select("body").select(".priority").selectAll("li")
+ var ranks = ["1","2","3","4","5","6","7"]
+
+    d3.select("body").select(".priority").selectAll("li")
      .data(l)
      .enter()
      .append("li")
      .attr("class", "sortable")
      .attr("draggable", "true")
      .text(function(d){return d;});
+
+     d3.select("body").select(".priority").selectAll("li")
+       .append("p")
+       .data(ranks)
+       .attr("class", "rankings")
+       .text(function(d) {return d;})
 
    var counter = 0;
    $(".sortable").each(function(index){
