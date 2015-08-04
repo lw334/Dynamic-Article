@@ -46,6 +46,7 @@ function init_autocomplete() {
     };
 
     $("#user_school").autocomplete({
+      minLength: 4,
       source: ac_data,
       select: function( event, ui ) {
         var school_name = event.target.value;

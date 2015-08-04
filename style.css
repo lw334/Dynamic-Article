@@ -70,7 +70,7 @@ p, #priority, #pie{
     font-family: 'Roboto Slab', serif;
     margin-left: 750px;
     margin-right: 100px;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 #user_school {
@@ -143,33 +143,10 @@ p, #priority, #pie{
   white-space: nowrap;
 }
 
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #59606A;
-  shape-rendering: crispEdges;
-}
-
-.label {
-  font-size: 15px;
-  font-family: 'Roboto Slab', serif;
-  color:#59606A;
-}
-
-
-
-.tooltip {
-position: absolute;
-width: 200px;
-height: 30px;
-pointer-events: none;
-}
-
-.line {
-  fill: none;
-  stroke: gray;
-  opacity: 0.15;
-  stroke-width: 1.5px;
+/*the game*/
+li {
+  cursor:pointer;
+  cursor:hand;
 }
 
 #rank {
@@ -192,6 +169,7 @@ pointer-events: none;
   text-decoration: none;
 }
 
+
 #rank:hover {
   background: #3cb0fd;
   background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
@@ -202,15 +180,51 @@ pointer-events: none;
   text-decoration: none;
 }
 
+/*graph styles*/
+.lineGraph .scatterPlot {
+  width: 80%;
+  height: 40%;
+}
+
+.circle .line {
+  color: #A6A6A6;
+}
+
+.line {
+  fill: none;
+  stroke: gray;
+  opacity: 0.15;
+  stroke-width: 1.5px;
+}
+
+.tooltip {
+position: absolute;
+width: 200px;
+height: 30px;
+pointer-events: none;
+font-family: 'Roboto Slab', serif;
+color: #2F60B5;
+background: #FFFFFF;
+border: 2px solid #BABABA;
+border-radius: 6px;
+font-size:11px;
+opacity: 0.95;
+}
+
 .arc path {
   stroke: #fff;
   text: 10px sans-serif;
 }
 
-#lineChart {
-
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #59606A;
+  shape-rendering: crispEdges;
 }
 
-#search {
-  display: inline-block;
+.label {
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  color:#59606A;
 }
