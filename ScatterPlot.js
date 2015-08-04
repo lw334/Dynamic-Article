@@ -87,8 +87,7 @@ function draw_scatter_plot(school,similars,dataset){
          
   // add the tooltip area to the webpage
   var tooltip = d3.select("body").append("div")
-      .attr("class", "tooltip")
-      .style("opacity", 0);
+      .attr("class", "tooltip");
 
   //drawing dots
     svg.selectAll("circle")
@@ -129,14 +128,14 @@ function draw_scatter_plot(school,similars,dataset){
               tooltip.transition()
                    .duration(500)
                    .style("opacity", 0);
-          })
+          });
 
   dropDown.on("change", function() {
       var selected = d3.event.target.value;
       var comparison = 0;
 
       if (selected == 'Your school and similar schools'){
-        selected = window.school["Unit Name"];
+        selected = school["Unit Name"];
         comparison = 1;
       }
 
@@ -164,9 +163,8 @@ function draw_scatter_plot(school,similars,dataset){
         svg.selectAll("circle")
             .filter(function(d) { return selected != d["Unit Name"];})
             .attr("display", displayOthers);
-            
         svg.selectAll("circle")
-            .filter(function(d) {return selected == d["Unit Name"];})
+            .filter(function(d) { console.log(selected["SimilarNames"]); return selected == d["Unit Name"];})
             .attr("display", display);
         }
       }

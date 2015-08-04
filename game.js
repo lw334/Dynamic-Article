@@ -35,5 +35,7 @@ var CONTINGENCY_t =  "I want the school to have the resources to solve emergenci
     else{
       document.getElementById("understanding").innerHTML = "If money equals priority, it seems that the budget of your children’s school is being spent with a different mindset.";
     }
+    $("#priority").hide(2000);
+    $('#rank').hide();
 
   });

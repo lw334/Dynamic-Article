@@ -1,7 +1,7 @@
 function draw_line_chart(school_name,similars){
 var margin = {top: 20, right: 80, bottom: 30, left: 80},
-    width = 900 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = 800 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
 
 var parseDate = d3.time.format("%Y").parse;//%m%d").parse;
 
@@ -33,7 +33,7 @@ var dropDown = d3.select("#lineFilter").append("select")
 var svg = d3.select("body").select('#lineChart').append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
-  .append("g")
+    .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
@@ -45,6 +45,8 @@ d3.csv("yearlyBudget.csv", function(error, data) {
   data.forEach(function(d) {
     d.date = parseDate(d.date);
   });
+
+
 
   var schools = color.domain().map(function(name) {
     return {
@@ -65,6 +67,7 @@ d3.csv("yearlyBudget.csv", function(error, data) {
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
+      .style("font-size", "12px")
       .call(xAxis)
     .append("text")
       .attr("class", "label")
@@ -75,6 +78,7 @@ d3.csv("yearlyBudget.csv", function(error, data) {
 
   svg.append("g")
       .attr("class", "y axis")
+      .style("font-size", "12px")
       .call(yAxis)
     .append("text")
       .attr("class", "label")
@@ -86,7 +90,7 @@ d3.csv("yearlyBudget.csv", function(error, data) {
 
   var sch = svg.selectAll(".sch")
       .data(schools)
-    .enter().append("g")
+      .enter().append("g")
       .attr("class", "school");
 
   schools = schools.sort(function(a, b) { return d3.ascending(a["name"], b["name"]);})
@@ -100,7 +104,6 @@ d3.csv("yearlyBudget.csv", function(error, data) {
 
   options.text(function (d) { return d["name"]; })
          .attr("value", function (d) { return d["name"]; });
-
 
 //draw lines
   sch.append("path")
@@ -134,73 +137,74 @@ d3.csv("yearlyBudget.csv", function(error, data) {
           }
       });
 
+
 //prepare tooltips
 
 var tooltip = d3.select("body").append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0.5);
+    .attr("class", "tooltip");
 
 //formating lines
   sch.append("text")
       .datum(function(d) { return {name: d.name, value: d.values[d.values.length - 1]}; })
       .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.budget) + ")"; })
       .attr("x", 3) 
-      .attr("dy", ".35em")
-      .append("g")
-      .on("mouseover", function(d) {
-        console.log("mouseOVER!")
-            tooltip.transition()
-                 .duration(200)
-                 .style("opacity", .9);
-            tooltip.html(d["name"])
-                 .style("left", (d3.event.pageX + 5) + "px")
-                 .style("top", (d3.event.pageY - 28) + "px");
-        })
-      .on("mouseout", function(d) {
-            tooltip.transition()
-                 .duration(500)
-                 .style("opacity", 0);
-        });
+      .attr("dy", ".35em");
 
-  dropDown.on("change", function() {
-      var selected = d3.event.target.value;
-      var comparison = 0;
 
-      if (selected == 'Your school and similar schools'){
-        selected = school_name;
-        comparison = 1;
-      }
-
-      displayOthers = d3.event.target.checked ? "inline" : "none";
-      display = d3.event.target.checked ? "none" : "inline";
-
-      if(selected == 'All'){
-        svg.selectAll(".line")
-            .attr("display", display);
-      }
-      else {
-        if (comparison == 1) {
-          svg.selectAll(".line")
-             .filter(function(d) { return (similars.indexOf(d["name"])!= -1);})
-             .attr("display", "inline");
-          svg.selectAll(".line")
-             .filter(function(d) { return similars.indexOf(d["name"]) == -1;})
-             .attr("display", "none");
-          svg.selectAll(".line")
-              .filter(function(d) {return selected == d["name"]; })
-              .attr("display", "inline");
-        } else {
-        svg.selectAll(".line")
-            .filter(function(d) { return selected != d["name"];})
-            .attr("display", displayOthers);
-            
-        svg.selectAll(".line")
-            .filter(function(d) {return selected == d["name"];})
-            .attr("display", display);
-        }
-      }
+  svg.selectAll(".line").on("mouseover", function(d) {
+    
+    console.log("mouseOVER!")
+        tooltip.transition()
+             .duration(200)
+             .style("opacity", .9);
+        tooltip.html(d["name"])
+             .style("left", (d3.event.pageX + 5) + "px")
+             .style("top", (d3.event.pageY - 28) + "px");
+    })
+  .on("mouseout", function(d) {
+        tooltip.transition()
+             .duration(500)
+             .style("opacity", 0);
     });
 
-});
+    dropDown.on("change", function() {
+        var selected = d3.event.target.value;
+        var comparison = 0;
+
+        if (selected == 'Your school and similar schools'){
+          selected = school_name;
+          comparison = 1;
+        }
+
+        displayOthers = d3.event.target.checked ? "inline" : "none";
+        display = d3.event.target.checked ? "none" : "inline";
+
+        if(selected == 'All'){
+          svg.selectAll(".line")
+              .attr("display", display);
+        }
+        else {
+          if (comparison == 1) {
+            svg.selectAll(".line")
+               .filter(function(d) { return (similars.indexOf(d["name"])!= -1);})
+               .attr("display", "inline");
+            svg.selectAll(".line")
+               .filter(function(d) { return similars.indexOf(d["name"]) == -1;})
+               .attr("display", "none");
+            svg.selectAll(".line")
+                .filter(function(d) {return selected == d["name"]; })
+                .attr("display", "inline");
+          } else {
+          svg.selectAll(".line")
+              .filter(function(d) { return selected != d["name"];})
+              .attr("display", displayOthers);
+              
+          svg.selectAll(".line")
+              .filter(function(d) {return selected == d["name"];})
+              .attr("display", display);
+          }
+      }
+    });
+  });
 }
 
