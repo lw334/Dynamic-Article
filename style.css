@@ -75,8 +75,8 @@ h3 {
     position: relative;
     font-family: 'Roboto Slab', serif;
     margin-left: 300px;
-    margin-right: 100px;
-    margin-top: 230px;
+    margin-right: 300px;
+    margin-top: 200px;
     color: #191919;
     text-align: left;
 }
@@ -95,7 +95,7 @@ p, #priority, #pie{
     font-family: 'Roboto Slab', serif;
     padding: 4px;
     margin-left: 300px;
-    margin-right: 100px;
+    margin-right: 300px;
     color: #333333;
 }
 
@@ -114,27 +114,28 @@ p, #priority, #pie{
   left: 0%;
   z-index: 1000;
   min-width: 300px;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 20px;
+  font-weight: 300;
   _width: 300px;
   padding: 5px;
-  margin: 2px 0 0 0;
+  /*margin: 2px 0 0 0;*/
   list-style: none;
   background-color: #c1272d;
   border-color: rgba(0, 0, 0, 0.2);
   border-style: solid;
-  border-width: 1px;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  *border-right-width: 2px;
-  *border-bottom-width: 2px;
+  /*border-width: 1px;*/
+  /*-webkit-border-radius: 0px;*/
+  /*-moz-border-radius: 0px;*/
+  /*border-radius: 0px;*/
+  /*-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);*/
+  /*-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);*/
+  /*box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);*/
+  /*-webkit-background-clip: padding-box;*/
+  /*-moz-background-clip: padding;*/
+  /*background-clip: padding-box;*/
+  /**border-right-width: 0.5px;*/
+  /**border-bottom-width: 0.5px;*/
   color: #ffffff;
   width: 400px;
 }
@@ -147,23 +148,28 @@ p, #priority, #pie{
 
 .ui-menu {
   list-style:none;
-  padding: 2px;
+  padding: 5px;
   margin: 0;
   display:block;
   float: left;
   margin-top: -3px;
-  color: #ffffff; /*changes the color of the dropdown items*/
+  font-family: 'Roboto', sans-serif;
+  color: #191919; /*changes the color of the dropdown items*/
 }
 
 .ui-menu .ui-menu-item {
   margin:0;
-  padding: 0;
+  padding: 5px;
   zoom: 1;
   float: left;
   clear: left;
   width: 100%;
-  color: #ffffff !important;
-  background: #AA3939 !important;  /*change the background of the dropdown list */
+  color: #191919 !important;
+  background: #fff9f9 !important;  /*change the background of the dropdown list */
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+
 }
 
 
@@ -175,7 +181,7 @@ p, #priority, #pie{
   border-radius: 0px;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
-  white-space: nowrap;
+  /*white-space: nowrap;*/
 }
 
 /*the game*/
