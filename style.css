@@ -34,15 +34,15 @@ h2 {
     margin-top: 50px;
     color: #ffffff;
 
-
-
 }
 
 h3 {
     font-size: 36px;
+    position: relative;
     font-family: 'Roboto Slab', serif;
     margin-left: 300px;
     margin-right: 100px;
+    margin-top: 100px;
     color: #191919;
     text-align: left;
 }
@@ -65,11 +65,12 @@ p, #priority, #pie{
     color: #333333;
 }
 
-p.barandbutton{
-    position: absolute;
-    cursor: default;
-    margin-top: -200px;
-    margin-left: 500px;
+.search {
+    position: relative;
+    font-family: 'Roboto Slab', serif;
+    margin-left: 750px;
+    margin-right: 100px;
+    margin-top: 150px;
 }
 
 #user_school {
