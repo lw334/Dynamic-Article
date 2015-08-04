@@ -135,9 +135,17 @@ p.barandbutton{
 .axis path,
 .axis line {
   fill: none;
-  stroke: #000;
+  stroke: #59606A;
   shape-rendering: crispEdges;
 }
+
+.label {
+  font-size: 15px;
+  font-family: 'Roboto Slab', serif;
+  color:#59606A;
+}
+
+
 
 .tooltip {
 position: absolute;
