@@ -67,13 +67,18 @@ d3.csv("yearlyBudget.csv", function(error, data) {
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis)
     .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", -6)
+      .style("text-anchor", "end")
       .text("Year");
 
   svg.append("g")
       .attr("class", "y axis")
       .call(yAxis)
     .append("text")
-      //.attr("transform", "rotate(-90)")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
@@ -103,11 +108,11 @@ d3.csv("yearlyBudget.csv", function(error, data) {
       .attr("d", function(d) { return line(d.values); })
       .style("stroke", function(d) {         
           if (d.name == school_name){
-            return "red";
+            return "#c1272d";
           }
           else if (similars.indexOf(d.name)!= -1){
           console.log("similar school found!")
-          return "blue";
+          return "#4879CE";
           }
       })
       .style("stroke-width", function(d) {         

@@ -1,8 +1,8 @@
   //svg setup
 function draw_scatter_plot(school,similars,dataset){
   var margin = {top: 20, right: 20, bottom: 30, left: 80},
-        width = 900 - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
+        width = 700 - margin.left - margin.right,
+        height = 400 - margin.top - margin.bottom;
 
   var XScale = d3.scale.linear().domain([1,4020]).range([0,width]);
       xAxis = d3.svg.axis().scale(XScale).orient("bottom");
@@ -50,18 +50,13 @@ function draw_scatter_plot(school,similars,dataset){
   //console.log(window.dataset);
 
   var scatterdata = dataset.sort(function(a, b) { return d3.ascending(a["Unit Name"], b["Unit Name"]);});
-  //console.log(similars)
-  //console.log(school)
- // //supposed user input
- // console.log(window.school);
- //  console.log(school_name);
  
   //draw X-axis
     svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis)
-        .append("text")
+      .append("text")
         .attr("class", "label")
         .attr("x", width)
         .attr("y", -6)
@@ -79,7 +74,6 @@ function draw_scatter_plot(school,similars,dataset){
         .attr("dy", ".71em")
         .style("text-anchor", "end")
         .text("Change in Per Pupil Enrollment");
-
 
   //options
   var options = dropDown.selectAll("option")
@@ -113,11 +107,11 @@ function draw_scatter_plot(school,similars,dataset){
        .style("fill", function(d){
             if (d["Unit Name"] == school["Unit Name"]){
               console.log("school found!");
-              return "red";
+              return "#c1272d";
             }
             else if (similars.indexOf(d["Unit Name"])!= -1){
               console.log("similar school found!");
-              return "blue";
+              return "#4879CE";
               }
           })
         //tooltips behaviors
