@@ -8,7 +8,7 @@ var CONTINGENCY_t =  "I want the school to have the resources to solve emergenci
 
 
  var l = [CONTRACT_t, COMMODITIES_t, CONTINGENCY_t, EQUIPMENT_t, SALARY_t, BENEFITS_t, TRANSPORTATION_t]
-     d3.select("body").select("#priority").selectAll("li")
+     d3.select("body").select(".priority").selectAll("li")
      .data(l)
      .enter()
      .append("li")
@@ -23,8 +23,8 @@ var CONTINGENCY_t =  "I want the school to have the resources to solve emergenci
    });
 
   $(function(){
-    $( "#priority" ).sortable();
-    $( "#priority" ).disableSelection()
+    $( ".priority" ).sortable();
+    $( ".priority" ).disableSelection()
   });
 
   $("#rank").click(function(){ 
@@ -35,7 +35,7 @@ var CONTINGENCY_t =  "I want the school to have the resources to solve emergenci
     else{
       document.getElementById("understanding").innerHTML = "If money equals priority, it seems that the budget of your children’s school is being spent with a different mindset.";
     }
-    $("#priority").hide(2000);
+    $(".priority").hide(1500);
     $('#rank').hide();
 
   });

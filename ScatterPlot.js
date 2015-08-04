@@ -94,15 +94,16 @@ function draw_scatter_plot(school,similars,dataset){
        .data(scatterdata)
        .enter()
        .append("circle")
+       .attr("id", function(d) { return d["Unit Name"]; 
+        })
        .attr("cx",function(d){
           return XScale(+d["FY 16 Projected Enrollment"]);
          })
        .attr("cy", function(d){
           return YScale(+d["Change in Per Pupil Enrollment Funding"]);
          })
-       .attr("r",2)
-       .attr("id", function(d) { return d["Unit Name"]; 
-        })
+
+       .attr("r", 2.5)
        .style("fill", function(d){
             if (d["Unit Name"] == school["Unit Name"]){
               console.log("school found!");
