@@ -4,10 +4,30 @@ body {
     background-color: #fff9f9;
 }
 
+#credit {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  margin-top: 600px;
+  margin-left: -50px;
+  position: absolute;
+  color: #191919;
+  /* Safari */  
+-webkit-transform: rotate(-90deg);
+/* Firefox */ 
+-moz-transform: rotate(-90deg);
+/* IE */ 
+-ms-transform: rotate(-90deg);
+/* Opera */  
+-o-transform: rotate(-90deg);
+/* Internet Explorer */  
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
 img {
     display: block;
-    width: 1400px;
-    height: 777px;
+    width: 1440px;
+    height: 739px;
+    margin-top: 0px;
 }
 
 h1 {
@@ -15,7 +35,7 @@ h1 {
     position: relative;
     font-family: 'Stardos Stencil', cursive;
     text-transform: uppercase;
-    margin-left: 750px;
+    margin-left: 850px;
     margin-right: 100px;
     margin-top: -700px;
     color: #ffffff;
@@ -29,11 +49,25 @@ h2 {
     font-weight: 300;
     text-align: left;
     line-height: 1.5em;
-    margin-left: 750px;
+    margin-left: 850px;
     margin-right: 100px;
     margin-top: 50px;
     color: #ffffff;
 
+}
+
+#helpuser {
+    font-size: 15px;
+    text-transform: uppercase;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-align: left;
+    margin-left: 850px;
+    margin-right: 100px;
+    margin-top: 40px;
+    margin-bottom: 2px;
+    color: #ffffff;
 }
 
 h3 {
@@ -42,7 +76,7 @@ h3 {
     font-family: 'Roboto Slab', serif;
     margin-left: 300px;
     margin-right: 100px;
-    margin-top: 100px;
+    margin-top: 230px;
     color: #191919;
     text-align: left;
 }
@@ -68,9 +102,10 @@ p, #priority, #pie{
 .search {
     position: relative;
     font-family: 'Roboto Slab', serif;
-    margin-left: 750px;
-    margin-right: 100px;
-    margin-top: 150px;
+    margin-left: 850px;
+    margin-right: 200px;
+    margin-top: 0px;
+    border-spacing: 300px;
 }
 
 #user_school {
@@ -86,13 +121,12 @@ p, #priority, #pie{
   margin: 2px 0 0 0;
   list-style: none;
   background-color: #c1272d;
-  border-color: #ccc;
   border-color: rgba(0, 0, 0, 0.2);
   border-style: solid;
   border-width: 1px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -102,6 +136,7 @@ p, #priority, #pie{
   *border-right-width: 2px;
   *border-bottom-width: 2px;
   color: #ffffff;
+  width: 400px;
 }
 
 .fixed-height {
