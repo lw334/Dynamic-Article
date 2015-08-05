@@ -91,7 +91,7 @@ h4 {
     border-bottom: 1px solid #0088dd;
 }
 
-p, .priority, #pie {
+p, #pie {
     font-size: 18px;
     font-family: 'Roboto Slab', serif;
     padding: 4px;
@@ -179,6 +179,7 @@ b {
 }
 
 
+
 .ui-menu .ui-menu-item:hover {
   background: #c1272d !important; /*change the background color of the item */
   font-weight: normal;
@@ -191,11 +192,33 @@ b {
 }
 
 /*the game*/
-li {
-  cursor:pointer;
-  cursor:hand;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    *display: inline;
+    zoom: 1
 }
 
+.ranking li {
+  background-color: #C7001B;
+  color: #FBFFF5;
+  border: 3px solid #6D6D6D;
+  padding: 8px;
+  font-family: helvetica;
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 18px;
+  margin:10px
+}
+
+.priority {
+    width: 80%;
+}
+
+
+/*the button*/
 #rank {
   position:middle;
   font-size: 17px;
@@ -215,7 +238,6 @@ li {
   margin-right: 100px;
   text-decoration: none;
 }
-
 
 #rank:hover {
   background: #3cb0fd;

@@ -10,6 +10,14 @@ var CONTINGENCY_t =  "I want the school to have the resources to solve emergenci
  var l = [CONTRACT_t, COMMODITIES_t, CONTINGENCY_t, EQUIPMENT_t, SALARY_t, BENEFITS_t, TRANSPORTATION_t]
  var ranks = ["1","2","3","4","5","6","7"]
 
+   d3.select("body").select(".ranking").selectAll("li")
+     .data(ranks)
+     .enter()
+     .append("li")
+     .attr("class", "rankings")
+     .attr("id", function(d) {return d-1;})
+     .text(function(d) {return d;})
+
     d3.select("body").select(".priority").selectAll("li")
      .data(l)
      .enter()
@@ -17,12 +25,6 @@ var CONTINGENCY_t =  "I want the school to have the resources to solve emergenci
      .attr("class", "sortable")
      .attr("draggable", "true")
      .text(function(d){return d;});
-
-     d3.select("body").select(".priority").selectAll("li")
-       .append("p")
-       .data(ranks)
-       .attr("class", "rankings")
-       .text(function(d) {return d;})
 
    var counter = 0;
    $(".sortable").each(function(index){
