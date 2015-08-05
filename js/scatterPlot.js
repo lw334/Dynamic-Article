@@ -1,4 +1,3 @@
-  //svg setup
 function draw_scatter_plot(school,similars,dataset){
   var margin = {top: 20, right: 20, bottom: 30, left: 80},
         width = 700 - margin.left - margin.right,
@@ -24,28 +23,28 @@ function draw_scatter_plot(school,similars,dataset){
   var scatterdata = dataset.sort(function(a, b) { return d3.ascending(a["Unit Name"], b["Unit Name"]);});
  
   //draw X-axis
-    svg.append("g")
-        .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
-        .call(xAxis)
-      .append("text")
-        .attr("class", "label")
-        .attr("x", width)
-        .attr("y", -6)
-        .style("text-anchor", "end")
-        .text("enrollment");
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", -6)
+      .style("text-anchor", "end")
+      .text("enrollment");
 
   //draw Y-axis
-    svg.append("g")
-        .attr("class", "y axis")
-        .call(yAxis)
-      .append("text")
-        .attr("class", "label")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("dy", ".71em")
-        .style("text-anchor", "end")
-        .text("Change in Per Pupil Enrollment");
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Change in Per Pupil Enrollment");
 
   //options
   var options = dropDown.selectAll("option")
@@ -62,46 +61,46 @@ function draw_scatter_plot(school,similars,dataset){
       .attr("class", "tooltip");
 
   //drawing dots
-    svg.selectAll("circle")
-       .data(scatterdata)
-       .enter()
-       .append("circle")
-       .attr("id", function(d) { return d["Unit Name"]; 
-        })
-       .attr("cx",function(d){
-          return XScale(+d["FY 16 Projected Enrollment"]);
-         })
-       .attr("cy", function(d){
-          return YScale(+d["Change in Per Pupil Enrollment Funding"]);
-         })
+  svg.selectAll("circle")
+     .data(scatterdata)
+     .enter()
+     .append("circle")
+     .attr("id", function(d) { return d["Unit Name"]; 
+      })
+     .attr("cx",function(d){
+        return XScale(+d["FY 16 Projected Enrollment"]);
+       })
+     .attr("cy", function(d){
+        return YScale(+d["Change in Per Pupil Enrollment Funding"]);
+       })
 
-       .attr("r", 2.5)
-       .style("fill", function(d){
-            if (d["Unit Name"] == school["Unit Name"]){
-              console.log("school found!");
-              return "#c1272d";
+     .attr("r", 2.5)
+     .style("fill", function(d){
+          if (d["Unit Name"] == school["Unit Name"]){
+            console.log("school found!");
+            return "#c1272d";
+          }
+          else if (similars.indexOf(d["Unit Name"])!= -1){
+            console.log("similar school found!");
+            return "#4879CE";
             }
-            else if (similars.indexOf(d["Unit Name"])!= -1){
-              console.log("similar school found!");
-              return "#4879CE";
-              }
-          })
-        //tooltips behaviors
-        .on("mouseover", function(d) {
-          console.log("TIP")
-              tooltip.transition()
-                   .duration(200)
-                   .style("opacity", .9);
-              tooltip.html(d["Unit Name"] + "<br/> (" + "Enrollment: "+ d["FY 16 Projected Enrollment"]
-              + ", " + "Change in funding: " + d["Change in Per Pupil Enrollment Funding"] + ")")
-                   .style("left", (d3.event.pageX + 5) + "px")
-                   .style("top", (d3.event.pageY - 28) + "px");
-          })
-        .on("mouseout", function(d) {
-              tooltip.transition()
-                   .duration(500)
-                   .style("opacity", 0);
-          });
+        })
+      //tooltips behaviors
+      .on("mouseover", function(d) {
+        console.log("TIP")
+            tooltip.transition()
+                 .duration(200)
+                 .style("opacity", .9);
+            tooltip.html(d["Unit Name"] + "<br/> (" + "Enrollment: "+ d["FY 16 Projected Enrollment"]
+            + ", " + "Change in funding: " + d["Change in Per Pupil Enrollment Funding"] + ")")
+                 .style("left", (d3.event.pageX + 5) + "px")
+                 .style("top", (d3.event.pageY - 28) + "px");
+        })
+      .on("mouseout", function(d) {
+            tooltip.transition()
+                 .duration(500)
+                 .style("opacity", 0);
+        });
 
   dropDown.on("change", function() {
       var selected = d3.event.target.value;

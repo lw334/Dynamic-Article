@@ -139,7 +139,6 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
 
 
 //prepare tooltips
-
 var tooltip = d3.select("body").append("div")
     .attr("class", "tooltip");
 
