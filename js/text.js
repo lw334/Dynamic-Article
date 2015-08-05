@@ -8,7 +8,7 @@ var school_data;
 var dataset;
 var name_to_unit = {}
 //Autocomplete bar
-d3.csv("./data/unitList.csv",function (csv) {
+d3.csv("/data/unitList.csv",function (csv) {
     school_data=csv;
     init_autocomplete();
 });

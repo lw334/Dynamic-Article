@@ -20,7 +20,7 @@ var svg = d3.select("body").select("#pie").append("svg")
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.csv("./data/pieChart.csv", function(error, data) {
+d3.csv("/data/pieChart.csv", function(error, data) {
 
   data.forEach(function(d) {
     d[school_name] = +d[school_name];
