@@ -4,7 +4,6 @@ $(function(){
         _height  = $(window).height(),
         i        = 0;
     
-    // Grab positions of our sections 
     $('.section').each(function(){
         sections[this.name] = $(this).offset().top;
     });

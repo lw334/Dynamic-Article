@@ -8,14 +8,14 @@ var school_data;
 var dataset;
 var name_to_unit = {}
 //Autocomplete bar
-d3.csv("/data/unitList.csv",function (csv) {
+d3.csv("./js/data/unitList.csv",function (csv) {
     school_data=csv;
     init_autocomplete();
 });
 
 //Call back for when user selects a school
 function select_school(school_name) {
-  d3.json('./data/article1.json', function(error, data) {
+  d3.json('./js/data/article1.json', function(error, data) {
     if (error) throw error;
     window.dataset = data;
     for (i = 0; i < dataset.length; i++){

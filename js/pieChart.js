@@ -20,11 +20,10 @@ var svg = d3.select("body").select("#pie").append("svg")
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-d3.csv("/data/pieChart.csv", function(error, data) {
+d3.csv("./js/data/pieChart.csv", function(error, data) {
 
   data.forEach(function(d) {
     d[school_name] = +d[school_name];
-    //console.log(d[school_name]);
   });
 
   var g = svg.selectAll(".arc")
@@ -35,7 +34,6 @@ d3.csv("/data/pieChart.csv", function(error, data) {
   g.append("path")
       .attr("d", arc)
       .style("fill", function(d) { 
-        //console.log(d.value)
         if (d.value != 0) {
           return color(d.data["2015Expenditures"]); 
         }
