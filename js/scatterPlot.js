@@ -111,6 +111,10 @@ function draw_scatter_plot(school,similars,dataset){
         comparison = 1;
       }
 
+      svg.selectAll("circle")
+         .style("opacity", 0.9)
+         .attr("r", 2);
+
       displayOthers = d3.event.target.checked ? "inline" : "none";
       display = d3.event.target.checked ? "none" : "inline";
       console.log(display)
@@ -124,19 +128,27 @@ function draw_scatter_plot(school,similars,dataset){
         if (comparison == 1) {
           svg.selectAll("circle")
              .filter(function(d) { return (similars.indexOf(d["Unit Name"])!= -1);})
+             .transition()
+             .attr("r", 5)
+             .style("opacity", 1)
              .attr("display", "inline");
           svg.selectAll("circle")
              .filter(function(d) { return similars.indexOf(d["Unit Name"]) == -1;})
-             .attr("display", "none");
+             //.attr("display", "none")
+             .attr("display", "inline")
+             .transition()
+             .style("opacity", 0.2);
           svg.selectAll("circle")
               .filter(function(d) {return selected == d["Unit Name"]; })
+              .attr("r", 5)
+              .style("opacity", 1)
               .attr("display", "inline");
         } else {
-        svg.selectAll("circle")
+          svg.selectAll("circle")
             .filter(function(d) { return selected != d["Unit Name"];})
-            .attr("display", displayOthers);
+            .attr("display", display);
         svg.selectAll("circle")
-            .filter(function(d) { console.log(selected["SimilarNames"]); return selected == d["Unit Name"];})
+            .filter(function(d) { return selected == d["Unit Name"];})
             .attr("display", display);
         }
       }

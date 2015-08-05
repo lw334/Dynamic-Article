@@ -12,10 +12,10 @@ $(function(){
         var $this = $(this),
             pos   = $this.scrollTop();
 
-         if ($(this).scrollTop() == 0) {
-            $("#floating-nav-content").slideUp(400);
+         if (pos == 0) {
+            $("#main-nav").slideUp(400);
         } else {
-            $("#floating-nav-content").slideDown(600);
+            $("#main-nav").slideDown(700);
         }
             
         for(i in sections){
