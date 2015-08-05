@@ -14,40 +14,12 @@ function draw_scatter_plot(school,similars,dataset){
   var dropDown = d3.select("#scatterFilter").append("select")
                     .attr("name", "school-list");
 
-  behavior setup
-  function zoomed() {
-    svg.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
-  }
-
   var svg = d3.select("body").select("#scatterPlot")
               .append("svg")
               .attr("width", width + margin.left + margin.right)
               .attr("height", height + margin.top + margin.bottom)
             .append("g")
               .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-            //  .call(d3.behavior.zoom().scaleExtent([1, 10]).on("zoom", zoomed))
-            
-
-                      
-  //draw dots
-  d3.json('Article1.json', function(error, data) {
-     if (error) throw error;
-    dataset = data;
-    var school;
-    var similars;
-    var changed;
-    for (var i = 0; i < dataset.length; i++){
-      if (dataset[i]['Unit Name'] == school_name) {
-        school = dataset[i];
-        similars = school["SimilarNames"];
-        changed = similars.trim().split(",");
-        for (j = 0; j < changed.length; j ++){
-          changed[j] = changed[j].trim().replace("'","").replace("[","").replace("]","").replace("'","");
-        }
-      }
-    }
-  console.log(window.school_name)
-  console.log(window.dataset); //
 
   var scatterdata = dataset.sort(function(a, b) { return d3.ascending(a["Unit Name"], b["Unit Name"]);});
  
