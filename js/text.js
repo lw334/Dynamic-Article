@@ -30,7 +30,7 @@ function select_school(school_name) {
     }   
     update_text(school); 
     draw_scatter_plot(school,similars,dataset);
-    draw_line_chart(school_name,similars);
+    draw_line_chart(school_name,similars,dataset);
     draw_pie_chart(school_name);
   });   
 }
