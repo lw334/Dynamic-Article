@@ -48,7 +48,7 @@ function draw_scatter_plot(school,similars,dataset){
 
   //options
   var options = dropDown.selectAll("option")
-             .data([{"Unit Name":"All"}, {"Unit Name":"Your school and similar schools"}].concat(scatterdata))
+             .data([{"Unit Name":"Your school and similar schools"}].concat(scatterdata))
            .enter()
              .append("option");
 
@@ -60,7 +60,7 @@ function draw_scatter_plot(school,similars,dataset){
   var tooltip = d3.select("body").append("div")
       .attr("class", "tooltip");
 
-  //drawing dots
+  //drawing default dots
   svg.selectAll("circle")
      .data(scatterdata)
      .enter()
@@ -74,83 +74,107 @@ function draw_scatter_plot(school,similars,dataset){
         return YScale(+d["Change in Per Pupil Enrollment Funding"]);
        })
 
-     .attr("r", 2.5)
+     .attr("r", function(d){
+        if ((d["Unit Name"] == school["Unit Name"])|| (similars.indexOf(d["Unit Name"])!= -1)){
+          return 5;
+        }
+        else {
+          return 2;
+        }
+      })
      .style("fill", function(d){
-          if (d["Unit Name"] == school["Unit Name"]){
-            console.log("school found!");
-            return "#c1272d";
+        if (d["Unit Name"] == school["Unit Name"]){
+          console.log("school found!");
+          return "#c1272d";
+        }
+        else if (similars.indexOf(d["Unit Name"])!= -1){
+          console.log("similar school found!");
+          return "#4879CE";
+        }
+      })
+     .style("opacity", function(d){
+        if ((d["Unit Name"] == school["Unit Name"]) || (similars.indexOf(d["Unit Name"])!= -1)){
+          return 1;
           }
-          else if (similars.indexOf(d["Unit Name"])!= -1){
-            console.log("similar school found!");
-            return "#4879CE";
-            }
-        })
+        else {
+          return 0.2;
+        }
+      })
+      
       //tooltips behaviors
       .on("mouseover", function(d) {
         console.log("TIP")
-            tooltip.transition()
-                 .duration(200)
-                 .style("opacity", .9);
-            tooltip.html(d["Unit Name"] + "<br/> (" + "Enrollment: "+ d["FY 16 Projected Enrollment"]
-            + ", " + "Change in funding: " + d["Change in Per Pupil Enrollment Funding"] + ")")
-                 .style("left", (d3.event.pageX + 5) + "px")
-                 .style("top", (d3.event.pageY - 28) + "px");
+        d3.select(this).attr("r", 5).style("fill", "red").style("opacity","1");
+        tooltip.transition()
+             .duration(200)
+             .style("opacity", .9);
+        tooltip.html(d["Unit Name"] + "<br/> (" + "Enrollment: "+ d["FY 16 Projected Enrollment"]
+        + ", " + "Change in funding: " + d["Change in Per Pupil Enrollment Funding"] + ")")
+             .style("left", (d3.event.pageX + 5) + "px")
+             .style("top", (d3.event.pageY - 28) + "px");
         })
       .on("mouseout", function(d) {
-            tooltip.transition()
-                 .duration(500)
-                 .style("opacity", 0);
+        d3.select(this).attr("r", 2).style("fill", "gray").style("opacity","0.2");
+        tooltip.transition()
+             .duration(500)
+             .style("opacity", 0);
         });
 
   dropDown.on("change", function() {
-      var selected = d3.event.target.value;
-      var comparison = 0;
+    var selected = d3.event.target.value;
+    var comparison = 0;
 
-      if (selected == 'Your school and similar schools'){
-        selected = school["Unit Name"];
-        comparison = 1;
-      }
+    svg.selectAll("circle")
+       .style("opacity", 0.2)
+       .style("fill", "gray")
+       .attr("r", 2);
 
+    if (selected == 'Your school and similar schools'){
+      selected = school["Unit Name"];
+      comparison = 1;
+    }
+
+    if (comparison == 1) {
       svg.selectAll("circle")
-         .style("opacity", 0.9)
-         .attr("r", 2);
-
-      displayOthers = d3.event.target.checked ? "inline" : "none";
-      display = d3.event.target.checked ? "none" : "inline";
-      console.log(display)
-      console.log(displayOthers)
-
-      if(selected == 'All'){
-        svg.selectAll("circle")
-            .attr("display", display);
-      }
-      else {
-        if (comparison == 1) {
-          svg.selectAll("circle")
-             .filter(function(d) { return (similars.indexOf(d["Unit Name"])!= -1);})
-             .transition()
-             .attr("r", 5)
-             .style("opacity", 1)
-             .attr("display", "inline");
-          svg.selectAll("circle")
-             .filter(function(d) { return similars.indexOf(d["Unit Name"]) == -1;})
-             //.attr("display", "none")
-             .attr("display", "inline")
-             .transition()
-             .style("opacity", 0.2);
-          svg.selectAll("circle")
-              .filter(function(d) {return selected == d["Unit Name"]; })
-              .attr("r", 5)
-              .style("opacity", 1)
-              .attr("display", "inline");
-        } else {
-          svg.selectAll("circle")
-            .filter(function(d) { return selected != d["Unit Name"];})
-            .attr("display", display);
-        svg.selectAll("circle")
-            .filter(function(d) { return selected == d["Unit Name"];})
-            .attr("display", display);
+         .filter(function(d) { return (similars.indexOf(d["Unit Name"])!= -1);})
+         .transition()
+         .attr("r", 5)
+         .style("fill", "blue")
+         .style("opacity", 1);
+      svg.selectAll("circle")
+          .filter(function(d) {return selected == d["Unit Name"]; })
+          .transition()
+          .attr("r", 5)
+          .style("fill", "red")
+          .style("opacity", 1);
+      } else {
+        var scatter_similar_schools;
+        var scatter_school;
+        for (var i = 0; i < dataset.length; i++) {
+          if (dataset[i]["Unit Name"] == selected) {
+            scatter_school = dataset[i];
+            scatter_similar_schools = scatter_school["SimilarNames"]; 
+            scatter_similar_schools = scatter_similar_schools.trim().split(",");
+            for (var j = 0; j < scatter_similar_schools.length; j ++){
+              scatter_similar_schools[j] = scatter_similar_schools[j].trim().replace("'","").replace("[","").replace("]","").replace("'","");
+            }
+          }
         }
+        svg.selectAll("circle")
+          .filter(function(d) {
+            return (scatter_similar_schools.indexOf(d["Unit Name"]) != -1);
+          })
+          .transition()
+          .attr("r", 5)
+          .style("fill", "blue")
+          .style("opacity", 1);
+      
+        svg.selectAll("circle")
+            .filter(function(d) { return selected == d["Unit Name"]; })
+            .transition()
+            .attr("r", 5)
+            .style("fill","red")
+            .style("opacity", 1);
       }
   });
 }
