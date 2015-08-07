@@ -293,6 +293,11 @@ ul {
   cursor:pointer;
 }
 
+.priority li:hover{
+  background-color:#c1272d;
+  color:#ffffff;
+}
+
 
 /*the button*/
 #rank {
