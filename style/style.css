@@ -2,7 +2,7 @@
 
 body {
     background-color: #fff9f9;
-    margin: -20px;
+    margin: -18px;
 }
 
 
@@ -31,6 +31,7 @@ img#hero {
     display: block;
     width: 1400px;
     height: 739px;
+    z-index:900;
 }
 
 /*navigation bar*/
@@ -41,7 +42,7 @@ img#hero {
     width:100%;
     height:70px;
     opacity:0.95;
-    z-index:900;
+    z-index:1000;
 }
 
 .nav_bar {
@@ -96,6 +97,7 @@ h1 {
     margin-top: -700px;
     color: #ffffff;
     text-align: left;
+    z-index: 900;
 }
 
 h2 {
@@ -109,6 +111,7 @@ h2 {
     margin-right: 50px;
     margin-top: 50px;
     color: #ffffff;
+    z-index: 900;
 
 }
 
@@ -126,13 +129,18 @@ h2 {
     color: #ffffff;
 }
 
+#direction {
+  font-size: 20px;
+  font-weight: bolder;/*
+  color:#c1272d;*/
+}
 h3 {
     font-size: 36px;
     position: relative;
     font-family: 'Roboto Slab', serif;
     margin-left: 300px;
     margin-right: 300px;
-    margin-top: 100px;
+    margin-top: 250px;
     color: #191919;
     text-align: left;
 }
@@ -161,12 +169,11 @@ h4 {
   position: relative;
   top: 100%;
   left: 0%;
-  z-index: 1000;
+  z-index: 900;
   min-width: 300px;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: 300;
-  _width: 300px;
   padding: 5px;
   /*margin: 2px 0 0 0;*/
   list-style: none;
@@ -267,6 +274,7 @@ ul {
  border: 2px solid #c1272d ;
  background: #c1272d ;
  margin:10px;
+ margin-left:100px;
  border-radius: 6px;
 }
 
@@ -300,33 +308,20 @@ ul {
 
 
 /*the button*/
-#rank {
-  position:middle;
-  font-size: 17px;
-  font-family: 'Roboto Slab', serif;
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  color: #ffffff;
-  padding: 10px 20px 10px 20px;
-  margin-left: 300px;
-  margin-right: 100px;
+#rank {    
+  border-radius: 20px;
+  color: #FFF;
+  font-size: 22px;
+  background: #C1272D none repeat scroll 0% 0%;
+  padding: 10px 20px;
   text-decoration: none;
+  font-family: "Roboto Slab",serif;
+  margin-left: 200px;
+  margin-top: 10px;
 }
 
 #rank:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  background: #fc7f3c;
   text-decoration: none;
 }
 
@@ -364,6 +359,8 @@ border: 1px solid #c1272d;
 border-radius: 6px;
 font-size:11px;
 opacity: 0.95;
+z-index: 10;
+visibility: hidden;
 }
 
 

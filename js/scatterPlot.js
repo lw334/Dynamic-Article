@@ -105,7 +105,8 @@ function draw_scatter_plot(school,similars,dataset){
       .on("mouseover", function(d) {
         console.log("TIP")
         d3.select(this).attr("r", 5).style("fill", "#c1272d").style("opacity","1");
-        tooltip.transition()
+        tooltip.style("visibility","visible")
+             .transition()
              .duration(200)
              .style("opacity", .9);
         tooltip.html(d["Unit Name"] + "<br/> (" + "Enrollment: "+ d["FY 16 Projected Enrollment"]
