@@ -1,4 +1,4 @@
-function draw_line_chart(school_name,similars){
+function draw_line_chart(school_name,similars,dataset){
 var margin = {top: 20, right: 80, bottom: 30, left: 80},
     width = 800 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
@@ -22,7 +22,6 @@ var yAxis = d3.svg.axis()
     .orient("left");
 
 var line = d3.svg.line()
-    .interpolate("basis")
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.budget); });
 
@@ -45,8 +44,6 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
   data.forEach(function(d) {
     d.date = parseDate(d.date);
   });
-
-
 
   var schools = color.domain().map(function(name) {
     return {
@@ -97,15 +94,14 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
   //console.log(schools)
   //options
   var options = dropDown.selectAll("option")
-             .data([{"name":"All"}, {"name":"Your school and similar schools"}].concat(schools))
-           .enter()
+             .data([{"name":"Your school and similar schools"}].concat(schools))
+             .enter()
              .append("option");
-
 
   options.text(function (d) { return d["name"]; })
          .attr("value", function (d) { return d["name"]; });
 
-//draw lines
+//draw default lines
   sch.append("path")
       .attr("class", "line")
       .attr("d", function(d) { return line(d.values); })
@@ -119,24 +115,32 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
           }
       })
       .style("stroke-width", function(d) {         
-          if (d.name == school_name){
-            return "2px";
-          }
-          else if (similars.indexOf(d.name)!= -1){
-          console.log("similar school found!")
-          return "2px";
-          }
+        if ((d.name == school_name) || (similars.indexOf(d.name)!= -1)){
+          return "3px";
+        }
+        else {
+          return "1.5px";
+        }
       })
       .style("opacity", function(d) {         
-          if (d.name == school_name){
-            return "1";
-          }
-          else if (similars.indexOf(d.name)!= -1){
-          console.log("similar school found!")
+        if ((d.name == school_name) || (similars.indexOf(d.name)!= -1)){
           return "1";
-          }
+        }
+        else {
+          return "0.1";
+        }
       });
 
+//  //put dots on the lines
+
+// svg.selectAll(".line")
+//     .data(schools)
+//     .enter()
+//     .append("circle")
+//     .attr("cx", function(d, i) {return d.date})
+//     .attr("cy", function(d, i){return d.value}) 
+//     .attr("r", 2);
+//     .attr("stroke", "black")
 
 //prepare tooltips
 var tooltip = d3.select("body").append("div")
@@ -167,43 +171,60 @@ var tooltip = d3.select("body").append("div")
     });
 
     dropDown.on("change", function() {
-        var selected = d3.event.target.value;
-        var comparison = 0;
+      var selected = d3.event.target.value;
+      var comparison = 0;
 
-        if (selected == 'Your school and similar schools'){
-          selected = school_name;
-          comparison = 1;
-        }
 
-        displayOthers = d3.event.target.checked ? "inline" : "none";
-        display = d3.event.target.checked ? "none" : "inline";
+      svg.selectAll(".line")
+         .style("opacity", 0.1)
+         .style("stroke", "#A6A6A6")
+         .style("stroke-width", "1.5px")
+         .style("fill","none");
 
-        if(selected == 'All'){
-          svg.selectAll(".line")
-              .attr("display", display);
-        }
-        else {
-          if (comparison == 1) {
-            svg.selectAll(".line")
-               .filter(function(d) { return (similars.indexOf(d["name"])!= -1);})
-               .attr("display", "inline");
-            svg.selectAll(".line")
-               .filter(function(d) { return similars.indexOf(d["name"]) == -1;})
-               .attr("display", "none");
-            svg.selectAll(".line")
-                .filter(function(d) {return selected == d["name"]; })
-                .attr("display", "inline");
-          } else {
-          svg.selectAll(".line")
-              .filter(function(d) { return selected != d["name"];})
-              .attr("display", displayOthers);
-              
-          svg.selectAll(".line")
-              .filter(function(d) {return selected == d["name"];})
-              .attr("display", display);
-          }
+      if (selected == 'Your school and similar schools'){
+        selected = school_name;
+        comparison = 1;
       }
-    });
+
+      if (comparison == 1) {
+        svg.selectAll(".line")
+           .filter(function(d) { return (similars.indexOf(d["name"])!= -1); })
+           .style("stroke", "#4879CE")
+           .style("opacity", 1)
+           .style("stroke-width", "3px");
+        svg.selectAll(".line")
+            .filter(function(d) {return selected == d["name"]; })
+            .style("stroke", "#c1272d")
+            .style("opacity", 1)
+           .style("stroke-width", "3px");
+      } else {
+        var line_similar_schools;
+        var line_school;
+        for (var i = 0; i < dataset.length; i++) {
+          if (dataset[i]["Unit Name"] == selected) {
+            line_school = dataset[i];
+            line_similar_schools = line_school["SimilarNames"]; 
+            line_similar_schools = line_similar_schools.trim().split(",");
+            for (var j = 0; j < line_similar_schools.length; j ++){
+              line_similar_schools[j] = line_similar_schools[j].trim().replace("'","").replace("[","").replace("]","").replace("'","");
+            }
+          }
+        }
+        svg.selectAll(".line")
+          .filter(function(d) {
+            return (line_similar_schools.indexOf(d["name"]) != -1);
+          })
+          .transition()
+          .style("stroke", "#4879CE")
+          .style("opacity", 1)
+          .style("stroke-width", "3px");
+      svg.selectAll(".line")
+          .filter(function(d) {return selected == d["name"];})
+          .style("stroke", "#c1272d")
+          .style("opacity", 1)
+          .style("stroke-width", "3px");
+    }    
   });
+})
 }
 

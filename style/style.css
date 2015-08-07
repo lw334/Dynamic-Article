@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Stardos+Stencil:400,700|Roboto+Slab:400,300|Roboto:400,300,300italic,500,500italic);
 
 body {
-    background-color: #fff9f9;
+    background-color: #f2f2f2;
     padding-top: 0px;
 }
 
@@ -28,9 +28,8 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 img#hero {
     position:relative;
     display: block;
-    width: 100%;
+    width: 1400px;
     height: 739px;
-    border:0px;
 }
 
 /*navigation bar*/
@@ -58,6 +57,9 @@ img#hero {
 
 #nav_title{
     font-family: 'Stardos Stencil', cursive;
+    margin-left: 40px;
+    margin-right: 1000px;
+    padding-bottom: 10px;
 
 }
 
@@ -78,12 +80,12 @@ a+a {
 
 
 h1 {
-    font-size: 80px;
+    font-size: 70px;
     position: relative;
     font-family: 'Stardos Stencil', cursive;
     text-transform: uppercase;
     margin-left: 850px;
-    margin-right: 100px;
+    margin-right: 50px;
     margin-top: -700px;
     color: #ffffff;
     text-align: left;
@@ -97,7 +99,7 @@ h2 {
     text-align: left;
     line-height: 1.5em;
     margin-left: 850px;
-    margin-right: 100px;
+    margin-right: 50px;
     margin-top: 50px;
     color: #ffffff;
 
@@ -111,7 +113,7 @@ h2 {
     font-weight: 300;
     text-align: left;
     margin-left: 850px;
-    margin-right: 100px;
+    margin-right: 50px;
     margin-top: 40px;
     margin-bottom: 2px;
     color: #ffffff;
@@ -123,7 +125,7 @@ h3 {
     font-family: 'Roboto Slab', serif;
     margin-left: 300px;
     margin-right: 300px;
-    margin-top: 200px;
+    margin-top: 100px;
     color: #191919;
     text-align: left;
 }
@@ -137,25 +139,13 @@ h4 {
     border-bottom: 1px solid #0088dd;
 }
 
-p, #pie {
-    font-size: 18px;
-    font-family: 'Roboto Slab', serif;
-    padding: 4px;
-    margin-left: 300px;
-    margin-right: 300px;
-    color: #333333;
-}
 
-b {
-  font-family: 'Roboto', sans-serif;
-  font-size:15px;
-}
 
 .search {
     position: relative;
     font-family: 'Roboto Slab', serif;
     margin-left: 850px;
-    margin-right: 200px;
+    margin-right: 50px;
     margin-top: 0px;
     border-spacing: 300px;
 }
@@ -237,6 +227,20 @@ b {
   /*white-space: nowrap;*/
 }
 
+p, #pie {
+    font-size: 18px;
+    font-family: 'Roboto Slab', serif;
+    padding: 4px;
+    margin-left: 300px;
+    margin-right: 300px;
+    color: #333333;
+}
+
+b {
+  font-family: 'Roboto', sans-serif;
+  font-size:15px;
+}
+
 /*the game*/
 ul {
     list-style-type: none;
@@ -314,6 +318,10 @@ ul {
 
 circle {
   fill: #A6A6A6;
+}
+
+.line {
+  fill: none;
 }
 
 .tooltip {
