@@ -32,7 +32,7 @@ function draw_scatter_plot(school,similars,dataset){
       .attr("x", width)
       .attr("y", -6)
       .style("text-anchor", "end")
-      .text("enrollment");
+      .text("Enrollment");
 
   //draw Y-axis
   svg.append("g")
@@ -44,7 +44,7 @@ function draw_scatter_plot(school,similars,dataset){
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Change in Per Pupil Enrollment");
+      .text("Change in Per Pupil Enrollment ($)");
 
   //options
   var options = dropDown.selectAll("option")
@@ -57,7 +57,7 @@ function draw_scatter_plot(school,similars,dataset){
 
          
   // add the tooltip area to the webpage
-  var tooltip = d3.select("body").append("div")
+  var tooltip = d3.select("body").select("#scatterPlot").append("div")
       .attr("class", "tooltip");
 
   //drawing default dots
@@ -104,7 +104,7 @@ function draw_scatter_plot(school,similars,dataset){
       //tooltips behaviors
       .on("mouseover", function(d) {
         console.log("TIP")
-        d3.select(this).attr("r", 5).style("fill", "red").style("opacity","1");
+        d3.select(this).attr("r", 5).style("fill", "#c1272d").style("opacity","1");
         tooltip.transition()
              .duration(200)
              .style("opacity", .9);
@@ -114,7 +114,7 @@ function draw_scatter_plot(school,similars,dataset){
              .style("top", (d3.event.pageY - 28) + "px");
         })
       .on("mouseout", function(d) {
-        d3.select(this).attr("r", 2).style("fill", "gray").style("opacity","0.2");
+        d3.select(this).attr("r", 2).style("fill", "#59606A").style("opacity","0.2");
         tooltip.transition()
              .duration(500)
              .style("opacity", 0);
@@ -126,7 +126,7 @@ function draw_scatter_plot(school,similars,dataset){
 
     svg.selectAll("circle")
        .style("opacity", 0.2)
-       .style("fill", "gray")
+       .style("fill", "#59606A")
        .attr("r", 2);
 
     if (selected == 'Your school and similar schools'){
@@ -139,13 +139,13 @@ function draw_scatter_plot(school,similars,dataset){
          .filter(function(d) { return (similars.indexOf(d["Unit Name"])!= -1);})
          .transition()
          .attr("r", 5)
-         .style("fill", "blue")
+         .style("fill", "#4879CE")
          .style("opacity", 1);
       svg.selectAll("circle")
           .filter(function(d) {return selected == d["Unit Name"]; })
           .transition()
           .attr("r", 5)
-          .style("fill", "red")
+          .style("fill", "#c1272d")
           .style("opacity", 1);
       } else {
         var scatter_similar_schools;
@@ -166,14 +166,14 @@ function draw_scatter_plot(school,similars,dataset){
           })
           .transition()
           .attr("r", 5)
-          .style("fill", "blue")
+          .style("fill", "#4879CE")
           .style("opacity", 1);
       
         svg.selectAll("circle")
             .filter(function(d) { return selected == d["Unit Name"]; })
             .transition()
             .attr("r", 5)
-            .style("fill","red")
+            .style("fill","#c1272d")
             .style("opacity", 1);
       }
   });
