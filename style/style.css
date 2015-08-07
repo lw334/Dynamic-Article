@@ -6,133 +6,27 @@ body {
   margin: 0px;
 }
 
-.main-image {
-  background: url("http://i1341.photobucket.com/albums/o744/patygomeslima/kid_swing_1440_zpsuu1etsdg.jpg");
-  background-repeat: no-repeat;
-  height: 800px;
 
-
-}
-
-#credit {
-  font-family: 'Roboto', sans-serif;
-  font-size: 12px;
-  margin-top: 600px;
-  margin-left: -50px;
-  position: absolute;
-  color: #191919;
-  /* Safari */  
--webkit-transform: rotate(-90deg);
-/* Firefox */ 
--moz-transform: rotate(-90deg);
-/* IE */ 
--ms-transform: rotate(-90deg);
-/* Opera */  
--o-transform: rotate(-90deg);
-/* Internet Explorer */  
-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-}
-
-
-/*navigation bar*/
-.active {
-   font-size:20px;
-}
-
-
-#main-nav {
-    position:fixed;
-    background-color:#c1272d;
-    width:100%;
-    height:50px;
-    opacity:0.9;
-}
-
-.nav_bar {
-    display: center;
-    width:100%;
-    height:48px;
-    color: #ffffff;
-    text-decoration:none;
-    text-align: inline;
-}
-
-#nav_title{
-    font-family: 'Stardos Stencil', cursive;
-    margin-left: 40px;
-    margin-right: 1000px;
-    padding-bottom: 10px;
-
-}
-
-a:hover {
-    text-decoration:underline;
-}
-
-[id=nav_title] {
-    font-size:25px;
-    text-align: left;
-}
-
-a+a { 
-    border-left: 2px solid #ffffff; 
-    margin-top:5px;
-    margin-bottom:5px;
-}
-
+/*   <--- typography --->  */
 
 h1 {
     font-size: 70px;
     position: relative;
     font-family: 'Stardos Stencil', cursive;
     text-transform: uppercase;
-    margin-left: 850px;
-    margin-right: 50px;
-    margin-top: -700px;
     color: #ffffff;
     text-align: left;
 }
 
 h2 {
-    font-size: 24px;
-    position: relative;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    text-align: left;
-    line-height: 1.5em;
-    margin-left: 850px;
-    margin-right: 50px;
-    margin-top: 50px;
-    color: #ffffff;
-
-}
-
-#helpuser {
-    font-size: 15px;
-    text-transform: uppercase;
-    position: relative;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    text-align: left;
-    margin-left: 850px;
-    margin-right: 50px;
-    margin-top: 40px;
-    margin-bottom: 2px;
-    color: #ffffff;
-}
-
-h3 {
     font-size: 36px;
     position: relative;
     font-family: 'Roboto Slab', serif;
-    margin-left: 300px;
-    margin-right: 300px;
-    margin-top: 100px;
     color: #191919;
     text-align: left;
 }
 
-h4 {
+h3 {
     font-family: 'Roboto Slab', serif;
     margin-left: 300px;
     margin-top: 1px;
@@ -142,13 +36,53 @@ h4 {
 }
 
 
+/*   <--- main page --->  */
+
+.main-image {
+  background: url("http://i1341.photobucket.com/albums/o744/patygomeslima/kid_balanco_1440semfiltro_zpsiv5eiknr.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
+
+#intro {
+  width: 33%;
+  min-width: 200px;
+  margin-left: 60%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: rgba(0,0,0,0.4);
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+
+#lede {
+    font-size: 24px;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-align: left;
+    line-height: 1.5em;
+    color: #ffffff;
+}
+
+#helpuser {
+    font-size: 15px;
+    text-transform: uppercase;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-align: left;
+    color: #ffffff;
+}
 
 .search {
     position: relative;
     font-family: 'Roboto Slab', serif;
-    margin-left: 850px;
-    margin-right: 50px;
-    margin-top: 0px;
     border-spacing: 300px;
 }
 
@@ -213,10 +147,7 @@ h4 {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
   font-weight: 300;
-
 }
-
-
 
 .ui-menu .ui-menu-item:hover {
   background: #c1272d !important; /*change the background color of the item */
@@ -228,8 +159,105 @@ h4 {
   -moz-border-radius: 0px;
   /*white-space: nowrap;*/
 }
+#credit {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  margin-top: 600px;
+  margin-left: -50px;
+  position: absolute;
+  color: #191919;
+  /* Safari */  
+-webkit-transform: rotate(-90deg);
+/* Firefox */ 
+-moz-transform: rotate(-90deg);
+/* IE */ 
+-ms-transform: rotate(-90deg);
+/* Opera */  
+-o-transform: rotate(-90deg);
+/* Internet Explorer */  
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
 
-p, #pie {
+
+/*   <--- navigation bar --->   */
+
+
+.active {
+   font-size:20px;
+}
+
+
+#main-nav {
+    background-color:#c1272d;
+    height:50px;
+    opacity:0.9;
+    width: 100%;
+}
+
+#main-nav p {
+    display: inline;
+    font-family: 'Stardos Stencil', cursive;
+    font-size: 40px;
+    margin-left: 40px;
+    color: #ffffff;
+
+}
+
+#main-nav ul {
+  list-style-type: none;
+  float: right;
+  padding-bottom: 11px;
+  padding-top: 21px;
+}
+
+#main-nav ul li {
+  display: inline;
+}
+
+#main-nav ul li a {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+#main-nav ul li::after { 
+    content: "::";
+}
+
+#main-nav ul li:last-child::after{
+    content: "";
+}
+
+.nav_bar {
+    width:100%;
+    height:48px;
+    color: #ffffff;
+    text-decoration:none;
+}
+
+
+a:hover {
+    text-decoration:underline;
+}
+
+/*a+a { 
+    border-left: 2px solid #ffffff; 
+    margin-top:5px;
+    margin-bottom:5px;
+}*/
+
+
+
+/*   <--- budget 2015 --->   */
+
+
+.budget-2015{
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 100px;
+}
+
+#pie {
     font-size: 18px;
     font-family: 'Roboto Slab', serif;
     padding: 4px;
