@@ -1,10 +1,17 @@
 @import url(http://fonts.googleapis.com/css?family=Stardos+Stencil:400,700|Roboto+Slab:400,300|Roboto:400,300,300italic,500,500italic);
 
 body {
-    background-color: #f2f2f2;
-    padding-top: 0px;
+  background-color: #f2f2f2;
+  padding-top: 0px;
+  margin: 0px;
 }
 
+.main-image {
+  background: url("http://i1341.photobucket.com/albums/o744/patygomeslima/kid_swing_1440_zpsuu1etsdg.jpg");
+  background-repeat: no-repeat;
+  height: 800px;
+
+}
 
 #credit {
   font-family: 'Roboto', sans-serif;
@@ -25,12 +32,6 @@ body {
 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
-img#hero {
-    position:relative;
-    display: block;
-    width: 1400px;
-    height: 739px;
-}
 
 /*navigation bar*/
 .active {
