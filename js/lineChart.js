@@ -3,7 +3,7 @@ var margin = {top: 20, right: 80, bottom: 30, left: 80},
     width = 800 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
-var parseDate = d3.time.format("%Y").parse;//%m%d").parse;
+var parseDate = d3.time.format("%Y").parse;
 
 var x = d3.time.scale()
     .range([0, width]);
@@ -15,11 +15,13 @@ var color = d3.scale.category10();
 
 var xAxis = d3.svg.axis()
     .scale(x)
+    .tickFormat(d3.time.format("%Y"))
+    .ticks(5)
     .orient("bottom");
 
 var yAxis = d3.svg.axis()
     .scale(y)
-    .orient("left");
+    .orient("left").ticks(6,"s");
 
 var line = d3.svg.line()
     .x(function(d) { return x(d.date); })
@@ -83,7 +85,7 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Budget");
+      .text("Budget (Million $)");
 
   var sch = svg.selectAll(".sch")
       .data(schools)
@@ -143,7 +145,7 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
 //     .attr("stroke", "black")
 
 //prepare tooltips
-var tooltip = d3.select("body").append("div")
+var tooltip = d3.select("body").select("#lineChart").append("div")
     .attr("class", "tooltip");
 
 //formating lines
@@ -157,6 +159,7 @@ var tooltip = d3.select("body").append("div")
   svg.selectAll(".line").on("mouseover", function(d) {
     
     console.log("mouseOVER!")
+        d3.select(this).attr("stroke-width", "3px").style("stroke", "#c1272d").style("opacity","1").style("fill","none");
         tooltip.transition()
              .duration(200)
              .style("opacity", .9);
@@ -165,6 +168,7 @@ var tooltip = d3.select("body").append("div")
              .style("top", (d3.event.pageY - 28) + "px");
     })
   .on("mouseout", function(d) {
+        d3.select(this).attr("stroke-width", "1.5px").style("stroke", "#59606A").style("opacity","0.1").style("fill","none");
         tooltip.transition()
              .duration(500)
              .style("opacity", 0);
