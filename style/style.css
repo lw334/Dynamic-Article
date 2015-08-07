@@ -26,12 +26,11 @@ body {
 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
-img {
+img#hero {
     position:relative;
     display: block;
-    width: 1440px;
+    width: 1400px;
     height: 739px;
-    border:0px;
 }
 
 /*navigation bar*/
@@ -60,6 +59,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+    text-decoration:underline;
+}
+
 .active {
   text-decoration: none;
   font-size: 27px;
@@ -70,12 +73,12 @@ a {
   color:#ffffff;
   background-color:#c1272d;
 }
-
+/*
 a:hover {
     text-decoration:underline;
     background-color: #c1272d;
     color:#ffffff;
-}
+}*/
 
 [id~=nav_title] {
     font-size:30px;
@@ -84,12 +87,12 @@ a:hover {
 }
 
 h1 {
-    font-size: 80px;
+    font-size: 70px;
     position: relative;
     font-family: 'Stardos Stencil', cursive;
     text-transform: uppercase;
     margin-left: 850px;
-    margin-right: 100px;
+    margin-right: 50px;
     margin-top: -700px;
     color: #ffffff;
     text-align: left;
@@ -103,7 +106,7 @@ h2 {
     text-align: left;
     line-height: 1.5em;
     margin-left: 850px;
-    margin-right: 100px;
+    margin-right: 50px;
     margin-top: 50px;
     color: #ffffff;
 
@@ -117,7 +120,7 @@ h2 {
     font-weight: 300;
     text-align: left;
     margin-left: 850px;
-    margin-right: 100px;
+    margin-right: 50px;
     margin-top: 40px;
     margin-bottom: 2px;
     color: #ffffff;
@@ -129,7 +132,7 @@ h3 {
     font-family: 'Roboto Slab', serif;
     margin-left: 300px;
     margin-right: 300px;
-    margin-top: 200px;
+    margin-top: 100px;
     color: #191919;
     text-align: left;
 }
@@ -143,25 +146,13 @@ h4 {
     border-bottom: 1px solid #0088dd;
 }
 
-p, #pie {
-    font-size: 18px;
-    font-family: 'Roboto Slab', serif;
-    padding: 4px;
-    margin-left: 300px;
-    margin-right: 300px;
-    color: #333333;
-}
 
-b {
-  font-family: 'Roboto', sans-serif;
-  font-size:15px;
-}
 
 .search {
     position: relative;
     font-family: 'Roboto Slab', serif;
     margin-left: 850px;
-    margin-right: 200px;
+    margin-right: 50px;
     margin-top: 0px;
     border-spacing: 300px;
 }
@@ -241,6 +232,20 @@ b {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   /*white-space: nowrap;*/
+}
+
+p, #pie {
+    font-size: 18px;
+    font-family: 'Roboto Slab', serif;
+    padding: 4px;
+    margin-left: 300px;
+    margin-right: 300px;
+    color: #333333;
+}
+
+b {
+  font-family: 'Roboto', sans-serif;
+  font-size:15px;
 }
 
 /*the game*/
