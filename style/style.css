@@ -182,11 +182,15 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 /*   <--- navigation bar --->   */
 
 #main-nav {
-    position:fixed;
+    position: static;
     background-color:#c1272d;
     width:100%;
     height:50px;
     opacity:0.95;
+}
+#main-nav.sticky {
+    position: fixed;
+    top: 0;
 }
 
 /*title*/
@@ -280,7 +284,7 @@ select {
   font: 'Roboto', sans-serif;
   outline:none; 
   line-height: 1.2;
-  background-color:#c1272d;
+  background:#c1272d;
   color:#ffffff;
   font-size:15px;
   border-color: #c1272d;
