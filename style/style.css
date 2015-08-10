@@ -9,25 +9,6 @@ body {
 
 /*   <--- typography --->  */
 
-#credit {
-  font-family: 'Roboto', sans-serif;
-  font-size: 12px;
-  margin-top: 600px;
-  margin-left: -50px;
-  position: absolute;
-  color: #191919;
-  /* Safari */  
--webkit-transform: rotate(-90deg);
-/* Firefox */ 
--moz-transform: rotate(-90deg);
-/* IE */ 
--ms-transform: rotate(-90deg);
-/* Opera */  
--o-transform: rotate(-90deg);
-/* Internet Explorer */  
-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-}
-
 
 h1 {
     font-size: 70px;
@@ -64,6 +45,25 @@ h3 {
   -o-background-size: cover;
   background-size: cover;
   position: relative;
+}
+
+#credit {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  margin-top: 500px;
+  margin-left: -50px;
+  position: absolute;
+  color: #191919;
+  /* Safari */  
+-webkit-transform: rotate(-90deg);
+/* Firefox */ 
+-moz-transform: rotate(-90deg);
+/* IE */ 
+-ms-transform: rotate(-90deg);
+/* Opera */  
+-o-transform: rotate(-90deg);
+/* Internet Explorer */  
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
 
