@@ -310,17 +310,13 @@ ul {
     *display: inline;
     zoom: 1;
 }
-
+/*
 .ranking {
  position: relative;
-}
+}*/
 
-.priority {
-  position: relative;
-  width:70%;
-}
 
-.ranking li {
+/*.ranking li {
   font-family: 'Roboto', sans-serif;
   color: #ffffff  !important;
   font-size: 25px;
@@ -331,7 +327,12 @@ ul {
   margin-left:100px;
   border-radius: 6px;
 }
+*/
 
+.priority {
+  position: relative;
+  width:70%;
+}
 .priority li {
   font-family: 'Roboto Slab', serif;
   font-size: 18px;
@@ -349,7 +350,6 @@ ul {
   cursor:hand;
   cursor:pointer;
 }
-
 
 /*the button*/
 #rank {    
