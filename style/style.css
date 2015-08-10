@@ -36,6 +36,14 @@ h3 {
     border-bottom: 1px solid #0088dd;
 }
 
+p {
+    font-family: 'Roboto Slab', serif;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 100px;
+
+
+}
 /*   <--- main page --->  */
 .main-image {
   background: url("http://i1341.photobucket.com/albums/o744/patygomeslima/kid_balanco_1440semfiltro_zpsiv5eiknr.jpg");
@@ -71,7 +79,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   width: 33%;
   min-width: 200px;
   margin-left: 60%;
-  padding-top: 50px;
+  padding-top: 10px;
   padding-bottom: 50px;
   background-color: rgba(0,0,0,0.4);
   padding-right: 50px;
@@ -202,7 +210,6 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 /*other items*/
 #main-nav ul {
   list-style-type: none;
-  font-family: 'Roboto', sans-serif;
   float: right;
   padding-bottom: 11px;
   padding-top: 26px;
@@ -211,6 +218,8 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
 #main-nav ul li {
   display: inline;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 #main-nav ul li a {
