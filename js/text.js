@@ -45,7 +45,7 @@ function init_autocomplete() {
       name_to_unit[school_data[i]['Unit Name']] = school_data[i]['Unit']
     };
 
-    $("#user_school").autocomplete({
+    $(".search #user_school").autocomplete({
       minLength: 4,
       source: ac_data,
       select: function( event, ui ) {

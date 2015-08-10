@@ -187,6 +187,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     width:100%;
     height:50px;
     opacity:0.95;
+    z-index: 900;
 }
 
 /*title*/
@@ -256,13 +257,30 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     color: #333333;
 }
 
+/*selection bars*/
+
 b {
   font-family: 'Roboto', sans-serif;
   font-size:15px;
+  padding-left: 200px;
+}
+
+select {
+  display: inline-block;
+  padding: 4px 3px 3px 5px;
+  margin: 0;
+  font: 'Roboto', sans-serif;
+  outline:none; 
+  line-height: 1.2;
+  background-color:#c1272d;
+  color:#ffffff;
+  font-size:15px;
+  border-color: #c1272d;
+  border-radius:6px;
+
 }
 
 /*the game*/
-
 #direction {
   font-size: 20px;
   font-weight: bolder;
@@ -277,26 +295,43 @@ ul {
     zoom: 1;
 }
 
-.ranking li{
+.ranking {
  position: relative;
- font-family: 'Roboto', sans-serif;
- color: #ffffff  !important;
- font-size: 25px;
- padding: 10px 20px;
- border: 2px solid #c1272d ;
- background: #c1272d ;
- margin:10px;
- margin-left:100px;
- border-radius: 6px;
 }
 
 .priority {
   position: relative;
-  font-size: 18px;
+  width:70%;
+}
+
+.ranking li {
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff  !important;
+  font-size: 25px;
+  padding: 10px 20px;
+  border: 2px solid #c1272d ;
+  background: #c1272d ;
+  margin:10px;
+  margin-left:100px;
+  border-radius: 6px;
+}
+
+.priority li {
   font-family: 'Roboto Slab', serif;
+  font-size: 18px;
   padding: 4px;
   color: #333333;
-  width:70%;
+  border-color: #C1272D;
+  border-style: solid;
+  margin: 5px;
+  border-radius: 6px;
+}
+
+.priority li:hover{
+  background-color: #C1272D;
+  color:#ffffff;
+  cursor:hand;
+  cursor:pointer;
 }
 
 
@@ -324,6 +359,16 @@ ul {
   height: 40%;
 }
 
+#lineChart, #scatterPlot, #pie {
+  margin-left: 350px;
+}
+
+.label, .tick text{
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  color:#59606A;
+}
+
 .line {
   fill: none;
   stroke: #A6A6A6;
@@ -335,23 +380,17 @@ circle {
   fill: #A6A6A6;
 }
 
-.line {
-  fill: none;
-}
-
 .tooltip {
 position: absolute;
 width: 200px;
-height: 30px;
+height: 40px;
 pointer-events: none;
 font-family: 'Roboto Slab', serif;
-color: #2F60B5;
-background: #FFFFFF;
-border: 2px solid #BABABA;
+color: #FFFFFF;
+background: #C1272D;
 border-radius: 6px;
-font-size:11px;
+font-size:10px;
 opacity: 0.95;
-z-index: 10;
 visibility: hidden;
 }
 
@@ -360,15 +399,14 @@ visibility: hidden;
   text: 10px sans-serif;
 }
 
-.axis path,
-.axis line {
+.x_axis path,
+.x_axis line,
+.y_axis path,
+.y_axis line
+{
   fill: none;
   stroke: #59606A;
+  stroke-width:2px;
   shape-rendering: crispEdges;
 }
 
-.label {
-  font-size: 15px;
-  font-family: 'Roboto', sans-serif;
-  color:#59606A;
-}
