@@ -71,8 +71,8 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   width: 33%;
   min-width: 200px;
   margin-left: 60%;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   background-color: rgba(0,0,0,0.4);
   padding-right: 50px;
   padding-left: 50px;
@@ -185,18 +185,17 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     position:fixed;
     background-color:#c1272d;
     width:100%;
-    height:70px;
+    height:50px;
     opacity:0.95;
-    z-index:1000;
 }
 
 /*title*/
 #main-nav p {
-  display: inline;
-  font-family: 'Stardos Stencil', cursive;
-  font-size: 40px;
-  margin-left: 40px;
-  color: #ffffff;
+    display: inline;
+    font-family: 'Stardos Stencil', cursive;
+    font-size: 40px;
+    margin-left: 40px;
+    color: #ffffff;
 }
 
 /*other items*/
@@ -209,21 +208,11 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
 #main-nav ul li {
   display: inline;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  color: #ffffff;
 }
 
 #main-nav ul li a {
   padding-left: 10px;
   padding-right: 10px;
-  text-decoration: none;
-  color: #ffffff;
-
-}
-
-#main-nav ul li a:hover {
-  font-weight: bold;
 }
 
 
