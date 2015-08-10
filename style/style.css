@@ -36,14 +36,6 @@ h3 {
     border-bottom: 1px solid #0088dd;
 }
 
-p {
-    font-family: 'Roboto Slab', serif;
-    margin-left: 300px;
-    margin-right: 300px;
-    margin-top: 100px;
-
-
-}
 /*   <--- main page --->  */
 .main-image {
   background: url("http://i1341.photobucket.com/albums/o744/patygomeslima/kid_balanco_1440semfiltro_zpsiv5eiknr.jpg");
@@ -253,10 +245,16 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 /*   <--- budget 2015 --->   */
 
 .budget-2015{
-    margin-left: 300px;
-    margin-right: 300px;
-    margin-top: 100px;
+    min-width: 200px;
+    margin-left: 60%;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
 }
+
 
 #pie {
     font-size: 18px;
@@ -292,8 +290,9 @@ select {
 
 /*the game*/
 #direction {
-  font-size: 20px;
-  font-weight: bolder;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 ul {
