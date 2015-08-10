@@ -36,14 +36,14 @@ h3 {
     border-bottom: 1px solid #0088dd;
 }
 
-p {
+/*p {
     font-family: 'Roboto Slab', serif;
     margin-left: 300px;
     margin-right: 300px;
     margin-top: 100px;
+}*/
 
 
-}
 /*   <--- main page --->  */
 .main-image {
   background: url("http://i1341.photobucket.com/albums/o744/patygomeslima/kid_balanco_1440semfiltro_zpsiv5eiknr.jpg");
@@ -287,7 +287,7 @@ select {
   font-size:15px;
   border-color: #c1272d;
   border-radius:6px;
-
+  -moz-appearance: none;
 }
 
 /*the game*/
@@ -392,14 +392,15 @@ circle {
 
 .tooltip {
 position: absolute;
-width: 200px;
+width: 250px;
 height: 40px;
 pointer-events: none;
 font-family: 'Roboto Slab', serif;
 color: #FFFFFF;
 background: #C1272D;
 border-radius: 6px;
-font-size:10px;
+padding-left: 13px;
+font-size:12px;
 opacity: 0.95;
 visibility: hidden;
 }

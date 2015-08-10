@@ -1,7 +1,8 @@
 function draw_line_chart(school_name,similars,dataset){
-var margin = {top: 20, right: 80, bottom: 30, left: 80},
-    width = 800 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+var margin = {top: 20, right: 100, bottom: 30, left: 80},
+    width = 900 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
 
 var parseDate = d3.time.format("%Y").parse;
 
@@ -31,11 +32,36 @@ var line = d3.svg.line()
 var dropDown = d3.select("#lineFilter").append("select")
                   .attr("name", "school-list");
 
+
 var svg = d3.select("body").select('#lineChart').append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+//crudly drawing up the legend
+svg.append("text")
+   .attr("x", width-50)
+   .attr("y", height-450)
+   .attr("class","legend")
+   .text("your school");
+svg.append("text")
+   .attr("x",width-50)
+   .attr("y", height-430)
+   .attr("class","legend")
+   .text("similar schools");
+svg.append('rect')
+  .attr("x",width-70)
+  .attr("y",height-460)
+  .attr("width",10)
+  .attr("height",10)
+  .style("fill", "#c1272d");
+svg.append('rect')
+  .attr("x",width-70)
+  .attr("y",height-440)
+  .attr("width",10)
+  .attr("height",10)
+  .style("fill", "#4879CE");
 
 
 d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
@@ -66,7 +92,6 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
   svg.append("g")
       .attr("class", "x_axis")
       .attr("transform", "translate(0," + height + ")")
-      .style("font-size", "12px")
       .call(xAxis)
     .append("text")
       .attr("class", "label")
@@ -77,7 +102,6 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
 
   svg.append("g")
       .attr("class", "y_axis")
-      .style("font-size", "12px")
       .call(yAxis)
     .append("text")
       .attr("class", "label")
