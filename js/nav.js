@@ -12,7 +12,7 @@ $(function(){
         var $this = $(this),
             pos   = $this.scrollTop();
 
-         if (pos == 0) {
+         if (pos >= 0 && pos <= 750) {
             $("#main-nav").slideUp(400);
         } else {
             $("#main-nav").slideDown(700);

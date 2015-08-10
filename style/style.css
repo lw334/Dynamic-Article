@@ -9,6 +9,26 @@ body {
 
 /*   <--- typography --->  */
 
+#credit {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  margin-top: 600px;
+  margin-left: -50px;
+  position: absolute;
+  color: #191919;
+  /* Safari */  
+-webkit-transform: rotate(-90deg);
+/* Firefox */ 
+-moz-transform: rotate(-90deg);
+/* IE */ 
+-ms-transform: rotate(-90deg);
+/* Opera */  
+-o-transform: rotate(-90deg);
+/* Internet Explorer */  
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+
 h1 {
     font-size: 70px;
     position: relative;
@@ -35,13 +55,7 @@ h3 {
     border-bottom: 1px solid #0088dd;
 }
 
-a:hover {
-    text-decoration:none;
-}
-
-
 /*   <--- main page --->  */
-
 .main-image {
   background: url("http://i1341.photobucket.com/albums/o744/patygomeslima/kid_balanco_1440semfiltro_zpsiv5eiknr.jpg");
   background-repeat: no-repeat;
@@ -51,6 +65,7 @@ a:hover {
   background-size: cover;
   position: relative;
 }
+
 
 #intro {
   width: 33%;
@@ -72,6 +87,7 @@ a:hover {
     text-align: left;
     line-height: 1.5em;
     color: #ffffff;
+    z-index: 900;
 }
 
 #helpuser {
@@ -84,6 +100,7 @@ a:hover {
     color: #ffffff;
 }
 
+
 .search {
     position: relative;
     font-family: 'Roboto Slab', serif;
@@ -94,12 +111,11 @@ a:hover {
   position: relative;
   top: 100%;
   left: 0%;
-  z-index: 1000;
+  z-index: 900;
   min-width: 300px;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: 300;
-  _width: 300px;
   padding: 5px;
   /*margin: 2px 0 0 0;*/
   list-style: none;
@@ -161,43 +177,20 @@ a:hover {
   border-radius: 0px;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
-  /*white-space: nowrap;*/
 }
-#credit {
-  font-family: 'Roboto', sans-serif;
-  font-size: 12px;
-  margin-top: 600px;
-  margin-left: -50px;
-  position: absolute;
-  color: #191919;
-  /* Safari */  
--webkit-transform: rotate(-90deg);
-/* Firefox */ 
--moz-transform: rotate(-90deg);
-/* IE */ 
--ms-transform: rotate(-90deg);
-/* Opera */  
--o-transform: rotate(-90deg);
-/* Internet Explorer */  
-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-}
-
 
 /*   <--- navigation bar --->   */
 
-
-.active {
-  font-size:20px;
-}
-
-
 #main-nav {
-  background-color:#c1272d;
-  height:50px;
-  opacity:0.9;
-  width: 100%;
+    position:fixed;
+    background-color:#c1272d;
+    width:100%;
+    height:70px;
+    opacity:0.95;
+    z-index:1000;
 }
 
+/*title*/
 #main-nav p {
   display: inline;
   font-family: 'Stardos Stencil', cursive;
@@ -206,6 +199,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   color: #ffffff;
 }
 
+/*other items*/
 #main-nav ul {
   list-style-type: none;
   float: right;
@@ -241,17 +235,22 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     content: "";
 }
 
-.nav_bar {
-    width:100%;
-    height:48px;
-    color: #ffffff;
-    text-decoration:none;
+/*on browsing*/
+#main-nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#main-nav ul li a:hover {
+    text-decoration:underline;
+}
+
+.active {
+   font-weight:bold;
 }
 
 
-
 /*   <--- budget 2015 --->   */
-
 
 .budget-2015{
     margin-left: 300px;
@@ -274,6 +273,12 @@ b {
 }
 
 /*the game*/
+
+#direction {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -292,6 +297,8 @@ ul {
  border: 2px solid #c1272d ;
  background: #c1272d ;
  margin:10px;
+ margin-left:100px;
+ border-radius: 6px;
 }
 
 .priority {
@@ -305,33 +312,20 @@ ul {
 
 
 /*the button*/
-#rank {
-  position:middle;
-  font-size: 17px;
-  font-family: 'Roboto Slab', serif;
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 28px;
-  color: #ffffff;
-  padding: 10px 20px 10px 20px;
-  margin-left: 300px;
-  margin-right: 100px;
+#rank {    
+  border-radius: 20px;
+  color: #FFF;
+  font-size: 22px;
+  background: #C1272D none repeat scroll 0% 0%;
+  padding: 10px 20px;
   text-decoration: none;
+  font-family: "Roboto Slab",serif;
+  margin-left: 200px;
+  margin-top: 10px;
 }
 
 #rank:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  background: #fc7f3c;
   text-decoration: none;
 }
 
@@ -368,6 +362,8 @@ border: 2px solid #BABABA;
 border-radius: 6px;
 font-size:11px;
 opacity: 0.95;
+z-index: 10;
+visibility: hidden;
 }
 
 .arc path {

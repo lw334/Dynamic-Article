@@ -160,7 +160,8 @@ var tooltip = d3.select("body").select("#lineChart").append("div")
     
     console.log("mouseOVER!")
         d3.select(this).attr("stroke-width", "3px").style("stroke", "#c1272d").style("opacity","1").style("fill","none");
-        tooltip.transition()
+        tooltip.style("visibility","visible")
+             .transition()
              .duration(200)
              .style("opacity", .9);
         tooltip.html(d["name"])
