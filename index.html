@@ -18,52 +18,63 @@
     <body>        
         <!--     navigation bar -->
         <div id="main-nav" class="center">
-            <p class ="nav_bar">
-               <a id="nav_title">YOUR CPS</a>
-                <a id="nav_section1" href="#section1" class="active">CHOOSE A SCHOOL</a>
-                <a id="nav_section2" href="#section2">YOUR SCHOOL</a>
-                <a id="nav_section3" href="#section3">2016 BUDGET</a>
-                <a id="nav_section4" href="#section4">THE CRISIS</a>
-                <a id="nav_section5" href="#section5">ABOUT</a>
-                <a id="nav_section6" href="#section6">CONTACT</a>
-            </p>
+                
+                <p><a id="nav_title">YOUR CPS</a></p>
+                <ul>
+                <li><a id="nav_section1" href="#section1" class="active">CHOOSE A SCHOOL</a></li>
+                <li><a id="nav_section2" href="#section2">YOUR SCHOOL</a></li>
+                <li><a id="nav_section3" href="#section3">2016 BUDGET</a></li>
+                <li><a id="nav_section4" href="#section4">THE CRISIS</a></li>
+                <li><a id="nav_section5" href="#section5">ABOUT</a></li>
+                <li><a id="nav_section6" href="#section6">CONTACT</a></li>
+                </ul>
         </div>
-        <br />
+        
+        <!--  main page: photo, menu, name of the page, description and autocomplete  -->
+        
+        <div class="main-image" id="section1">    
+            <p id="credit">credit Bob Mical / Flickr</p>
+            
+            <div id="intro">
+                <h1>Your CPS</h1>
 
-        <p id="credit">credit Bob Mical / Flickr</p>
+                <p id="lede">If you have a child enrolled in the Chicago Public Schools (CPS), you have probably heard about an unprecedented financial crisis in the city's education system. This data journalism project will help you understand what is going on in Chicago’s public schools.It will also show how your child's schoolis being affected by CPS budget cuts.</p>
 
-        <img id="hero" src="http://i1341.photobucket.com/albums/o744/patygomeslima/kid_swing_1440_zpsuu1etsdg.jpg" border="0" alt=" photo kid_swing_1440_zpsuu1etsdg.jpg"/>
-
-        <a name="section1" class="section"></a>
-        <h1>Your CPS</h1>
-
-        <h2>If you have a child enrolled in the Chicago Public Schools (CPS), you have probably heard about an unprecedented financial crisis in the city's education system. This data journalism project will help you understand what is going on in Chicago’s public schools. It will also show how your child's schoolis being affected by CPS budget cuts.</h2>
-
-        <p id="helpuser">In which school are you interested in?</p>
-
-
-        <div class="search">
-            <input type="text" id="user_school" placeholder="Type the name of your school here">
+                <p id="helpuser">In which school are you interested in?</p>
+                <div class="search">
+                   <input type="text" id="user_school" placeholder="Type the name of your school here">
+                </div>
+            </div>
         </div>
+        
 
-        <h3>The Chicago Public Schools </br>Budget Crisis in Your School</h3>
+
+        
+
+<!--     drag and drop + related text -->
+
+    <div class='budget-2015'>
+        <h2>The Chicago Public Schools </br>Budget Crisis in Your School</h2>
 
         <p>The next school year hasn't started yet, but it is already in the news. And the picture is not good: blank checking account, bills past due, a rising deficit of more than $1 billion, 1,400 positions closed in the Chicago Public Schools (CPS) system, and an imminent risk of increasing class size. </p>
 
     <div class='budget-2015'>
         <p>At this point, you may be wondering what the cash-strapped CPS will decide on the budget of <span id='custom-school-name1' class='custom-school-name'></span> and how that will impact your school. How has your school been spending money in the past years and what will be different given the imminent budget cut? In order to answer your question in detail, we want you to take a moment and rank: As a parent, what are your top priorities when it comes to your children's school? </p> 
         <p id="direction">Please drag the following choices to rank the most important issue on the top. </p>
-    
-    <!--  game goes here -->
-    <div class = "sort_game">
-        <ul class = "ranking"></ul>
-        <ul class = "priority"></ul>
-    </div>
+
+        <p>At this point, you may be wondering what the cash-strapped CPS will decide on the budget of <span id='custom-school-name1' class='custom-school-name'></span> and how that will impact your school. How has your school been spending money in the past years and what will be different given the imminent budget cut? In order to answer your question in detail, we want you to take a moment and rank: As a parent, what are your top priorities when it comes to your children's school? </p>
+        <!--  game goes here -->
+        <div class = "sort_game">
+            <ul class = "ranking"></ul>
+            <ul class = "priority"></ul>
+        </div>
+        
         <button id ='rank'>I think I got it!</button>
 
         <p><span id = "understanding"></span></p>
 
         <p>Overall, in the past three years, the budget of <span id='custom-school-name2' class='custom-school-name'></span> has <span id = 'custom-consistency'></span>. This situation is <span id='custom-consistency-comparison'></span> what is happening with schools that serve the same grades and students with similar socioeconomic demographics.(Check our <a href='blankurl'>methodology</a> for more details)</p>
+    </div>
 
         <!-- Past Trend -->
         <div class = 'LineGraph'>
@@ -87,7 +98,7 @@
     </div> 
 
         
-    <a name="section2" class="section"><h4>WINTER COMES EARLY THIS YEAR</h4></a>
+    <a name="section2" class="section"><h3>WINTER COMES EARLY THIS YEAR</h3></a>
 
     <div class='budget-2016'>
         <p>The 2016 fiscal year budget has not been officially released, but preliminary numbers show a total amount of $ 2.6 billion, an increase of 21.85% from last year. However, 389 out of 635 schools will see their budgets shrink in 2016. Existing charter schools (alternative and non-alternative) are seeing on average an 8% and 26% increase in their budgets, whereas other types of schools’ budget are reduced on average. Among the schools whose budgets are decreasing, 290 of them are elementary schools, 63 are high schools, and 36 are charter schools. This also includes 9 specialty schools 6 alternative schools.</p>
