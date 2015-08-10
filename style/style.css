@@ -35,6 +35,10 @@ h3 {
     border-bottom: 1px solid #0088dd;
 }
 
+a:hover {
+    text-decoration:none;
+}
+
 
 /*   <--- main page --->  */
 
@@ -52,8 +56,8 @@ h3 {
   width: 33%;
   min-width: 200px;
   margin-left: 60%;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   background-color: rgba(0,0,0,0.4);
   padding-right: 50px;
   padding-left: 50px;
@@ -183,24 +187,23 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
 
 .active {
-   font-size:20px;
+  font-size:20px;
 }
 
 
 #main-nav {
-    background-color:#c1272d;
-    height:50px;
-    opacity:0.9;
-    width: 100%;
+  background-color:#c1272d;
+  height:50px;
+  opacity:0.9;
+  width: 100%;
 }
 
 #main-nav p {
-    display: inline;
-    font-family: 'Stardos Stencil', cursive;
-    font-size: 40px;
-    margin-left: 40px;
-    color: #ffffff;
-
+  display: inline;
+  font-family: 'Stardos Stencil', cursive;
+  font-size: 40px;
+  margin-left: 40px;
+  color: #ffffff;
 }
 
 #main-nav ul {
@@ -212,11 +215,21 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
 #main-nav ul li {
   display: inline;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #ffffff;
 }
 
 #main-nav ul li a {
   padding-left: 10px;
   padding-right: 10px;
+  text-decoration: none;
+  color: #ffffff;
+
+}
+
+#main-nav ul li a:hover {
+  font-weight: bold;
 }
 
 
@@ -234,17 +247,6 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     color: #ffffff;
     text-decoration:none;
 }
-
-
-a:hover {
-    text-decoration:underline;
-}
-
-/*a+a { 
-    border-left: 2px solid #ffffff; 
-    margin-top:5px;
-    margin-bottom:5px;
-}*/
 
 
 
