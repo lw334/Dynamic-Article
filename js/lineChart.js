@@ -64,7 +64,7 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
   ]);
 
   svg.append("g")
-      .attr("class", "x axis")
+      .attr("class", "x_axis")
       .attr("transform", "translate(0," + height + ")")
       .style("font-size", "12px")
       .call(xAxis)
@@ -76,7 +76,7 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
       .text("Year");
 
   svg.append("g")
-      .attr("class", "y axis")
+      .attr("class", "y_axis")
       .style("font-size", "12px")
       .call(yAxis)
     .append("text")

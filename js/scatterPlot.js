@@ -24,7 +24,7 @@ function draw_scatter_plot(school,similars,dataset){
  
   //draw X-axis
   svg.append("g")
-      .attr("class", "x axis")
+      .attr("class", "x_axis")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis)
     .append("text")
@@ -36,7 +36,7 @@ function draw_scatter_plot(school,similars,dataset){
 
   //draw Y-axis
   svg.append("g")
-      .attr("class", "y axis")
+      .attr("class", "y_axis")
       .call(yAxis)
     .append("text")
       .attr("class", "label")
