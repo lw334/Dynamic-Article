@@ -1,4 +1,5 @@
 function draw_line_chart(school_name,similars,dataset){
+  console.log("LineCHART!")
 var margin = {top: 20, right: 100, bottom: 30, left: 80},
     width = 900 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
