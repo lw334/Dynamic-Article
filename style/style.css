@@ -291,11 +291,7 @@ select {
 
 /*the game*/
 
-<<<<<<< HEAD
 .direction {
-=======
-#direction {
->>>>>>> d93d7d519f7a0131b6e34c0513aa890d2c3130db
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 500;
