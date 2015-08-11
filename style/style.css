@@ -183,7 +183,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
 #main-nav {
     position: static;
-    background-color:#191919;
+    background-color:#c1272d;
     width:100%;
     height:50px;
     z-index: 999;
@@ -273,11 +273,6 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
 /*selection bars*/
 
-b {
-  font-family: 'Roboto', sans-serif;
-  font-size:15px;
-  padding-left: 200px;
-}
 
 select {
   display: inline-block;
@@ -296,12 +291,7 @@ select {
 
 /*the game*/
 
-.sort_game{
-
-
-}
-
-#direction {
+.direction {
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 500;
@@ -341,7 +331,6 @@ ul {
 .priority li {
   font-family: 'Roboto Slab', serif;
   font-size: 18px;
-  padding: 4px;
   color: #333333;
   border-color: #C1272D;
   border-style: solid;
@@ -355,6 +344,31 @@ ul {
   cursor:hand;
   cursor:pointer;
 }
+
+.number {
+  background-color: #C1272D;
+  color:#ffffff;
+  border-color: #C1272D;
+  border-style: solid;
+  margin: 0px;
+  border-bottom-right-radius: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+
+.budget_categories{
+  padding-left: 10px;
+  font-weight: bolder;
+}
+ 
+ .description {
+  padding-left: 44px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-right: 5px;
+ }
+
 
 /*the button*/
 #rank {    
@@ -431,3 +445,20 @@ visibility: hidden;
   shape-rendering: crispEdges;
 }
 
+.budget_2015_analysis{
+    min-width: 200px;
+    margin-left: 60%;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+} 
+
+.budget-2016 {
+    min-width: 200px;
+    margin-left: 60%;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+}
