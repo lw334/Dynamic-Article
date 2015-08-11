@@ -157,17 +157,6 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
         }
       });
 
-//  //put dots on the lines
-
-// svg.selectAll(".line")
-//     .data(schools)
-//     .enter()
-//     .append("circle")
-//     .attr("cx", function(d, i) {return d.date})
-//     .attr("cy", function(d, i){return d.value}) 
-//     .attr("r", 2);
-//     .attr("stroke", "black")
-
 //prepare tooltips
 var tooltip = d3.select("body").select("#lineChart").append("div")
     .attr("class", "tooltip");
@@ -183,7 +172,6 @@ var tooltip = d3.select("body").select("#lineChart").append("div")
   svg.selectAll(".line").on("mouseover", function(d) {
     
     console.log("mouseOVER!")
-        d3.select(this).attr("stroke-width", "3px").style("stroke", "#c1272d").style("opacity","1").style("fill","none");
         tooltip.style("visibility","visible")
              .transition()
              .duration(200)
@@ -193,7 +181,6 @@ var tooltip = d3.select("body").select("#lineChart").append("div")
              .style("top", (d3.event.pageY - 28) + "px");
     })
   .on("mouseout", function(d) {
-        d3.select(this).attr("stroke-width", "1.5px").style("stroke", "#59606A").style("opacity","0.1").style("fill","none");
         tooltip.transition()
              .duration(500)
              .style("opacity", 0);
