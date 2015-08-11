@@ -100,10 +100,10 @@ function draw_scatter_plot(school,similars,dataset){
           return 0.2;
         }
       })
-      
+
       //tooltips behaviors
       .on("mouseover", function(d) {
-        console.log("TIP")
+        console.log("TIP");
         d3.select(this).attr("r", 5).style("fill", "#c1272d").style("opacity","1");
         tooltip.style("visibility","visible")
              .transition()
