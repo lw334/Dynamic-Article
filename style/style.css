@@ -286,12 +286,16 @@ select {
   font-size:15px;
   border-color: #c1272d;
   border-radius:6px;
-
+  -moz-appearance: none;
 }
 
 /*the game*/
 
+<<<<<<< HEAD
 .direction {
+=======
+#direction {
+>>>>>>> d93d7d519f7a0131b6e34c0513aa890d2c3130db
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 500;
@@ -417,14 +421,15 @@ circle {
 
 .tooltip {
 position: absolute;
-width: 200px;
+width: 250px;
 height: 40px;
 pointer-events: none;
 font-family: 'Roboto Slab', serif;
 color: #FFFFFF;
 background: #C1272D;
 border-radius: 6px;
-font-size:10px;
+padding-left: 13px;
+font-size:12px;
 opacity: 0.95;
 visibility: hidden;
 }

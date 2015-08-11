@@ -4,7 +4,7 @@ function draw_pie_chart(school_name) {
       radius = Math.min(width, height) / 2;
 
   var color = d3.scale.ordinal()
-      .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+      .range(["#843c39", "#ad494a", "#d6616b", "#e7969c", "#7b4173", "#a55194", "#ce6dbd"]);
 
   var arc = d3.svg.arc()
       .outerRadius(radius - 10)
@@ -47,12 +47,32 @@ function draw_pie_chart(school_name) {
             }
           });
 
+
+    // var legend = svg.selectAll('.legend')
+    // .data(color.domain())
+    // .enter()
+    // .append('g')
+    // .attr('class','legend')
+    // .append("rect")
+    // .attr("width",10)
+    // .attr("height",10)
+    // .attr("x", function(d,i) {
+    //   console.log(d)
+    //   if (d.value!=0) {
+    //     return (width-300-i*20);
+    //   }
+    // })
+    // .attr("y",height-200)
+    // .style("fill",color)
+    // .style("stroke",color);
+
     g.append("text")
         .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
         .attr("dy", ".35em")
         .style("text-anchor", "middle")
         .style("font-family", "sans-serif")
-        .style("font-size", "10px") 
+        .style("font-size", "12px") 
+        .style("fill","white")
         .text(function(d) { 
           if (d.value != 0) {
             return d.data["2015Expenditures"]; 
