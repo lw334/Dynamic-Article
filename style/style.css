@@ -307,6 +307,7 @@ ul {
 }
 
 
+
 /*
 .ranking {
  position: relative;
@@ -329,18 +330,29 @@ ul {
 .priority {
   position: relative;
   width:70%;
+  border-style: dashed;
+  border-color: rgb(178,178,178);
+  padding: 20px;
+  border-radius: 6px;
+  background-color: #ffffff;
+
 }
 .priority li {
   font-family: 'Roboto Slab', serif;
-  font-size: 18px;
+  font-size: 15px;
   color: #333333;
+}
+
+.card {
   border-color: #C1272D;
   border-style: solid;
   margin: 5px;
   border-radius: 6px;
+  width: 90%;
+  float: left;
 }
 
-.priority li:hover{
+.card:hover{
   background-color: #C1272D;
   color:#ffffff;
   cursor:hand;
@@ -352,10 +364,39 @@ ul {
   color:#ffffff;
   border-color: #C1272D;
   border-style: solid;
+  font-size: 15px;
   margin: 0px;
   border-bottom-right-radius: 6px;
   padding-left: 10px;
   padding-right: 10px;
+
+}
+
+
+.arrow {
+  width: 5%;
+  float: right;
+  margin-top: 40px;
+
+}
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid black;
+  margin-bottom: 10px;
+
+}
+
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+ border-top: 10px solid black;
+
 
 }
 
