@@ -26,18 +26,25 @@ var CONTINGENCY_t =  "I want the school to have the resources to solve emergenci
      .attr("draggable", "true")
      .text(function(d){return d;});
 
-   var counter = 0;
-   $(".sortable").each(function(index){
-      $(this).attr('id', counter);
-      counter++;
-   });
+  function updateRankings(){
+     var counter = 0;
+     $(".sortable").each(function(index){
+        $(this).attr('id', counter);
+        $(this).children(".number").html(counter+1);
+        counter++;
+     });
+  }
 
   $(function(){
-    $( ".priority" ).sortable();
+    $( ".priority" ).sortable({
+      update: function(event){
+        updateRankings();
+      }
+    });
     $( ".priority" ).disableSelection()
   });
 
-  $("#rank").click(function(){ 
+  $("#rank").click(function(){
     var choice = ($(".sortable")[0]).innerHTML;
     if (choice == SALARY_t) {
       document.getElementById("understanding").innerHTML = "If money equals priority, it seems that you have a pretty good sense of how the budget of your kid school is spent.";
