@@ -29,12 +29,102 @@ h2 {
 
 h3 {
     font-family: 'Roboto Slab', serif;
-    margin-left: 300px;
     margin-top: 1px;
     margin-bottom: 1px;
-    color: #0088dd;
-    border-bottom: 1px solid #0088dd;
+    padding-top: 30px;
+    color: #191919;
+    border-bottom: 1px solid #c1272d;
+    font-size: 20px;
+    width: 100%;
+    font-weight: 500;
 }
+
+
+.budget-2015{
+    min-width: 200px;
+    margin-left: 60%;
+    margin-left: 350px;
+    margin-right: 200px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.budget_2015_analysis{
+    min-width: 200px;
+    margin-left: 60%;
+    margin-left: 350px;
+    margin-right: 200px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: 300;
+} 
+
+.budget-2016 {
+    min-width: 200px;
+    margin-left: 60%;
+    margin-left: 350px;
+    margin-right: 200px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.capital-budget {
+    min-width: 200px;
+    margin-left: 60%;
+    margin-left: 350px;
+    margin-right: 200px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.CTU {
+    min-width: 200px;
+    margin-left: 60%;
+    margin-left: 350px;
+    margin-right: 200px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: 300;
+}    
+
+.history{
+    min-width: 200px;
+    margin-left: 60%;
+    margin-left: 350px;
+    margin-right: 200px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.direction {
+    min-width: 200px;
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+  blockquote {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-transform: uppercase;
+    font-style: italic;
+    color: #808080;
+    font-size: 25px;
+    width: 60%;
+    margin-left: -200px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    display: block;
+    float: left;
+    line-height: 1.5em;
+  }
+
 
 /*   <--- main page --->  */
 .main-image {
@@ -183,12 +273,13 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
 #main-nav {
     position: static;
-    background-color:#c1272d;
+  background-color:#c1272d;
     width:100%;
     height:50px;
     z-index: 999;
     min-width: 200px;
-
+    float: left;
+    margin-bottom: 50px;
 }
 #main-nav.sticky {
     position: fixed;
@@ -252,16 +343,6 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
 /*   <--- budget 2015 --->   */
 
-.budget-2015{
-    min-width: 200px;
-    margin-left: 60%;
-    margin-left: 200px;
-    margin-right: 200px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 20px;
-}
-
-
 #pie {
     font-size: 18px;
     font-family: 'Roboto Slab', serif;
@@ -291,12 +372,6 @@ select {
 
 /*the game*/
 
-.direction {
-  font-size: 15px;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-
 ul {
     list-style-type: none;
     margin: 0;
@@ -305,8 +380,6 @@ ul {
     *display: inline;
     zoom: 1;
 }
-
-
 
 /*
 .ranking {
@@ -330,24 +403,33 @@ ul {
 .priority {
   position: relative;
   width:70%;
-  border-style: dashed;
-  border-color: rgb(178,178,178);
+  margin-left: 100px;
+/*  border-style: dashed;
+*/  /*border-color: rgb(178,178,178);
   padding: 20px;
   border-radius: 6px;
-  background-color: #ffffff;
+*/ /* background-color: #ffffff;*/
 
 }
 .priority li {
   font-family: 'Roboto Slab', serif;
   font-size: 15px;
   color: #333333;
+  font-weight: 300;
+
 }
 
 .card {
+  background-color: #ffffff;
   border-color: #C1272D;
-  border-style: solid;
-  margin: 5px;
-  border-radius: 6px;
+  border-style: dashed;
+  border-width: thin;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  border-top-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
   width: 90%;
   float: left;
 }
@@ -363,46 +445,51 @@ ul {
   background-color: #C1272D;
   color:#ffffff;
   border-color: #C1272D;
-  border-style: solid;
   font-size: 15px;
   margin: 0px;
   border-bottom-right-radius: 6px;
   padding-left: 10px;
   padding-right: 10px;
-
 }
 
 
 .arrow {
-  width: 5%;
+  width: 4%;
   float: right;
-  margin-top: 40px;
-
+  margin-top: 0.7%;
+  margin-right: 3.5%;
+  background-color: #C1272D;
+  color:#ffffff;
+  border-color: #C1272D;
+  border-style: solid;
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
 }
 
 .arrow-up {
   width: 0; 
   height: 0; 
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid black;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #ffffff;
   margin-bottom: 10px;
-
+  margin-left: 2px;
 }
 
 .arrow-down {
   width: 0; 
   height: 0; 
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
- border-top: 10px solid black;
-
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #ffffff;
+  margin-left: 2px;
 
 }
 
 .budget_categories{
   padding-left: 10px;
   font-weight: bolder;
+  color: #C1272D;
 }
  
  .description {
@@ -437,10 +524,14 @@ ul {
   height: 40%;
 }
 
-#lineChart, #scatterPlot, #pie {
+.scatterPlot {
   margin-left: 350px;
 }
 
+/*#lineChart, #scatterPlot, #pie {
+  margin-left: 350px;
+}
+*/
 .label, .tick text{
   font-size: 15px;
   font-family: 'Roboto', sans-serif;
@@ -487,22 +578,4 @@ visibility: hidden;
   stroke: #59606A;
   stroke-width:2px;
   shape-rendering: crispEdges;
-}
-
-.budget_2015_analysis{
-    min-width: 200px;
-    margin-left: 60%;
-    margin-left: 200px;
-    margin-right: 200px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 20px;
-} 
-
-.budget-2016 {
-    min-width: 200px;
-    margin-left: 60%;
-    margin-left: 200px;
-    margin-right: 200px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 20px;
 }
