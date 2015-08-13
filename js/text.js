@@ -7,6 +7,9 @@ var CONTINGENCY = 4;
 var school_data;
 var dataset;
 var name_to_unit = {}
+var school;
+var similars;
+
 //Autocomplete bar
 d3.csv("./js/data/unitList.csv",function (csv) {
     school_data=csv;
@@ -20,7 +23,7 @@ function select_school(school_name) {
     window.dataset = data;
     for (i = 0; i < dataset.length; i++){
       if (dataset[i]['Unit Name'] == school_name) {
-        var school = dataset[i];
+        school = dataset[i];
         simi = school["SimilarNames"];
         similars = simi.trim().split(",");
         for (j = 0; j < similars.length; j ++){
@@ -90,6 +93,8 @@ function update_text(school){
     pushText('custom-2016-total-percent-change',toPercent(school['% Change from FY 15']) + " " + logic_word(school['% Change from FY 15'], 0, "more", "less"));
     pushText('custom-2016-pupil', currencyFormat(Math.abs(school['Change in Per Pupil Enrollment Funding'])) + " " + logic_word(school['Change in Per Pupil Enrollment Funding'], 0, "more", "less"));
 }
+
+
 
 function currencyFormat(number)
 {

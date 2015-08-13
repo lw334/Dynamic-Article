@@ -9,6 +9,7 @@
         <script src="http://d3js.org/d3.v3.min.js"></script>
         <script src="./js/nav.js"></script>
         <script type='text/javascript' src='./js/text.js'></script>
+        <script type='text/javascript' src='./js/slideScatter.js'></script>
         <link rel="stylesheet" href="./style/style.css"/>
         <link href='http://fonts.googleapis.com/css?family=Stardos+Stencil:400,700|Roboto+Slab:400,300|Roboto:400,300,300italic,500,500italic' rel='stylesheet' type='text/css'>
     </head>
@@ -140,13 +141,35 @@
         <p>In the case of <span id='custom-school-name5' class='custom-school-name'></span>, the total budget for the next school year is estimated to be <span id = 'custom-budget-2016'></span>, a number <span id='custom-2016-total-percent-change'></span> than last years'. For per pupil enrollment funding, your school received <span id='custom-2016-pupil'></span> than last year.
     </div>
 
+
+
 <!-- relations between enrollment and funding -->
     <div class = 'scatterPlot'>
     <p id="scatterFilter">
     <p class="direction">Pick Schools You Are Interested In:</p>
     </p>
-    <p id='scatterPlot'></p>
+    <!-- section in testing -->
+            <div class = "scatter-steps">
+                <ul id = "steps">
+                <li id="step1" class="active-step">1</li>
+                <li id="step2">2</li>
+                <li id="step3">3</li>
+                <li id="step4">4</li>
+                </ul>
+            </div>
+            <!-- end of test -->
+
+        <!-- section in testing -->
+        <div class="text-blocks-scatter">
+            <p id="explanation1" class="active-explanation">Your School: This graph plots the change in enrollment against the change in budget from 2015 to 2016. Did you find your school?</p>
+            <p id="explanation2">Funding Model: A handful of factors influence the amount of money each school receives, however, the main one is the number of students. Schools that had its enrollment increases will also see a rise on its budget, whereas schools that lost students will be less funded. The ascendent straight line in the center of the graph shows that most schools are following this trend.</p>
+            <p id="explanation3">Less Student: Chicago Public Schools are having less pupils enrolled this year than it had last year. In average, each school will have 6 students less in 2016. This trend is represented at the bottom part of the graph. Regular schools are losing more students than charters.</p>
+            <p id="explanation4">Less Money: In comparison to last year, each school in Chicago will have, in average, $ 93,337 less in its budget. The concentration of dots at the left part of the graph represents this trend. Proportionally, charter schools are the ones who had more positive variation in budget. </p>
+        </div>
+        <!-- end of testing -->
+    <p id='scatterPlot'></p>  
     </div>
+
 
 
     <a name="section3" class="section"><h5>The Crisis</h5></a>

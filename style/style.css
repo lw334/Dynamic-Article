@@ -394,7 +394,7 @@ ul {
 }
 
 #lineChart, #scatterPlot, #pie {
-  margin-left: 350px;
+  margin-left: 0px;
 }
 
 .label, .tick text{
@@ -462,3 +462,64 @@ visibility: hidden;
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
 }
+
+.grid .tick {
+    stroke: lightgrey;
+    opacity: 0.7;
+}
+.grid path {
+      stroke-width: 0;
+}
+
+.grid .tick {
+    stroke: lightgrey;
+    opacity: 0.7;
+}
+.grid path {
+      stroke-width: 0;
+}
+
+.scatter-steps ul {
+  position:absolute;
+  border-style: solid;
+  border-color:black;
+  margin-left:800px;
+  z-index:1000;
+}
+
+.text-blocks-scatter {
+  border-style: solid;
+  border-color: black;
+  width:200px;
+  height:180px;
+  position:absolute;
+  z-index: 1000;
+  left: 900px;
+}
+
+.scatter-steps ul li{
+    display: inline;
+    list-style-type: none;
+    font-size: 20px;
+}
+
+.text-blocks-scatter p {
+  position:absolute;
+  display: inline;
+  visibility: hidden;
+}
+
+.rect-graph {
+  visibility: hidden;
+}
+
+.active-explanation {
+  visibility: visible !important;
+}
+
+.active-graph {
+  visibility: visible !important;
+}
+
+
+
