@@ -540,6 +540,7 @@ ul {
 
 .label, .tick text{
   font-size: 15px;
+  font-weight:lighter;
   font-family: 'Roboto', sans-serif;
   color:#59606A;
 }
@@ -549,6 +550,12 @@ ul {
   stroke: #A6A6A6;
   opacity: 0.15;
   stroke-width: 1.5px;
+}
+
+.legend {
+  font-size:15px;
+  font-family:'Roboto', sans-serif;
+  font-weight:300;
 }
 
 circle {
@@ -585,7 +592,7 @@ border-radius: 6px;
 {
   fill: none;
   stroke: #59606A;
-  stroke-width:2px;
+  stroke-width:1px;
   shape-rendering: crispEdges;
 }
 
@@ -624,44 +631,78 @@ border-radius: 6px;
 }
 
 .scatter-steps ul {
-  position:absolute;
+  cursor: pointer;
+  cursor: hand;
+  position: absolute;
   border-style: solid;
+  border-color: #564332;
+  border-width:1px;
+  padding-left: 0;
+  padding-right: 0;
   border-color:black;
-  margin-left:800px;
-  z-index:1000;
+  padding: 7px 1px;
+  width: 115px;
+  height: 15px;
+  margin-left: 700px;
+  z-index: 998;
+  -webkit-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
+  -moz-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
+  box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
 }
 
 .text-blocks-scatter {
   border-style: solid;
-  border-color: black;
-  width:200px;
-  height:180px;
-  position:absolute;
-  z-index: 1000;
-  left: 900px;
+  border-width: 1px;
+  -webkit-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
+  -moz-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
+  box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
+  border-color: #7E6652;
+  width: 300px;
+  height: 175px;
+  position: absolute;
+  z-index: 998;
+  left: 950px;
 }
 
 .scatter-steps ul li{
+    font: 8px sans-serif;
+    font-weight:lighter;
     display: inline;
     list-style-type: none;
-    font-size: 20px;
+    font-size: 15px;
+    border-left: solid;
+    border-color: #564332;
+    padding: 7px 8px;
+    border-width: 1px;
+    text-align:center;
+}
+
+.scatter-steps ul #step1 {
+  border-left:none;
 }
 
 .text-blocks-scatter p {
   position:absolute;
   display: inline;
   visibility: hidden;
+  font:15px sans-serif;
+  padding:5px 8px;
 }
 
 .rect-graph {
   visibility: hidden;
+  opacity:0.5;
 }
 
 .active-explanation {
   visibility: visible !important;
+  opacity:1;
+  transition:opacity 0.5s linear;
 }
 
 .active-graph {
   visibility: visible !important;
+  opacity:0.1;
+  transition:opacity 0.5s linear;
 }
 
