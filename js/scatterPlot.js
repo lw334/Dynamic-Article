@@ -4,10 +4,10 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
         width = 1000 - margin.left - margin.right,
         height = 800- margin.top - margin.bottom;
 
-  var XScale = d3.scale.linear().domain([-0.6,0.5]).range([0,width]);
+  var XScale = d3.scale.linear().domain([-0.6,0.4]).range([0,width]);
       xAxis = d3.svg.axis().scale(XScale).orient("bottom");
 
-  var YScale = d3.scale.linear().domain([-250,250]).range([height,0]);
+  var YScale = d3.scale.linear().domain([-200,250]).range([height,0]);
       yAxis = d3.svg.axis().scale(YScale).orient("left");
   
 
@@ -46,7 +46,8 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("FY16 Projected Enrollment");
+      .text("Change in Enrollment");
+
 
   //draw grids
   svg.append("g")         
@@ -66,15 +67,39 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
         .tickFormat("")
     )
 
-  //options
-  var options = dropDown.selectAll("option")
-             .data([{"Unit Name":"Your school and similar schools"}].concat(scatterdata))
-           .enter()
-             .append("option");
 
-  options.text(function (d) { return d["Unit Name"]; })
-         .attr("value", function (d) { return d["Unit Name"]; });
+  //crudly drawing up legend
+  svg.append("text")
+   .attr("x", width-50)
+   .attr("y", height-450)
+   .attr("class","legend")
+   .text("District School");
+svg.append("text")
+   .attr("x",width-50)
+   .attr("y", height-430)
+   .attr("class","legend")
+   .text("Charter School");
+svg.append('rect')
+  .attr("x",width-70)
+  .attr("y",height-460)
+  .attr("width",10)
+  .attr("height",10)
+  .style("fill", "#C76062");
+svg.append('rect')
+  .attr("x",width-70)
+  .attr("y",height-440)
+  .attr("width",10)
+  .attr("height",10)
+  .style("fill", "#48BB42");
 
+  // //options
+  // var options = dropDown.selectAll("option")
+  //            .data([{"Unit Name":"Your school and similar schools"}].concat(scatterdata))
+  //          .enter()
+  //            .append("option");
+
+  // options.text(function (d) { return d["Unit Name"]; })
+  //        .attr("value", function (d) { return d["Unit Name"]; });
        
   // // add the tooltip area to the webpage
   var tooltip = d3.select("body").select("#scatterPlot").append("div")
@@ -92,13 +117,11 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
      .data(scatterdata)
      .enter()
      .append("circle")
-     .attr("id", function(d) { return d["Unit Name"]; 
-      })
      .attr("cx",function(d){
-        return XScale(+d["% Change from FY 15"]);//+d["% Change from FY 15"]);
+        return XScale(+d["% Change from FY 15"]);
        })
      .attr("cy", function(d){
-        return YScale(+d["Change in Enrollment"]);//+d["Change in Enrollment"])//+d["FY 16 Projected Enrollment"]);
+        return YScale(+d["Change in Enrollment"]);
        })
      .attr("r", function(d){
         if ((d["Unit Name"] == school["Unit Name"])) {
@@ -112,13 +135,13 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
         }
       })
     .style("stroke-width","1")
-    .style("stroke","#000")
+    .style("stroke","#636363")
     .style("fill", function(d){
       if (d["Governance"] == "District"){
-        return "red";
+        return "#C76062";
       }
       else if (d["Governance"] == "Charter" || d["Governance"] == "Contract"){
-       return "green";
+       return "#48BB42";
       }
     })
     .transition(5000)
@@ -145,8 +168,8 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
            .transition()
            .duration(200)
            .style("opacity", .9);
-      tooltip.html(d["Unit Name"] + "<br/> (" + "Enrollment: "+ d["FY 16 Projected Enrollment"]
-      + ", " + "Change in funding: " + d["Change in Per Pupil Enrollment Funding"] + ")")
+      tooltip.html(d["Unit Name"] + "<br/> (" + d["Change in Enrollment"]
+      + ", " + d["% Change from FY 15"] + ")")
            .style("left", (d3.event.pageX + 5) + "px")
            .style("top", (d3.event.pageY - 28) + "px");
       })
@@ -164,8 +187,7 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
      .attr("width",1400)
      .attr("height",150)
      .attr("transform","rotate(330, 220, 80)")
-     .style("color","gray")
-     .style("opacity","0.1");
+     .style("color","gray");
 
    svg.append('rect')
     .attr("class","rect-graph")
@@ -174,8 +196,7 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
     .attr("y",0)
     .attr("width",450)
     .attr("height",750)
-    .style("color","gray")
-    .style("opacity","0.1");
+    .style("color","gray");
 
   svg.append('rect')
      .attr("class","rect-graph")
@@ -184,15 +205,13 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
      .attr("y",375)
      .attr("width",800)
      .attr("height",350)
-     .style("color","gray")
-     .style("opacity","0.1");
+     .style("color","gray");
 
 
 }
 
 
-
-// //dropDown updates
+// // //dropDown updates
 
 //   dropDown.on("change", function() {
 //     var selected = d3.event.target.value;

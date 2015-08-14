@@ -21,6 +21,8 @@ function select_school(school_name) {
   d3.json('./js/data/article1.json', function(error, data) {
     if (error) throw error;
     window.dataset = data;
+    d3.select('body').selectAll('svg').remove();
+    d3.select("body").selectAll("select").remove();
     for (i = 0; i < dataset.length; i++){
       if (dataset[i]['Unit Name'] == school_name) {
         school = dataset[i];
@@ -40,16 +42,14 @@ function select_school(school_name) {
 
 //Setup and render the autocomplete
 function init_autocomplete() {
-    select_school('Stephen F Gale Community Academy');
     var ac_data = [];
     for (var i = 0; i < school_data.length; i++) {
-      //ac_data.push({label: school_data[i]['Unit Name'], value: school_data[i]['Unit']})
       ac_data.push(school_data[i]['Unit Name'])
       name_to_unit[school_data[i]['Unit Name']] = school_data[i]['Unit']
     };
 
     $(".search #user_school").autocomplete({
-      minLength: 4,
+      minLength: 1,
       source: ac_data,
       select: function( event, ui ) {
         var school_name = event.target.value;
@@ -57,6 +57,8 @@ function init_autocomplete() {
         select_school(school_name);
       }
     }).autocomplete("widget").addClass("fixed-height");
+    // //default school
+    select_school('Stephen F Gale Community Academy');
 }
 
 function update_text(school){
@@ -93,8 +95,6 @@ function update_text(school){
     pushText('custom-2016-total-percent-change',toPercent(school['% Change from FY 15']) + " " + logic_word(school['% Change from FY 15'], 0, "more", "less"));
     pushText('custom-2016-pupil', currencyFormat(Math.abs(school['Change in Per Pupil Enrollment Funding'])) + " " + logic_word(school['Change in Per Pupil Enrollment Funding'], 0, "more", "less"));
 }
-
-
 
 function currencyFormat(number)
 {
