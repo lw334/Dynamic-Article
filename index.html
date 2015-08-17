@@ -3,23 +3,22 @@
     <head>
         <meta charset='utf-8'>
         <title>Test Paragraph</title>
-        <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/pepper-grinder/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script src="http://d3js.org/d3.v3.min.js"></script>
         <script src="./js/nav.js"></script>
         <script type='text/javascript' src='./js/text.js'></script>
         <script type='text/javascript' src='./js/slideScatter.js'></script>
-        <link rel="stylesheet" href="./style/style.css"/>
         <link href='http://fonts.googleapis.com/css?family=Stardos+Stencil:400,700|Roboto+Slab:400,300|Roboto:400,300,300italic,500,500italic' rel='stylesheet' type='text/css'>
+        <!--<link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/pepper-grinder/jquery-ui.css">-->
+        <link rel="stylesheet" href="./style/style.css"/>
     </head>
 
     <!--  main page: photo, menu, name of the page, description and autocomplete  -->
 
     <body>
-        
         <!--  main page: photo, menu, name of the page, description and autocomplete  -->
-        <div class="main-image" id="section1">    
+        <div class="main-image" id="section1">
             <p id="credit">credit Bob Mical / Flickr</p>
 
             <div id="intro">
@@ -57,12 +56,9 @@
         <p>At this point, you may be wondering what the cash-strapped CPS will decide on the budget of <span id='custom-school-name1' class='custom-school-name'></span>.You might even be asking how your school has been spending money in the past years and what will be different. In order to answer your questions in detail, we want you to take a moment and rank your top priorities when it comes to your children's school.</p> 
 
         <p class="direction">Please drag the following choices to rank the most important issue on the top. </p>
-        
         <!--  game goes here -->
-
         <ul class="priority ui-sortable">
-            
-            <li class="sortable ui-sortable-handle" draggable="true" id="0"> 
+            <li>
                 <div class="card">
                     <span class="number">1</span><span class="budget_categories">COMMODITIES</span>
                     <div class="description">I want my children to study with updated instructional materials including new books and softwares, and stay in air conditioned classrooms on summer days. </div>
@@ -73,7 +69,7 @@
                 </div>
             </li>
 
-            <li class="sortable ui-sortable-handle" draggable="true" id="0">
+            <li>
                 <div class="card">
                     <span class="number">2</span><span class="budget_categories">CONTRACTS</span>
                     <div class="description">I want the school to deliver necessary services, such as health care and counseling to my children and professional training to the teachers and staff so I know my children are taken good care of. </div>
@@ -84,7 +80,7 @@
                 </div>
             </li>
 
-            <li class="sortable ui-sortable-handle" draggable="true" id="0">
+            <li>
             <div class="card">
                 <span class="number">3</span><span class="budget_categories">EQUIPMENT</span>
                 <div class="description"> I want the school to have well-maintained buildings and equipment such as computers to enhance my child’s learning.</div>
@@ -95,7 +91,7 @@
                 </div>
             </li>
 
-            <li class="sortable ui-sortable-handle" draggable="true" id="0">
+            <li>
 
                 <div class="card">
                     <span class="number">4</span><span class="budget_categories">SALARIES</span>
@@ -107,7 +103,7 @@
                     </div>
             </li>
 
-            <li class="sortable ui-sortable-handle" draggable="true" id="0">
+            <li>
             <div class="card">
                 <span class="number">5</span><span class="budget_categories">BENEFITS</span>
                 <div class="description">I want my children to study with teachers who have access to social welfare benefits and are likely to remain in school and understand my children well over the years.</div>
@@ -118,7 +114,7 @@
                 </div>
             </li>
 
-            <li class="sortable ui-sortable-handle" draggable="true" id="0">
+            <li>
             <div class="card">
                 <span class="number">6</span><span class="budget_categories">TRANSPORTATION</span>
                 <div class="description">I want to make sure that my children arrive at school and return home safely.</div>
@@ -129,11 +125,11 @@
                 </div>
             </li>
 
-            <li class="sortable ui-sortable-handle" draggable="true" id="0">
+            <li>
             <div class="card">
                 <span class="number">7</span><span class="budget_categories">CONTIGENCIES</span>
                 <div class="description">I want the school to have the resources to solve emergencies that might occur, such as the exacerbation of medical conditions and accidental/intentional injuries.</div>
-            </div>                
+            </div>
                 <div class="arrow">
                     <div class="arrow-up"></div>
                     <div class="arrow-down"></div>
@@ -151,15 +147,14 @@
 
 
         <!-- Past Trend -->
-       
     <div class="budget_2015_analysis">
 
         <div class = 'LineGraph'>
         <p class="direction">Pick Schools You Are Interested In</p><p id="lineFilter"></p>
-        
+
         <p id="lineChart"></p>
         </div>
-
+        <a name="section2" class="section"><h3>YOUR SCHOOL BUDGET</h3></a>
         <p>In 2015, <span id='custom-school-name3' class='custom-school-name'></span> received a total budget of <span id='custom-total-budget'></span>. The majority of the budget, <span id='custom-salary'></span>, was spent on teachers and staff salaries. The second largest expenditure that composed <span id='custom-benefits'></span> of the budget was benefits, which include medicare for teachers and staff personnel, as well as pensions. Those two categories are always the most expensive costs for schools.</p>
 
         <p>For your school, the third area that received more investment was <span id='custom-third'></span>, a label used to determine <span id='custom-usage'></span>. If you want to know in detail about <span id='custom-school-name4' class='custom-school-name'></span>'s budget and check how close your answer is to what was adopted by the school last year, the graph below is the most current breakdown of costs of your kid's school, excluding salary and benefits.</p>
@@ -172,12 +167,12 @@
 
         <p>Your school may have provided <span id='custom-service-level'></span> services to students and staff than comparable schools, judging from last year’s spending on contracts. This means your school may have spent <span id='custom-service-exp'></span> resources on services including counseling, nursing and food. This may also imply that your school provided <span id='custom-service-training'></span> professional trainings to the teachers and the staff.</p>
 
-        <p>If you are more concerned about having quality instructional materials and a comfortable study environment for your children , <span id='custom-logic-1'></span> your school spent <span id='custom-commodity-exp'></span> than the average in commodities comparing to similar schools. <span id='custom-logic-2'></span> your school spent <span id='custom-equipment-exp'></span> the average in equipment, the investment in school building construction and maintenance. As for transportation, your school spent <span id='custom-transporation-exp'></span> the average on transporting your children to and from school and sporting events compared to similar schools.</p>
-    </div> 
+        <p>If you are more concerned about having quality instructional materials for your children and a comfortable study environment, <span id='custom-logic-1'></span> your school spent <span id='custom-commodity-exp'></span> the average in commodities comparing to similar schools. <span id='custom-logic-2'></span> your school spent <span id='custom-equipment-exp'></span> the average in equipment, the investment in school building construction and maintenance. As for transportation, your school spent <span id='custom-transporation-exp'></span> the average on transporting your children to and from school and sporting events compared to similar schools.</p>
+    </div>
 
     <div class='budget-2016'>
-        
-    <a name="section2" class="section"><h3>WINTER COMES EARLY THIS YEAR</h3></a>
+
+    <a name="section3" class="section"><h3>WINTER COMES EARLY THIS YEAR</h3></a>
 
         <p>The 2016 fiscal year budget has not been officially released, but preliminary numbers show a total amount of $ 2.6 billion, an increase of 21.85 percent from last year. However, 389 out of 635 schools will see their budgets shrink in 2016. Existing charter schools (alternative and non-alternative) are seeing on average an 8 percent and 26 percent increase in their budgets, whereas other types of schools’ budgets are reduced on average.</p>
 
@@ -268,7 +263,7 @@
     </div>
 
     <div class="history">
-        <a name="section3" class="section"><h3>HISTORY OF A CRISIS</h3></a>
+        <a name="section4" class="section"><h3>HISTORY OF A CRISIS</h3></a>
         <p>The total CPS budget increased consistently from 2013 to 2015. Last year’s total budget is 10 percent more than what was two years ago. So if the overall budget is rising, why are we in crisis? Because, even in times of financial difficulty, the budget has a positive fluctuation due to adjustment to inflation, variation in the number of students, and pension payments from year to year. 
         </p>
 
@@ -309,7 +304,7 @@
     </div>
 
     <div class="methodology"> 
-        <a name="section4" class="section"><h3>METHODOLOGY</h3></a>
+        <a name="section5" class="section"><h3>METHODOLOGY</h3></a>
        <p> Our project utilized mainly three datasets that contain the latest information publicly available: the report card data from 2014, the CPS budget data on individual schools from 2015, and the 2016 preliminary budgets released in July. The datasets are joined on school unit IDs. </p>
 
         <p> We carefully chose the indicators for similar schools based on suggestions from teachers, parents, education researchers and reporters that we interviewed. Instead of using test results and school rankings, we used socio-economic status of the students including racial components, low-income rate, parental involvement rate and attendance rate to measure similarities and total enrollments and 2014 FY's total budgets to limit the search to similar-sized schools, and calculated similarities by finding the euclidean distances between schools. Simply put, it is unfair to compare schools with students who arrive every day with hungry stomachs to ones with students who do not have to worry about if there will be lunch.</p>    
@@ -337,7 +332,7 @@
 </div>
     
   
-    <script type='text/javascript' src='./js/game.js'></script>
+    <script type='text/javascript' src='js/game.js'></script>
     <script type='text/javascript' src='./js/lineChart.js'></script>
     <script type='text/javascript' src='./js/pieChart.js'></script>
     <script type='text/javascript' src='./js/scatterPlot.js'></script>
