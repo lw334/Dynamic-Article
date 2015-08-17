@@ -452,19 +452,19 @@ ul {
 
 /*the button*/
 #rank {    
-  border-radius: 20px;
+  border-radius: 6px;
   color: #FFF;
   font-size: 22px;
   background: #C1272D none repeat scroll 0% 0%;
   padding: 10px 20px;
   text-decoration: none;
   font-family: "Roboto Slab",serif;
-  margin-left: 200px;
+  margin-left: 280px;
   margin-top: 10px;
 }
 
 #rank:hover {
-  background: #fc7f3c;
+  background: #e1696e;
   text-decoration: none;
 }
 
@@ -474,6 +474,7 @@ ul {
   height: 40%;
 }
 
+<<<<<<< HEAD
 #lineChart{
   margin-left: 100px;
 }
@@ -486,10 +487,22 @@ ul {
 #pie {
   margin-left: 250px;
 }
+=======
+.scatterplot {
+  margin-left: 350px;
+
+}
+
+#lineChart, #scatterPlot, #pie {
+/*  margin-left: 0px;
+*/}
+
+>>>>>>> bf7d30b1ad387a386fbd6f64c76c310781422a67
 /*#lineChart, #scatterPlot, #pie {
   margin-left: 350px;
 }
 */
+
 .label, .tick text{
   font-size: 15px;
   font-weight:lighter;
@@ -520,13 +533,16 @@ width: 250px;
 height: 40px;
 pointer-events: none;
 font-family: 'Roboto Slab', serif;
+text-transform: uppercase;
 color: #FFFFFF;
 background: #C1272D;
 border-radius: 6px;
 padding-left: 13px;
+padding-top: 5px;
 font-size:12px;
 opacity: 0.95;
 visibility: hidden;
+border-radius: 6px;
 }
 
 .arc path {
@@ -548,7 +564,7 @@ visibility: hidden;
 .budget_2015_analysis{
     min-width: 200px;
     margin-left: 60%;
-    margin-left: 200px;
+    margin-left: 350px;
     margin-right: 200px;
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
@@ -557,7 +573,7 @@ visibility: hidden;
 .budget-2016 {
     min-width: 200px;
     margin-left: 60%;
-    margin-left: 200px;
+    margin-left: 350px;
     margin-right: 200px;
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
