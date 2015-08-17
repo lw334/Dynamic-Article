@@ -34,9 +34,9 @@ function select_school(school_name) {
       }
     }   
     update_text(school); 
-    draw_scatter_plot(school,similars,dataset);
     draw_line_chart(school_name,similars,dataset);
     draw_pie_chart(school_name);
+    draw_scatter_plot(school,similars,dataset);
   });   
 }
 
@@ -71,20 +71,20 @@ function update_text(school){
     $('#custom-third').text(school['LargestSpending']);
     $('#custom-usage').text(label(school['LargestSpending']));
     $('#custom-service-level').text(comparison_word(school['2015Contract%'], school['AvgSpending'][CONTRACT], "the same level of", "better", "worse"));
-
+    $('#highlight-salary-benefits').text(toPercent(parseFloat(school['2015Benefit%']) + parseFloat(school["2015Salary%"])) + " ");
     //comparison
-    $('#custom-service-exp').text(comparison_word(school['2015Contract%'], school['AvgSpending'][CONTRACT], "similar", "more", "less"));
+    $('#custom-service-exp').text(comparison_word(parseFloat(school['2015Contract%']), parseFloat(school['AvgSpending'][CONTRACT]), "similar", "more", "less"));
 
-    $('#custom-service-training').text(comparison_word(school['2015Contract%'], school['AvgSpending'][CONTRACT], "similar amount of", "better", "worse"));
+    $('#custom-service-training').text(comparison_word(parseFloat(school['2015Contract%']), parseFloat(school['AvgSpending'][CONTRACT]), "similar amount of", "better", "worse"));
 
-    $('#custom-logic-1').text(logic_word(school['2015Commodities%'], school['AvgSpending'][COMMODITY], "fortunately", "unfortunately"));
-    $('#custom-commodity-exp', comparison_word(school['2015Commodities%'], school['AvgSpending'][COMMODITY], "about the same as the", "more", "less"));
+    $('#custom-logic-1').text(logic_word(parseFloat(school['2015Commodities%']), parseFloat(school['AvgSpending'][COMMODITY]), "fortunately", "unfortunately"));
+    $('#custom-commodity-exp', comparison_word(parseFloat(school['2015Commodities%']), parseFloat(school['AvgSpending'][COMMODITY]), "about the same as the", "more", "less"));
 
-    $('#custom-logic-2').text(logic_word(school['2015Equipment%'], school['AvgSpending'][EQUIPMENT], "on the other hand", "However,"));
+    $('#custom-logic-2').text(logic_word(parseFloat(school['2015Equipment%']), parseFloat(school['AvgSpending'][EQUIPMENT]), "on the other hand", "However,"));
 
-    $('#custom-equipment-exp').text(comparison_word(school['2015Euipment%'], school['AvgSpending'][EQUIPMENT], "similar", "more than", "less than"));
+    $('#custom-equipment-exp').text(comparison_word(parseFloat(school['2015Euipment%']), parseFloat(school['AvgSpending'][EQUIPMENT]), "similar", "more than", "less than"));
 
-    $('#custom-transporation-exp').text(comparison_word(school['2015Transportation%'], school['AvgSpending'][TRANSPORTATION], "similar", "more than", "less than"));
+    $('#custom-transporation-exp').text(comparison_word(parseFloat(school['2015Transportation%']), parseFloat(school['AvgSpending'][TRANSPORTATION]), "similar", "more than", "less than"));
 
     //2016
     $('#custom-budget-2016').text(currencyFormat(school['FY 16 Budget    (Core and Supplemental)']));

@@ -246,8 +246,4 @@ var tooltip = d3.select("body").select("#lineChart").append("div")
 }
 
 
-// function reverse_line_plot(){
-//   d3.select("body").select("#lineChart").select('svg').remove();
-// }
-
 

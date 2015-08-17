@@ -1,3 +1,4 @@
+
 function draw_pie_chart(school_name) {
   var width = 480,
       height = 250,
@@ -46,25 +47,6 @@ function draw_pie_chart(school_name) {
               return arc(d);
             }
           });
-
-
-    // var legend = svg.selectAll('.legend')
-    // .data(color.domain())
-    // .enter()
-    // .append('g')
-    // .attr('class','legend')
-    // .append("rect")
-    // .attr("width",10)
-    // .attr("height",10)
-    // .attr("x", function(d,i) {
-    //   console.log(d)
-    //   if (d.value!=0) {
-    //     return (width-300-i*20);
-    //   }
-    // })
-    // .attr("y",height-200)
-    // .style("fill",color)
-    // .style("stroke",color);
 
     g.append("text")
         .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })

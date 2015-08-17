@@ -56,76 +56,64 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
   .call(xAxis
       .ticks(20)
       .tickSize(-height, 0, 0)
-      .tickFormat("")
-  )
+      .tickFormat(""))
 
   svg.append("g")         
     .attr("class", "grid")
     .call(yAxis
         .ticks(20)
         .tickSize(-width, 0, 0)
-        .tickFormat("")
-    )
+        .tickFormat(""))
 
 
-  //crudly drawing up legend
-svg.append("text")
-   .attr("x", 0)
-   .attr("y", height-410)
-   .attr("class","legend")
-   .text("Your School");
-svg.append("text")
-   .attr("x", 0)
-   .attr("y", height-380)
-   .attr("class","legend")
-   .text("Similar School");
-svg.append("text")
-   .attr("x", 0)
-   .attr("y", height-350)
-   .attr("class","legend")
-   .text("District School");
-svg.append("text")
-   .attr("x",0)
-   .attr("y", height-320)
-   .attr("class","legend")
-   .text("Charter School");
-svg.append('rect')
-  .attr("x",110)
-  .attr("y",height-360)
-  .attr("width",10)
-  .attr("height",10)
-  .style("fill", "#C76062");
-svg.append('rect')
-  .attr("x",110)
-  .attr("y",height-330)
-  .attr("width",10)
-  .attr("height",10)
-  .style("fill", "#48BB42");
-svg.append('circle')
-  .attr("r", 10)
-  .attr("cx", 120)
-  .attr("cy", height-415)
-  .style("stroke-width","2px")
-  .style("fill", "none")
-  .style("stroke", "#c1272d");
-svg.append('circle')
-  .attr("r", 7)
-  .attr("cx", 120)
-  .attr("cy", height-385)
-  .style("stroke-width","2px")
-  .style("fill","none")
-  .style("stroke", "#4879CE");
-
-
-  // //options
-  // var options = dropDown.selectAll("option")
-  //            .data([{"Unit Name":"Your school and similar schools"}].concat(scatterdata))
-  //          .enter()
-  //            .append("option");
-
-  // options.text(function (d) { return d["Unit Name"]; })
-  //        .attr("value", function (d) { return d["Unit Name"]; });
-       
+    //crudly drawing up legend
+  svg.append("text")
+     .attr("x", 0)
+     .attr("y", height-410)
+     .attr("class","legend")
+     .text("Your School");
+  svg.append("text")
+     .attr("x", 0)
+     .attr("y", height-380)
+     .attr("class","legend")
+     .text("Similar School");
+  svg.append("text")
+     .attr("x", 0)
+     .attr("y", height-350)
+     .attr("class","legend")
+     .text("District School");
+  svg.append("text")
+     .attr("x",0)
+     .attr("y", height-320)
+     .attr("class","legend")
+     .text("Charter School");
+  svg.append('rect')
+    .attr("x",110)
+    .attr("y",height-360)
+    .attr("width",10)
+    .attr("height",10)
+    .style("fill", "#C76062");
+  svg.append('rect')
+    .attr("x",110)
+    .attr("y",height-330)
+    .attr("width",10)
+    .attr("height",10)
+    .style("fill", "#48BB42");
+  svg.append('circle')
+    .attr("r", 10)
+    .attr("cx", 120)
+    .attr("cy", height-415)
+    .style("stroke-width","2px")
+    .style("fill", "none")
+    .style("stroke", "#c1272d");
+  svg.append('circle')
+    .attr("r", 7)
+    .attr("cx", 120)
+    .attr("cy", height-385)
+    .style("stroke-width","2px")
+    .style("fill","none")
+    .style("stroke", "#4879CE");
+         
   // // add the tooltip area to the webpage
   var tooltip = d3.select("body").select("#scatterPlot").append("div")
       .attr("class", "tooltip");
@@ -248,69 +236,5 @@ svg.append('circle')
      .attr("width",800)
      .attr("height",250)
      .style("color","gray");
-
-
 }
 
-
-// // //dropDown updates
-
-//   dropDown.on("change", function() {
-//     var selected = d3.event.target.value;
-//     var comparison = 0;
-
-//     svg.selectAll("circle")
-//        .style("opacity", 0.2)
-//        .style("fill", "#59606A")
-//        .attr("r", 8);
-
-//     if (selected == 'Your school and similar schools'){
-//       selected = school["Unit Name"];
-//       comparison = 1;
-//     }
-
-//     if (comparison == 1) {
-//       svg.selectAll("circle")
-//          .filter(function(d) { return (similars.indexOf(d["Unit Name"])!= -1);})
-//          .transition()
-//          .attr("r", 10)
-//          .style("fill", "#4879CE")
-//          .style("opacity", 1);
-//       svg.selectAll("circle")
-//           .filter(function(d) {return selected == d["Unit Name"]; })
-//           .transition()
-//           .attr("r", 10)
-//           .style("fill", "#c1272d")
-//           .style("opacity", 1);
-//       } else {
-//         var scatter_similar_schools;
-//         var scatter_school;
-//         for (var i = 0; i < dataset.length; i++) {
-//           if (dataset[i]["Unit Name"] == selected) {
-//             scatter_school = dataset[i];
-//             scatter_similar_schools = scatter_school["SimilarNames"]; 
-//             scatter_similar_schools = scatter_similar_schools.trim().split(",");
-//             for (var j = 0; j < scatter_similar_schools.length; j ++){
-//               scatter_similar_schools[j] = scatter_similar_schools[j].trim().replace("'","").replace("[","").replace("]","").replace("'","");
-//             }
-//           }
-//         }
-//         svg.selectAll("circle")
-//           .filter(function(d) {
-//             return (scatter_similar_schools.indexOf(d["Unit Name"]) != -1);
-//           })
-//           .transition()
-//           .attr("r", 10)
-//           .style("fill", "#4879CE")
-//           .style("opacity", 1);
-      
-//         svg.selectAll("circle")
-//             .filter(function(d) { return selected == d["Unit Name"]; })
-//             .transition()
-//             .attr("r", 10)
-//             .style("fill","#c1272d")
-//             .style("opacity", 1);
-//       }
-//   });
-// }
-//});

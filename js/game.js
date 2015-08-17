@@ -22,10 +22,10 @@ $(document).ready(function(){
   $("#rank").click(function(){
     var choice = ($(".sortable")[0]).innerHTML;
     if (choice == SALARY_t) {
-      document.getElementById("understanding").innerHTML = "If money equals priority, it seems that you have a pretty good sense of how the budget of your kid school is spent.";
+      $("understanding").text("If money equals priority, it seems that you have a pretty good sense of how the budget of your kid school is spent.");
     }
     else{
-      document.getElementById("understanding").innerHTML = "If money equals priority, it seems that the budget of your children’s school is being spent with a different mindset.";
+      $("understanding").text("If money equals priority, it seems that the budget of your children’s school is being spent with a different mindset.");
     }
     $(".priority").hide(1000);
     $(".ranking").hide(1000);
