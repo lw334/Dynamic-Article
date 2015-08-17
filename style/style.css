@@ -255,8 +255,8 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 #main-nav ul {
   list-style-type: none;
   float: right;
-  padding-bottom: 10px;
-  padding-top: 1px;
+  padding-bottom: 11px;
+  padding-top: 10px;
   color: #ffffff;
   min-width: 600px;
   font-size: 20px;
@@ -358,12 +358,6 @@ ul.priority{
   position: relative;
   width:70%;
   margin-left: 100px;
-/*  border-style: dashed;
-*/  /*border-color: rgb(178,178,178);
-  padding: 20px;
-  border-radius: 6px;
-*/ /* background-color: #ffffff;*/
-
 }
 .priority li {
   font-family: 'Roboto Slab', serif;
@@ -478,7 +472,6 @@ ul.priority{
   height: 40%;
 }
 
-<<<<<<< HEAD
 #lineChart{
   margin-left: 100px;
 }
@@ -491,17 +484,6 @@ ul.priority{
 #pie {
   margin-left: 250px;
 }
-=======
-.scatterplot {
-  margin-left: 350px;
-
-}
-
-#lineChart, #scatterPlot, #pie {
-/*  margin-left: 0px;
-*/}
-
->>>>>>> bf7d30b1ad387a386fbd6f64c76c310781422a67
 /*#lineChart, #scatterPlot, #pie {
   margin-left: 350px;
 }
