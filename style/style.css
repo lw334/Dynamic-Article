@@ -354,11 +354,11 @@ ul {
   position: relative;
   width:70%;
   margin-left: 100px;
-/*  border-style: dashed;
-*/  /*border-color: rgb(178,178,178);
+  /*border-style: dashed;
+  border-color: rgb(178,178,178);
   padding: 20px;
   border-radius: 6px;
-*/ /* background-color: #ffffff;*/
+  background-color: #ffffff;*/
 
 }
 .priority li {
@@ -366,7 +366,6 @@ ul {
   font-size: 15px;
   color: #333333;
   font-weight: 300;
-
 }
 
 .card {
@@ -377,20 +376,23 @@ ul {
   margin-top: 5px;
   margin-left: 5px;
   margin-bottom: 5px;
-  border-top-left-radius: 6px;
-  border-bottom-right-radius: 6px;
-  border-bottom-left-radius: 6px;
+  border-radius: 6px;
   width: 90%;
-  float: left;
+  display: inline-block;
 }
 
 .card:hover{
-  background-color: #C1272D;
-  color:#ffffff;
-  cursor:hand;
+  /*background-color: #C1272D;*/
+  background-color: #d0d0d0;
+  /*color:#ffffff;*/
   cursor:pointer;
 }
 
+.card-placeholder {
+    background: #999;
+    border-radius: 6px;
+    border: 2px dashed #757575;
+}
 .number {
   background-color: #C1272D;
   color:#ffffff;
@@ -405,9 +407,9 @@ ul {
 
 .arrow {
   width: 4%;
-  float: right;
+  display:inline-block;
   margin-top: 0.7%;
-  margin-right: 3.5%;
+  margin-right: 0;
   background-color: #C1272D;
   color:#ffffff;
   border-color: #C1272D;
@@ -474,20 +476,6 @@ ul {
   height: 40%;
 }
 
-<<<<<<< HEAD
-#lineChart{
-  margin-left: 100px;
-}
-
-#scatterPlot{
-  margin-left:200px;
-  margin-top:100px;
-}
-
-#pie {
-  margin-left: 250px;
-}
-=======
 .scatterplot {
   margin-left: 350px;
 
@@ -497,7 +485,6 @@ ul {
 /*  margin-left: 0px;
 */}
 
->>>>>>> bf7d30b1ad387a386fbd6f64c76c310781422a67
 /*#lineChart, #scatterPlot, #pie {
   margin-left: 350px;
 }
