@@ -4,7 +4,7 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
         width = 900 - margin.left - margin.right,
         height = 700- margin.top - margin.bottom;
 
-  var XScale = d3.scale.linear().domain([-0.6,0.4]).range([0,width]);
+  var XScale = d3.scale.linear().domain([-60,40]).range([0,width]);
       xAxis = d3.svg.axis().scale(XScale).orient("bottom");
 
   var YScale = d3.scale.linear().domain([-200,250]).range([height,0]);
@@ -118,7 +118,7 @@ svg.append('rect')
      .enter()
      .append("circle")
      .attr("cx",function(d){
-        return XScale(+d["% Change from FY 15"]);
+        return XScale(+d["% Change from FY 15"]*100);
        })
      .attr("cy", function(d){
         return YScale(+d["Change in Enrollment"]);
@@ -168,7 +168,7 @@ svg.append('rect')
            .transition()
            .duration(200)
            .style("opacity", .9);
-      tooltip.html(d["Unit Name"] + "<br/> (" + d["Change in Enrollment"]
+      tooltip.html(d["Unit Name"] + "(" + d["Change in Enrollment"]
       + ", " + d["% Change from FY 15"] + ")")
            .style("left", (d3.event.pageX + 5) + "px")
            .style("top", (d3.event.pageY - 28) + "px");
