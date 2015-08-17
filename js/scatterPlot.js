@@ -69,7 +69,17 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
 
 
   //crudly drawing up legend
-  svg.append("text")
+svg.append("text")
+   .attr("x", 0)
+   .attr("y", height-410)
+   .attr("class","legend")
+   .text("Your School");
+svg.append("text")
+   .attr("x", 0)
+   .attr("y", height-380)
+   .attr("class","legend")
+   .text("Similar School");
+svg.append("text")
    .attr("x", 0)
    .attr("y", height-350)
    .attr("class","legend")
@@ -91,6 +101,21 @@ svg.append('rect')
   .attr("width",10)
   .attr("height",10)
   .style("fill", "#48BB42");
+svg.append('circle')
+  .attr("r", 10)
+  .attr("cx", 120)
+  .attr("cy", height-415)
+  .style("stroke-width","2px")
+  .style("fill", "none")
+  .style("stroke", "#c1272d");
+svg.append('circle')
+  .attr("r", 7)
+  .attr("cx", 120)
+  .attr("cy", height-385)
+  .style("stroke-width","2px")
+  .style("fill","none")
+  .style("stroke", "#4879CE");
+
 
   // //options
   // var options = dropDown.selectAll("option")
@@ -134,8 +159,25 @@ svg.append('rect')
           return 4;
         }
       })
-    .style("stroke-width","1")
-    .style("stroke","#636363")
+    .style("stroke-width",function(d){
+       if ((d["Unit Name"] == school["Unit Name"])||(similars.indexOf(d["Unit Name"])!= -1)) {
+        return "2";
+      }
+      else {
+        return "0";
+      }
+    })
+    .style("stroke",function(d){
+      if (d["Unit Name"] == school["Unit Name"]) {
+        return "#c1272d";
+      }
+      else if (similars.indexOf(d["Unit Name"])!= -1) {
+        return "#4879CE";
+      }
+      else {
+        return "#636363";
+      }
+    })
     .style("fill", function(d){
       if (d["Governance"] == "District"){
         return "#C76062";

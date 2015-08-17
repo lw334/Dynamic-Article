@@ -331,36 +331,22 @@ ul {
     zoom: 1;
 }
 
-/*
-.ranking {
- position: relative;
-}*/
-
-
-/*.ranking li {
-  font-family: 'Roboto', sans-serif;
-  color: #ffffff  !important;
-  font-size: 25px;
-  padding: 10px 20px;
-  border: 2px solid #c1272d ;
-  background: #c1272d ;
-  margin:24px;
-  margin-left:100px;
-  border-radius: 6px;
-}
-*/
 
 .priority {
   position: relative;
   width:70%;
   margin-left: 100px;
+<<<<<<< HEAD
   /*border-style: dashed;
   border-color: rgb(178,178,178);
   padding: 20px;
   border-radius: 6px;
   background-color: #ffffff;*/
 
+=======
+>>>>>>> 4905901d4498c4a1b829ca828392435aa52540ca
 }
+
 .priority li {
   font-family: 'Roboto Slab', serif;
   font-size: 15px;
@@ -476,20 +462,23 @@ ul {
   height: 40%;
 }
 
+#lineChart{
+  margin-left: 0px;
+}
+
+#scatterPlot{
+  margin-left:200px;
+  margin-top:100px;
+}
+
+#pie {
+  margin-left: 250px;
+}
+
 .scatterplot {
   margin-left: 350px;
 
 }
-
-#lineChart, #scatterPlot, #pie {
-/*  margin-left: 0px;
-*/}
-
-/*#lineChart, #scatterPlot, #pie {
-  margin-left: 350px;
-}
-*/
-
 .label, .tick text{
   font-size: 15px;
   font-weight:lighter;
@@ -587,13 +576,12 @@ border-radius: 6px;
   cursor: hand;
   position: absolute;
   border-style: solid;
-  border-color: #564332;
+  border-color: #7E6652;
   border-width:1px;
   padding-left: 0;
   padding-right: 0;
-  border-color:black;
   padding: 7px 1px;
-  width: 115px;
+  width: 100px;
   height: 15px;
   left: 200px;
   z-index: 998;
@@ -626,10 +614,16 @@ border-radius: 6px;
     list-style-type: none;
     font-size: 15px;
     border-left: solid;
-    border-color: #564332;
+    border-color: #7E6652;
     padding: 7px 8px;
     border-width: 1px;
     text-align:center;
+}
+
+.scatter-steps ul .active-step {
+  background-color: #C1272D;
+  color: white;
+  font-weight:bold;
 }
 
 .scatter-steps ul #step1 {
@@ -660,6 +654,7 @@ border-radius: 6px;
   opacity:0.1;
   transition:opacity 0.5s linear;
 }
+
 
 
 
