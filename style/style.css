@@ -243,22 +243,23 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
 /*title*/
 #main-nav p {
-    display: inline;
+    display: inline-block;
     font-family: 'Stardos Stencil', cursive;
     font-size: 40px;
     margin-left: 40px;
     color: #ffffff;
+    margin-top: 0;
 }
 
 /*other items*/
 #main-nav ul {
   list-style-type: none;
   float: right;
-  padding-bottom: 11px;
-  padding-top: 26px;
+  padding-bottom: 10px;
+  padding-top: 1px;
   color: #ffffff;
   min-width: 600px;
-
+  font-size: 20px;
 }
 
 #main-nav ul li {
@@ -294,17 +295,6 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
    font-weight:bold;
 }
 
-@media screen and (min-width: 1066px){
-  #main-nav {
-    height: 40px;
-  }
-  #main-nav p {
-    font-size: 30px;
-  }
-  #main-nav ul li {
-    font-size: 20px;
-    padding-top: 13px;
-}
 
 /*   <--- budget 2015 --->   */
 
@@ -337,36 +327,50 @@ select {
 
 /*the game*/
 
-ul {
+ul.priority{
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: inline-block;
-    *display: inline;
     zoom: 1;
 }
 
+/*
+.ranking {
+ position: relative;
+}*/
+
+
+/*.ranking li {
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff  !important;
+  font-size: 25px;
+  padding: 10px 20px;
+  border: 2px solid #c1272d ;
+  background: #c1272d ;
+  margin:24px;
+  margin-left:100px;
+  border-radius: 6px;
+}
+*/
 
 .priority {
   position: relative;
   width:70%;
   margin-left: 100px;
-<<<<<<< HEAD
-  /*border-style: dashed;
-  border-color: rgb(178,178,178);
+/*  border-style: dashed;
+*/  /*border-color: rgb(178,178,178);
   padding: 20px;
   border-radius: 6px;
-  background-color: #ffffff;*/
+*/ /* background-color: #ffffff;*/
 
-=======
->>>>>>> 4905901d4498c4a1b829ca828392435aa52540ca
 }
-
 .priority li {
   font-family: 'Roboto Slab', serif;
   font-size: 15px;
   color: #333333;
   font-weight: 300;
+
 }
 
 .card {
@@ -377,23 +381,20 @@ ul {
   margin-top: 5px;
   margin-left: 5px;
   margin-bottom: 5px;
-  border-radius: 6px;
+  border-top-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
   width: 90%;
-  display: inline-block;
+  float: left;
 }
 
 .card:hover{
-  /*background-color: #C1272D;*/
-  background-color: #d0d0d0;
-  /*color:#ffffff;*/
+  background-color: #C1272D;
+  color:#ffffff;
+  cursor:hand;
   cursor:pointer;
 }
 
-.card-placeholder {
-    background: #999;
-    border-radius: 6px;
-    border: 2px dashed #757575;
-}
 .number {
   background-color: #C1272D;
   color:#ffffff;
@@ -408,9 +409,9 @@ ul {
 
 .arrow {
   width: 4%;
-  display:inline-block;
+  float: right;
   margin-top: 0.7%;
-  margin-right: 0;
+  margin-right: 3.5%;
   background-color: #C1272D;
   color:#ffffff;
   border-color: #C1272D;
@@ -477,8 +478,9 @@ ul {
   height: 40%;
 }
 
+<<<<<<< HEAD
 #lineChart{
-  margin-left: 0px;
+  margin-left: 100px;
 }
 
 #scatterPlot{
@@ -489,11 +491,22 @@ ul {
 #pie {
   margin-left: 250px;
 }
-
+=======
 .scatterplot {
   margin-left: 350px;
 
 }
+
+#lineChart, #scatterPlot, #pie {
+/*  margin-left: 0px;
+*/}
+
+>>>>>>> bf7d30b1ad387a386fbd6f64c76c310781422a67
+/*#lineChart, #scatterPlot, #pie {
+  margin-left: 350px;
+}
+*/
+
 .label, .tick text{
   font-size: 15px;
   font-weight:lighter;
@@ -591,12 +604,13 @@ border-radius: 6px;
   cursor: hand;
   position: absolute;
   border-style: solid;
-  border-color: #7E6652;
+  border-color: #564332;
   border-width:1px;
   padding-left: 0;
   padding-right: 0;
+  border-color:black;
   padding: 7px 1px;
-  width: 100px;
+  width: 115px;
   height: 15px;
   left: 200px;
   z-index: 998;
@@ -629,16 +643,10 @@ border-radius: 6px;
     list-style-type: none;
     font-size: 15px;
     border-left: solid;
-    border-color: #7E6652;
+    border-color: #564332;
     padding: 7px 8px;
     border-width: 1px;
     text-align:center;
-}
-
-.scatter-steps ul .active-step {
-  background-color: #C1272D;
-  color: white;
-  font-weight:bold;
 }
 
 .scatter-steps ul #step1 {
@@ -670,6 +678,30 @@ border-radius: 6px;
   transition:opacity 0.5s linear;
 }
 
+
+@media screen and (max-width: 1160px){
+  #main-nav {
+    height: 40px;
+  }
+  #main-nav p {
+    font-size: 30px;
+    margin-top:  2px;
+
+  }
+  #main-nav ul {
+    font-size: 15px;
+    margin-top: 16px;
+  }
+
+  #main-nav ul li::after { 
+    content: "";
+  }
+}
+
+@media screen and (max-width: 890px){
+   #main-nav ul{
+    display: none;
+   } 
 
 
 
