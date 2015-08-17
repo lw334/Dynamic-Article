@@ -255,7 +255,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   list-style-type: none;
   float: right;
   padding-bottom: 11px;
-  padding-top: 26px;
+  padding-top: 10px;
   color: #ffffff;
   min-width: 600px;
 
@@ -351,15 +351,6 @@ ul {
   position: relative;
   width:70%;
   margin-left: 100px;
-<<<<<<< HEAD
-  /*border-style: dashed;
-  border-color: rgb(178,178,178);
-  padding: 20px;
-  border-radius: 6px;
-  background-color: #ffffff;*/
-
-=======
->>>>>>> 4905901d4498c4a1b829ca828392435aa52540ca
 }
 
 .priority li {
