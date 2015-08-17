@@ -68,33 +68,33 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
 
     //crudly drawing up legend
   svg.append("text")
-     .attr("x", 0)
+     .attr("x", 5)
      .attr("y", height-410)
      .attr("class","legend")
      .text("Your School");
   svg.append("text")
-     .attr("x", 0)
+     .attr("x", 5)
      .attr("y", height-380)
      .attr("class","legend")
      .text("Similar School");
   svg.append("text")
-     .attr("x", 0)
+     .attr("x", 5)
      .attr("y", height-350)
      .attr("class","legend")
      .text("District School");
   svg.append("text")
-     .attr("x",0)
+     .attr("x",5)
      .attr("y", height-320)
      .attr("class","legend")
      .text("Charter School");
   svg.append('rect')
-    .attr("x",110)
+    .attr("x",115)
     .attr("y",height-360)
     .attr("width",10)
     .attr("height",10)
     .style("fill", "#C76062");
   svg.append('rect')
-    .attr("x",110)
+    .attr("x",115)
     .attr("y",height-330)
     .attr("width",10)
     .attr("height",10)
