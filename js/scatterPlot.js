@@ -1,8 +1,8 @@
 function draw_scatter_plot(school,similars,dataset, graphStep){
 
   var margin = {top: 20, right: 20, bottom: 30, left: 80},
-        width = 1000 - margin.left - margin.right,
-        height = 800- margin.top - margin.bottom;
+        width = 900 - margin.left - margin.right,
+        height = 700- margin.top - margin.bottom;
 
   var XScale = d3.scale.linear().domain([-0.6,0.4]).range([0,width]);
       xAxis = d3.svg.axis().scale(XScale).orient("bottom");
@@ -26,7 +26,7 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
   //draw X-axis
   svg.append("g")
       .attr("class", "x_axis")
-      .attr("transform", "translate(0," + (height/2) + ")")
+      .attr("transform", "translate(0," + (height/2+ 35) + ")")
       .call(xAxis)
     .append("text")
       .attr("class", "label")
@@ -38,7 +38,7 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
   //draw Y-axis
   svg.append("g")
       .attr("class", "y_axis")
-      .attr("transform", "translate(" + (width - 410) + "," + "0" + ")")
+      .attr("transform", "translate(" + (width - 320) + "," + "0" + ")")
       .call(yAxis)
     .append("text")
       .attr("class", "label")
@@ -70,24 +70,24 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
 
   //crudly drawing up legend
   svg.append("text")
-   .attr("x", width-50)
-   .attr("y", height-450)
+   .attr("x", 0)
+   .attr("y", height-350)
    .attr("class","legend")
    .text("District School");
 svg.append("text")
-   .attr("x",width-50)
-   .attr("y", height-430)
+   .attr("x",0)
+   .attr("y", height-320)
    .attr("class","legend")
    .text("Charter School");
 svg.append('rect')
-  .attr("x",width-70)
-  .attr("y",height-460)
+  .attr("x",110)
+  .attr("y",height-360)
   .attr("width",10)
   .attr("height",10)
   .style("fill", "#C76062");
 svg.append('rect')
-  .attr("x",width-70)
-  .attr("y",height-440)
+  .attr("x",110)
+  .attr("y",height-330)
   .attr("width",10)
   .attr("height",10)
   .style("fill", "#48BB42");
@@ -192,19 +192,19 @@ svg.append('rect')
    svg.append('rect')
     .attr("class","rect-graph")
     .attr("id","rect-step3")
-    .attr("x",40)
-    .attr("y",0)
-    .attr("width",450)
-    .attr("height",750)
+    .attr("x",180)
+    .attr("y",10)
+    .attr("width",300)
+    .attr("height",600)
     .style("color","gray");
 
   svg.append('rect')
      .attr("class","rect-graph")
      .attr("id","rect-step4")
      .attr("x",40)
-     .attr("y",375)
+     .attr("y",360)
      .attr("width",800)
-     .attr("height",350)
+     .attr("height",250)
      .style("color","gray");
 
 

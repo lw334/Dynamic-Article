@@ -40,57 +40,7 @@ h3 {
 }
 
 
-.budget-2015{
-    min-width: 200px;
-    margin-left: 60%;
-    margin-left: 350px;
-    margin-right: 200px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 20px;
-    font-weight: 300;
-}
-
-.budget_2015_analysis{
-    min-width: 200px;
-    margin-left: 60%;
-    margin-left: 350px;
-    margin-right: 200px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 20px;
-    font-weight: 300;
-} 
-
-.budget-2016 {
-    min-width: 200px;
-    margin-left: 60%;
-    margin-left: 350px;
-    margin-right: 200px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 20px;
-    font-weight: 300;
-}
-
-.capital-budget {
-    min-width: 200px;
-    margin-left: 60%;
-    margin-left: 350px;
-    margin-right: 200px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 20px;
-    font-weight: 300;
-}
-
-.CTU {
-    min-width: 200px;
-    margin-left: 60%;
-    margin-left: 350px;
-    margin-right: 200px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 20px;
-    font-weight: 300;
-}    
-
-.history{
+.budget-2015, .budget_2015_analysis, .budget-2016, .capital-budget, .CTU, .history, .methodology, .contact-info{
     min-width: 200px;
     margin-left: 60%;
     margin-left: 350px;
@@ -524,10 +474,18 @@ ul {
   height: 40%;
 }
 
-#lineChart, #scatterPlot, #pie {
-  margin-left: 0px;
+#lineChart{
+  margin-left: 100px;
 }
 
+#scatterPlot{
+  margin-left:200px;
+  margin-top:100px;
+}
+
+#pie {
+  margin-left: 250px;
+}
 /*#lineChart, #scatterPlot, #pie {
   margin-left: 350px;
 }
@@ -634,11 +592,12 @@ visibility: hidden;
   padding: 7px 1px;
   width: 115px;
   height: 15px;
-  margin-left: 700px;
+  left: 200px;
   z-index: 998;
   -webkit-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
   -moz-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
   box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
+  background-color: #f2f2f2;
 }
 
 .text-blocks-scatter {
@@ -652,7 +611,9 @@ visibility: hidden;
   height: 175px;
   position: absolute;
   z-index: 998;
-  left: 950px;
+  left: 200px;
+  margin-top:30px;
+  background-color:#f2f2f2;
 }
 
 .scatter-steps ul li{
@@ -696,4 +657,6 @@ visibility: hidden;
   opacity:0.1;
   transition:opacity 0.5s linear;
 }
+
+
 
