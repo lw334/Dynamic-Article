@@ -75,6 +75,11 @@ h3 {
     line-height: 1.5em;
   }
 
+.bio {
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
 
 /*   <--- main page --->  */
 .main-image {
@@ -259,7 +264,6 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 #main-nav ul li {
   display: inline;
   font-family: 'Roboto', sans-serif;
-
 }
 
 #main-nav ul li a {
@@ -290,6 +294,17 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
    font-weight:bold;
 }
 
+@media screen and (min-width: 1066px){
+  #main-nav {
+    height: 40px;
+  }
+  #main-nav p {
+    font-size: 30px;
+  }
+  #main-nav ul li {
+    font-size: 20px;
+    padding-top: 13px;
+}
 
 /*   <--- budget 2015 --->   */
 
