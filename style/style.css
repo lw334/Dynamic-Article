@@ -228,7 +228,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
 #main-nav {
     position: static;
-  background-color:#c1272d;
+    background-color:#c1272d;
     width:100%;
     height:50px;
     z-index: 999;
@@ -256,7 +256,6 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   list-style-type: none;
   float: right;
   padding-bottom: 11px;
-  padding-top: 10px;
   color: #ffffff;
   min-width: 600px;
   font-size: 20px;
@@ -454,6 +453,10 @@ ul.priority{
   height: 40%;
 }
 
+.scatterPlot{
+  margin-left:100px;
+}
+
 #explain-pie {
   width:300px;
 }
@@ -463,7 +466,7 @@ ul.priority{
 }
 
 #lineChart{
-  margin-left: 100px;
+  margin-left: 0px;
 }
 
 #scatterPlot{
@@ -579,14 +582,15 @@ border-radius: 6px;
   padding-right: 0;
   border-color:black;
   padding: 7px 1px;
-  width: 115px;
+  width: 99px;
   height: 15px;
-  left: 200px;
+  left: 350px;
   z-index: 998;
   -webkit-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
   -moz-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
   box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
   background-color: #f2f2f2;
+  margin-top:0px;
 }
 
 .text-blocks-scatter {
@@ -600,7 +604,7 @@ border-radius: 6px;
   height: 175px;
   position: absolute;
   z-index: 998;
-  left: 200px;
+  left: 350px;
   margin-top:30px;
   background-color:#f2f2f2;
 }
@@ -647,8 +651,14 @@ border-radius: 6px;
   transition:opacity 0.5s linear;
 }
 
+.active-step {
+  background-color: #c1272d;
+  color: white;
+  font-weight: bold !important;
+}
 
-@media screen and (max-width: 1160px){
+
+@media screen and (max-width: 1240px){
   #main-nav {
     height: 40px;
   }
@@ -667,7 +677,7 @@ border-radius: 6px;
   }
 }
 
-@media screen and (max-width: 890px){
+@media screen and (max-width: 945px){
    #main-nav ul{
     display: none;
    } 
