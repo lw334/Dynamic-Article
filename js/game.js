@@ -1,10 +1,13 @@
 $ = jQuery;
 $(document).ready(function(){
   function updateRankings(){
+    console.log("updateRankings");
    var counter = 0;
-   $(".sortable").each(function(index){
+   $(".priority li").each(function(index){
+     console.log(this);
       $(this).attr('id', counter);
-      $(this).children(".number").html(counter+1);
+      var card = $(this).children(".card");
+      $(card).children(".number").html(counter+1);
       counter++;
    });
   }
@@ -14,6 +17,7 @@ $(document).ready(function(){
     forcePlaceholderSize: true,
     update: function(event){
       updateRankings();
+      console.log("updated");
     }
   });
   // disables text selection w/in elements for easier dragging
