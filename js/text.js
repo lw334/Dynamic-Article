@@ -77,14 +77,14 @@ function update_text(school){
     pushText('custom-service-level', comparison_word(school['2015Contract%'], school['AvgSpending'][CONTRACT], "the same level of", "better", "worse"));
 
     //comparison
-    pushText('custom-service-exp', comparison_word(school['2015Contract%'], school['AvgSpending'][CONTRACT], "similar", "better", "worse"));
+    pushText('custom-service-exp', comparison_word(school['2015Contract%'], school['AvgSpending'][CONTRACT], "similar", "more", "less"));
 
     pushText('custom-service-training', comparison_word(school['2015Contract%'], school['AvgSpending'][CONTRACT], "similar amount of", "better", "worse"));
 
     pushText('custom-logic-1', logic_word(school['2015Commodities%'], school['AvgSpending'][COMMODITY], "fortunately", "unfortunately"));
     pushText('custom-commodity-exp', comparison_word(school['2015Commodities%'], school['AvgSpending'][COMMODITY], "about the same as the", "more", "less"));
 
-    pushText('custom-logic-2', logic_word(school['2015Equipment%'], school['AvgSpending'][EQUIPMENT], "on the other hand", "what's more, "));
+    pushText('custom-logic-2', logic_word(school['2015Equipment%'], school['AvgSpending'][EQUIPMENT], "on the other hand", "However,"));
 
     pushText('custom-equipment-exp', comparison_word(school['2015Euipment%'], school['AvgSpending'][EQUIPMENT], "similar", "more than", "less than"));
 
@@ -134,7 +134,7 @@ function pushText(id, text) {
 }
 
 function toPercent(num){
-  return (Math.abs(num)*100).toPrecision(2) + "%";
+  return (Math.abs(num)*100).toPrecision(2) + " percent"; //"%";
 }
 
 // customize texts
@@ -158,7 +158,7 @@ function label(spending){
     return 'the money spent to improve school infrastructure including building maintenance and technological resources';
   }
   else if (spending === 'commodity'){
-    return 'the purchase of software licenses, instructional material, library books, pay for electricity and gas';
+    return 'the purchase of software licenses, instructional material, library books, and pay for electricity and gas';
   }
 }
 // return self-defined comparison words
