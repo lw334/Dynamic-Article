@@ -54,6 +54,15 @@ function init_autocomplete() {
       select: function( event, ui ) {
         var school_name = event.target.value;
         console.log("select handler user selected " + school_name + " aka " + name_to_unit[school_name]);
+        //select_school(school_name);
+          for (i = 0; i < dataset.length; i++){
+            if (ac_data[i] == school_name) {
+              //event.preventDefault();
+              //select_school(school_name);
+              console.log("SCROLL");
+              $('html, body').animate({scrollTop: $('#main-nav').offset().top}, 1000);
+            }
+          }
         select_school(school_name);
       }
     }).autocomplete("widget").addClass("fixed-height");

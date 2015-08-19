@@ -30,8 +30,8 @@ var line = d3.svg.line()
     .y(function(d) { return y(d.budget); });
 
 
-var dropDown = d3.select("#lineFilter").append("select")
-                  .attr("name", "school-list");
+// var dropDown = d3.select("#lineFilter").append("select")
+//                   .attr("name", "school-list");
 
 
 var svg = d3.select("body").select('#lineChart').append("svg")
@@ -117,17 +117,6 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
       .enter().append("g")
       .attr("class", "school");
 
-  schools = schools.sort(function(a, b) { return d3.ascending(a["name"], b["name"]);})
-  //console.log(schools)
-  //options
-  var options = dropDown.selectAll("option")
-             .data([{"name":"Your school and similar schools"}].concat(schools))
-             .enter()
-             .append("option");
-
-  options.text(function (d) { return d["name"]; })
-         .attr("value", function (d) { return d["name"]; });
-
 //draw default lines
   sch.append("path")
       .attr("class", "line")
@@ -170,78 +159,21 @@ var tooltip = d3.select("body").select("#lineChart").append("div")
       .attr("dy", ".35em");
 
 
-  svg.selectAll(".line").on("mouseover", function(d) {
-    
-    console.log("mouseOVER!")
-        tooltip.style("visibility","visible")
-             .transition()
-             .duration(200)
-             .style("opacity", .9);
-        tooltip.html(d["name"])
-             .style("left", (d3.event.pageX + 5) + "px")
-             .style("top", (d3.event.pageY - 28) + "px");
-    })
-  .on("mouseout", function(d) {
-        tooltip.transition()
-             .duration(500)
-             .style("opacity", 0);
-    });
-
-    dropDown.on("change", function() {
-      var selected = d3.event.target.value;
-      var comparison = 0;
-
-
-      svg.selectAll(".line")
-         .style("opacity", 0.1)
-         .style("stroke", "#A6A6A6")
-         .style("stroke-width", "1.5px")
-         .style("fill","none");
-
-      if (selected == 'Your school and similar schools'){
-        selected = school_name;
-        comparison = 1;
-      }
-
-      if (comparison == 1) {
-        svg.selectAll(".line")
-           .filter(function(d) { return (similars.indexOf(d["name"])!= -1); })
-           .style("stroke", "#4879CE")
-           .style("opacity", 1)
-           .style("stroke-width", "3px");
-        svg.selectAll(".line")
-            .filter(function(d) {return selected == d["name"]; })
-            .style("stroke", "#c1272d")
-            .style("opacity", 1)
-           .style("stroke-width", "3px");
-      } else {
-        var line_similar_schools;
-        var line_school;
-        for (var i = 0; i < dataset.length; i++) {
-          if (dataset[i]["Unit Name"] == selected) {
-            line_school = dataset[i];
-            line_similar_schools = line_school["SimilarNames"]; 
-            line_similar_schools = line_similar_schools.trim().split(",");
-            for (var j = 0; j < line_similar_schools.length; j ++){
-              line_similar_schools[j] = line_similar_schools[j].trim().replace("'","").replace("[","").replace("]","").replace("'","");
-            }
-          }
-        }
-        svg.selectAll(".line")
-          .filter(function(d) {
-            return (line_similar_schools.indexOf(d["name"]) != -1);
-          })
-          .transition()
-          .style("stroke", "#4879CE")
-          .style("opacity", 1)
-          .style("stroke-width", "3px");
-      svg.selectAll(".line")
-          .filter(function(d) {return selected == d["name"];})
-          .style("stroke", "#c1272d")
-          .style("opacity", 1)
-          .style("stroke-width", "3px");
-    }    
-  });
+    svg.selectAll(".line").on("mouseover", function(d) { 
+      console.log("mouseOVER!")
+          tooltip.style("visibility","visible")
+               .transition()
+               .duration(200)
+               .style("opacity", .9);
+          tooltip.html(d["name"])
+               .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+      })
+    .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });
 })
 }
 
