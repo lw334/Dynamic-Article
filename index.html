@@ -55,96 +55,111 @@
 
         <p>At this point, you may be wondering what the cash-strapped CPS will decide on the budget of <span id='custom-school-name1' class='custom-school-name'></span>.You might even be asking how your school has been spending money in the past years and what will be different. In order to answer your questions in detail, we want you to take a moment and rank your top priorities when it comes to your children's school.</p> 
 
-        <p class="direction">Please drag the following choices to rank the most important issue on the top. </p>
         <!--  game goes here -->
-        <ul class="priority ui-sortable">
-            <li>
+        <div class="game">
+            <p class="direction" id="direction-game">Please drag the following choices to rank the most important issue on the top. </p>
+
+            <ul class="priority ui-sortable">
+                <li>
+                    <div class="card">
+                        <div class="caret-up"></div>
+                        <span class="number">1</span><span class="budget_categories">COMMODITIES</span>
+                        <div class="description">I want my children to study with updated instructional materials including new books and softwares, and stay in air conditioned classrooms on summer days. </div>
+                        <div class="caret-down"></div>
+
+                    </div>
+                    <!-- <div class="arrow">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-down"></div>
+                    </div> -->
+                </li>
+
+                <li>
+                    <div class="card">
+                        <div class="caret-up"></div>
+                        <span class="number">2</span><span class="budget_categories">CONTRACTS</span>
+                        <div class="description">I want the school to deliver necessary services, such as health care and counseling to my children and professional training to the teachers and staff so I know my children are taken good care of. </div>
+                        <div class="caret-down"></div>
+                    </div>
+                    <!-- div class="arrow">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-down"></div>
+                    </div> -->
+                </li>
+
+                <li>
                 <div class="card">
                     <div class="caret-up"></div>
-                    <span class="number">1</span><span class="budget_categories">COMMODITIES</span>
-                    <div class="description">I want my children to study with updated instructional materials including new books and softwares, and stay in air conditioned classrooms on summer days. </div>
+                    <span class="number">3</span><span class="budget_categories">EQUIPMENT</span>
+                    <div class="description"> I want the school to have well-maintained buildings and equipment such as computers to enhance my child’s learning.</div>
                     <div class="caret-down"></div>
-
-                </div>
-                <!-- <div class="arrow">
-                    <div class="arrow-up"></div>
-                    <div class="arrow-down"></div>
-                </div> -->
-            </li>
-
-            <li>
-                <div class="card">
-                    <span class="number">2</span><span class="budget_categories">CONTRACTS</span>
-                    <div class="description">I want the school to deliver necessary services, such as health care and counseling to my children and professional training to the teachers and staff so I know my children are taken good care of. </div>
-                </div>
-                <!-- div class="arrow">
-                    <div class="arrow-up"></div>
-                    <div class="arrow-down"></div>
-                </div> -->
-            </li>
-
-            <li>
-            <div class="card">
-                <span class="number">3</span><span class="budget_categories">EQUIPMENT</span>
-                <div class="description"> I want the school to have well-maintained buildings and equipment such as computers to enhance my child’s learning.</div>
-            </div>
-                <!-- <div class="arrow">
-                    <div class="arrow-up"></div>
-                    <div class="arrow-down"></div>
-                </div> -->
-            </li>
-
-            <li>
-
-                <div class="card">
-                    <span class="number">4</span><span class="budget_categories">SALARIES</span>
-                    <div class="description">I want my children to receive individual attention from teachers and staff so they can benefit from personalized advising and be better prepared for colleges.</div>
                 </div>
                     <!-- <div class="arrow">
                         <div class="arrow-up"></div>
                         <div class="arrow-down"></div>
                     </div> -->
-            </li>
+                </li>
 
-            <li>
-            <div class="card">
-                <span class="number">5</span><span class="budget_categories">BENEFITS</span>
-                <div class="description">I want my children to study with teachers who have access to social welfare benefits and are likely to remain in school and understand my children well over the years.</div>
-            </div>
-                <!-- <div class="arrow">
-                    <div class="arrow-up"></div>
-                    <div class="arrow-down"></div>
-                </div> -->
-            </li>
+                <li>
 
-            <li>
-            <div class="card">
-                <span class="number">6</span><span class="budget_categories">TRANSPORTATION</span>
-                <div class="description">I want to make sure that my children arrive at school and return home safely.</div>
-            </div>
-                <!-- <div class="arrow">
-                    <div class="arrow-up"></div>
-                    <div class="arrow-down"></div>
-                </div> -->
-            </li>
+                    <div class="card">
+                        <div class="caret-up"></div>
+                        <span class="number">4</span><span class="budget_categories">SALARIES</span>
+                        <div class="description">I want my children to receive individual attention from teachers and staff so they can benefit from personalized advising and be better prepared for colleges.</div>
+                        <div class="caret-down"></div>
+                    </div>
+                        <!-- <div class="arrow">
+                            <div class="arrow-up"></div>
+                            <div class="arrow-down"></div>
+                        </div> -->
+                </li>
 
-            <li>
-            <div class="card">
-                <span class="number">7</span><span class="budget_categories">CONTIGENCIES</span>
-                <div class="description">I want the school to have the resources to solve emergencies that might occur, such as the exacerbation of medical conditions and accidental/intentional injuries.</div>
-            </div>
-                <!-- <div class="arrow">
-                    <div class="arrow-up"></div>
-                    <div class="arrow-down"></div>
-                </div> -->
-            </li>
-        </ul>
+                <li>
+                <div class="card">
+                    <div class="caret-up"></div>
+                    <span class="number">5</span><span class="budget_categories">BENEFITS</span>
+                    <div class="description">I want my children to study with teachers who have access to social welfare benefits and are likely to remain in school and understand my children well over the years.</div>
+                    <div class="caret-down"></div>
+                </div>
+                    <!-- <div class="arrow">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-down"></div>
+                    </div> -->
+                </li>
 
-        <button id='rank'>I think I got it!</button>
+                <li>
+                <div class="card">
+                    <div class="caret-up"></div>
+                    <span class="number">6</span><span class="budget_categories">TRANSPORTATION</span>
+                    <div class="description">I want to make sure that my children arrive at school and return home safely.</div>
+                    <div class="caret-down"></div>
+                </div>
+                    <!-- <div class="arrow">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-down"></div>
+                    </div> -->
+                </li>
 
-        <p><span id="understanding"></span></p>
+                <li>
+                <div class="card">
+                <div class="caret-up"></div>
+                    <span class="number">7</span><span class="budget_categories">CONTIGENCIES</span>
+                    <div class="description">I want the school to have the resources to solve emergencies that might occur, such as the exacerbation of medical conditions and accidental/intentional injuries.</div>
+                    <div class="caret-down"></div>
+                </div>
+                    <!-- <div class="arrow">
+                        <div class="arrow-up"></div>
+                        <div class="arrow-down"></div>
+                    </div> -->
+                </li>
+            </ul>
+            <button id='rank'>I think I got it!</button>
+        
+        </div>
 
-        <p>Overall, in the past three years, the budget of <span id='custom-school-name2' class='custom-school-name'></span> has been <span id = 'custom-consistency'></span>. This situation is <span id='custom-consistency-comparison'></span> what is happening with schools that serve the same grades and students with similar socioeconomic demographics. (Check our <a href='#section5'>methodology</a> for more details)</p>
+            <p><span id="understanding"></span></p>
+
+            <p>Overall, in the past three years, the budget of <span id='custom-school-name2' class='custom-school-name'></span> has been <span id = 'custom-consistency'></span>. This situation is <span id='custom-consistency-comparison'></span> what is happening with schools that serve the same grades and students with similar socioeconomic demographics. (Check our <a href='#section5'>methodology</a> for more details)</p>
 </div>
 
 
@@ -163,7 +178,7 @@
         <p>For your school, the third area that received more investment was <span id='custom-third'></span>, a label used to determine <span id='custom-usage'></span>. If you want to know in detail about <span id='custom-school-name4' class='custom-school-name'></span>'s budget and check how close your answer is to what was adopted by the school last year, the graph below is the most current breakdown of costs of your kid's school, excluding salary and benefits.</p>
 
         </br>
-        <div id = "pie"></div>
+        <div id="explain-pie"><span id="highlight-salary-benefits"></span>of your school budget was spent on salaries and benefits, <strong>excluding</strong> those two types of expenditures, this is your school's most current breakdown:</div><div id = "pie"></div>
         </br>
 
         <p>These large numbers are difficult to understand, so let's help you put them in perspective.</p>
@@ -331,7 +346,7 @@
 
         <p id="person"> <b>Lingwei Cheng</b> is a graduate student at the University of Chicago Harris School of Public Policy, where she studies Computational Analysis and Public Policy. Lingwei is from Chongqing, China, the largest city in the world. Yet, she is interested in rural development and wishes one day to use technology and innovation to improve the livelihood of the disadvantaged and to empower citizens. During the summer, she’s part of an NGO of amature hikers that hikes to collect information on children in remote mountainous regions in China. She has interned as a reporter for several city publications and as a web editor at Xinhua News Agency. She’s currently the web editor for Chicago Policy Reviews. You can contact her at @Lingweic or lingweic@uchicago.edu </p>
 
-        <p id="person"> <b>Patrícia Gomes</b> is an education reporter who graduated last June in Media Strategy and Leadership at Medill School of Journalism, Northwestern University. She has been working as a professional journalist since 2008 in media outlets such as Agence France Presse, Folha de S.Paulo and Porvir. Paty is from Brazil and is passionate about innovations, education, and the journalism itself. You can contact her at @Paty_Gomes_ or patriciagomes@u.northwestern.edu.</p>
+        <p id="person"> <b>Patrícia Gomes</b> is an education reporter who graduated last June in Media Strategy and Leadership at Medill School of Journalism, Northwestern University. She has been working as a professional journalist since 2008 in media outlets such as Agence France Presse, Folha de S.Paulo and Porvir. Paty is from Brazil and is passionate about innovation, education, and journalism itself. You can contact her at @Paty_Gomes_ or patriciagomes@u.northwestern.edu.</p>
 </div>
     
   
