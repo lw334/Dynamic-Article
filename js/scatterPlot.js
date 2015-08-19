@@ -218,23 +218,24 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
      .attr("height",150)
      .attr("transform","rotate(330, 220, 80)")
      .style("color","gray");
+     
+  svg.append('rect')
+     .attr("class","rect-graph")
+     .attr("id","rect-step3")
+     .attr("x",40)
+     .attr("y",360)
+     .attr("width",800)
+     .attr("height",250)
+     .style("color","gray");
 
    svg.append('rect')
     .attr("class","rect-graph")
-    .attr("id","rect-step3")
+    .attr("id","rect-step4")
     .attr("x",180)
     .attr("y",10)
     .attr("width",300)
     .attr("height",600)
     .style("color","gray");
 
-  svg.append('rect')
-     .attr("class","rect-graph")
-     .attr("id","rect-step4")
-     .attr("x",40)
-     .attr("y",360)
-     .attr("width",800)
-     .attr("height",250)
-     .style("color","gray");
 }
 
