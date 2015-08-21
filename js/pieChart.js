@@ -1,5 +1,7 @@
 
-function draw_pie_chart(school_name) {
+function draw_pie_chart(school_name, total) {
+  var budget15 = total;
+
   var width = 480,
       height = 250,
       radius = Math.min(width, height) / 2;
@@ -35,7 +37,7 @@ function draw_pie_chart(school_name) {
     g.append("path")
         .attr("d", arc)
         .style("fill", function(d) { 
-          if (d.value != 0) {
+          if (d.value > 0.0001) {
             return color(d.data["2015Expenditures"]); 
           }
         })
@@ -56,9 +58,31 @@ function draw_pie_chart(school_name) {
         .style("font-size", "12px") 
         .style("fill","white")
         .text(function(d) { 
-          if (d.value != 0) {
+          if (d.value > 0.0001) {
             return d.data["2015Expenditures"]; 
           }
         });
+
+  //prepare tooltips
+  var tooltip_pie = d3.select("body").select("#pie").append("div")
+      .attr("class", "tooltip_pie");
+
+    svg.selectAll(".arc").on("mouseover", function(d) { 
+      console.log("mouseOVER!")
+          tooltip_pie.style("visibility","visible")
+               .transition()
+               .duration(200)
+               .style("opacity", .9);
+          tooltip_pie.html(function(){
+            return d.data["2015Expenditures"] + " " + currencyFormat(parseInt(d.value * budget15));
+            })
+               .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+      })
+    .on("mouseout", function(d) {
+          tooltip_pie.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });
   });
 }

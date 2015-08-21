@@ -49,6 +49,9 @@ h3 {
     font-weight: 300;
 }
 
+.custom-formal-school-name {
+  font-weight:bolder;
+}
 .custom-school-name {
   font-weight:bolder;
 }
@@ -301,7 +304,9 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     margin-right: 300px;
     color: #333333;
 }
-
+.arc:hover{
+  opacity:0.8;
+}
 /*selection bars*/
 
 
@@ -443,6 +448,10 @@ ul.priority{
   text-decoration: none;
 }
 
+#charter-description {
+  font-weight: bold;
+}
+
 /*graph styles*/
 .lineGraph .scatterPlot {
   width: 80%;
@@ -455,6 +464,9 @@ ul.priority{
 
 #explain-pie {
   width:300px;
+}
+#explanation-district-2 {
+  font-weight:bold;
 }
 
 #highlight-salary-benefits {
@@ -511,6 +523,24 @@ background: #C1272D;
 border-radius: 6px;
 padding-left: 13px;
 padding-top: 5px;
+font-size:12px;
+opacity: 0.95;
+visibility: hidden;
+border-radius: 6px;
+}
+
+.tooltip_pie {
+position: absolute;
+width: 90px;
+height: 40px;
+pointer-events: none;
+font-family: 'Roboto Slab', serif;
+text-align: center;
+text-transform: uppercase;
+color: #FFFFFF;
+background: #C1272D;
+border-radius: 6px;
+padding-top: 8px;
 font-size:12px;
 opacity: 0.95;
 visibility: hidden;
