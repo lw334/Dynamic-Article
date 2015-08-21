@@ -545,7 +545,6 @@ ul.priority{
   height: 40%;
 }
 
-<<<<<<< HEAD
 .scatterPlot{
   margin-left:100px;
 }
@@ -561,8 +560,6 @@ ul.priority{
   font-size:35px;
 }
 
-=======
->>>>>>> 1b48a989f29dff607e12bf9d26a77319689556de
 #lineChart{
   margin-left: 100px;
 }
@@ -701,7 +698,7 @@ border-radius: 6px;
   padding-right: 0;
   border-color:black;
   padding: 7px 1px;
-  width: 115px;
+  width: 100px;
   height: 15px;
   left: 200px;
   z-index: 998;
@@ -709,9 +706,12 @@ border-radius: 6px;
   -moz-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
   box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
   background-color: #f2f2f2;
+  margin-top: 0px;
+  border-radius: 3px;
 }
 
 .text-blocks-scatter {
+  border-radius: 3px;
   border-style: solid;
   border-width: 1px;
   -webkit-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
@@ -760,6 +760,14 @@ border-radius: 6px;
 .active-explanation {
   visibility: visible !important;
   opacity:1;
+  transition:opacity 0.5s linear;
+}
+
+
+.active-step {
+  background-color: #c1272d;
+  color:#ffffff;
+  font-weight: bold;
   transition:opacity 0.5s linear;
 }
 

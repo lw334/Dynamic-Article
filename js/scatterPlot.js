@@ -87,18 +87,18 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
      .attr("y", height-320)
      .attr("class","legend")
      .text("Charter School");
-  svg.append('rect')
-    .attr("x",115)
-    .attr("y",height-360)
-    .attr("width",10)
-    .attr("height",10)
-    .style("fill", "#C76062");
-  svg.append('rect')
-    .attr("x",115)
-    .attr("y",height-330)
-    .attr("width",10)
-    .attr("height",10)
-    .style("fill", "#48BB42");
+     //school types
+  svg.append('circle')
+    .attr("cx",120)
+    .attr("cy",height-355)
+    .attr("r", 4)
+    .style("fill", "#FFAE15");
+  svg.append('circle')
+    .attr("cx",120)
+    .attr("cy",height-325)
+    .attr("r",4)
+    .style("fill", "#7243A2");
+    //your and similar schools
   svg.append('circle')
     .attr("r", 10)
     .attr("cx", 120)
@@ -168,10 +168,10 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
     })
     .style("fill", function(d){
       if (d["Governance"] == "District"){
-        return "#C76062";
+        return "#FFAE15";
       }
       else if (d["Governance"] == "Charter" || d["Governance"] == "Contract"){
-       return "#48BB42";
+       return "#7243A2";
       }
     })
     .transition(5000)
@@ -218,7 +218,7 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
      .attr("height",150)
      .attr("transform","rotate(330, 220, 80)")
      .style("color","gray");
-     
+
   svg.append('rect')
      .attr("class","rect-graph")
      .attr("id","rect-step3")
