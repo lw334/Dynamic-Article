@@ -159,7 +159,7 @@ var tooltip = d3.select("body").select("#lineChart").append("div")
       .attr("dy", ".35em");
 
 
-    svg.selectAll(".line").on("mouseover", function(d) { 
+  svg.selectAll(".line").on("mouseover", function(d) { 
       console.log("mouseOVER!")
           tooltip.style("visibility","visible")
                .transition()

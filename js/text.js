@@ -9,6 +9,7 @@ var dataset;
 var name_to_unit = {}
 var school;
 var similars;
+var total_budget;
 
 //Autocomplete bar
 d3.csv("./js/data/unitList.csv",function (csv) {
@@ -26,8 +27,8 @@ function select_school(school_name) {
     for (i = 0; i < dataset.length; i++){
       if (dataset[i]['Unit Name'] == school_name) {
         school = dataset[i];
-        simi = school["SimilarNames"];
-        similars = simi.trim().split(",");
+        total_budget = school["FY2015ApprovedBudget"];
+        similars = school["SimilarNames"].trim().split(",");
         for (j = 0; j < similars.length; j ++){
         similars[j] = similars[j].trim().replace("'","").replace("[","").replace("]","").replace("'","");
         }
@@ -35,7 +36,7 @@ function select_school(school_name) {
     }   
     update_text(school); 
     draw_line_chart(school_name,similars,dataset);
-    draw_pie_chart(school_name);
+    draw_pie_chart(school_name,total_budget);
     draw_scatter_plot(school,similars,dataset);
   });   
 }
@@ -54,11 +55,8 @@ function init_autocomplete() {
       select: function( event, ui ) {
         var school_name = event.target.value;
         console.log("select handler user selected " + school_name + " aka " + name_to_unit[school_name]);
-        //select_school(school_name);
           for (i = 0; i < dataset.length; i++){
             if (ac_data[i] == school_name) {
-              //event.preventDefault();
-              //select_school(school_name);
               console.log("SCROLL");
               $('html, body').animate({scrollTop: $('#main-nav').offset().top}, 1000);
             }
@@ -71,32 +69,32 @@ function init_autocomplete() {
 }
 
 function update_text(school){
-    $('.custom-school-name').text(school['Unit Name']);
+    reverse_text();
+    $('.custom-formal-school-name').text(school['Unit Name']);
+    $('.custom-school-name').text(school['School Name']);
     $('#custom-consistency').text(school['Consistency']);
     $('#custom-consistency-comparison').text(consistency_comparison_result(school));
     $('#custom-total-budget').text(currencyFormat(school['FY2015ApprovedBudget']));
+    //set customize paragraph
+    charter(school);
+    charter_pie_explanation(school);
     $('#custom-salary').text(toPercent(school['2015Salary%']));
     $('#custom-benefits').text(toPercent(school['2015Benefit%']));
     $('#custom-third').text(school['LargestSpending']);
     $('#custom-usage').text(label(school['LargestSpending']));
     $('#custom-service-level').text(comparison_word(school['2015Contract%'], school['AvgSpending'][CONTRACT], "the same level of", "better", "worse"));
-    $('#highlight-salary-benefits').text(toPercent(parseFloat(school['2015Benefit%']) + parseFloat(school["2015Salary%"])) + " ");
     //comparison
     $('#custom-service-exp').text(comparison_word(parseFloat(school['2015Contract%']), parseFloat(school['AvgSpending'][CONTRACT]), "similar", "more", "less"));
-
     $('#custom-service-training').text(comparison_word(parseFloat(school['2015Contract%']), parseFloat(school['AvgSpending'][CONTRACT]), "similar amount of", "better", "worse"));
-
     $('#custom-logic-1').text(logic_word(parseFloat(school['2015Commodities%']), parseFloat(school['AvgSpending'][COMMODITY]), "fortunately", "unfortunately"));
     $('#custom-commodity-exp', comparison_word(parseFloat(school['2015Commodities%']), parseFloat(school['AvgSpending'][COMMODITY]), "about the same as the", "more", "less"));
-
     $('#custom-logic-2').text(logic_word(parseFloat(school['2015Equipment%']), parseFloat(school['AvgSpending'][EQUIPMENT]), "on the other hand", "However,"));
-
     $('#custom-equipment-exp').text(comparison_word(parseFloat(school['2015Euipment%']), parseFloat(school['AvgSpending'][EQUIPMENT]), "similar", "more than", "less than"));
-
     $('#custom-transporation-exp').text(comparison_word(parseFloat(school['2015Transportation%']), parseFloat(school['AvgSpending'][TRANSPORTATION]), "similar", "more than", "less than"));
-
+    $('#spending-contingency').text(currencyFormat(parseFloat(school['FY2015ApprovedContingency'])));
+    $('#pupil-spending-contingency').text(currencyFormat(parseFloat(school['FY2015ApprovedContingency'])/parseFloat(school['FY 15 Enrollment'])));
     //2016
-    $('#custom-budget-2016').text(currencyFormat(school['FY 16 Budget    (Core and Supplemental)']));
+    $('#custom-budget-2016').text(currencyFormat(parseFloat(school['FY 16 Budget    (Core and Supplemental)'])));
     $('#custom-2016-total-percent-change').text(toPercent(school['% Change from FY 15']) + " " + logic_word(school['% Change from FY 15'], 0, "more", "less"));
     $('#custom-2016-pupil').text(currencyFormat(Math.abs(school['Change in Per Pupil Enrollment Funding'])) + " " + logic_word(school['Change in Per Pupil Enrollment Funding'], 0, "more", "less"));
 }
@@ -134,8 +132,45 @@ function currencyFormat(number)
 }
   //helper functions
 
+function decapitalize(s) {
+    return s.charAt(0).toLowerCase() + s.slice(1);
+}
+
 function toPercent(num){
-  return (Math.abs(num)*100).toPrecision(2) + " percent"; //"%";
+  return (Math.abs(num)*100).toPrecision(2) + " percent"; 
+}
+
+function charter(school){ 
+  console.log("Called!!!!!");
+  if (school["Governance"] == 'Charter' || school["Governance"] == "Contract") {
+    $('#charter-description').text("However, because " + school["School Name"] + " is a " + decapitalize(String(school['Governance'])) + " school, "
+      + "most of the expenditures including salaries, benefits, and commodities are combined into spending on contract. " + 
+      "Therefore, we can only try our best to estimate the spendings based on CPS school average.");
+  }
+}
+
+
+function charter_pie_explanation(school){ 
+  if (school["Governance"] == 'Charter' || school["Governance"] == "Contract") {
+    $('#explanation-charter-1').text("Excluding ");
+    $('#explanation-charter-2').text("salaries and benefits which are contained in spending on contract this is your school's most current breakdown: ");
+  }
+  else {
+    $('#highlight-salary-benefits').text(toPercent(parseFloat(school['2015Benefit%'])+ parseFloat(school["2015Salary%"]))+ " ");
+    $('#explanation-district-1').text(" of your school budget was spent on salaries and benefits,");
+    $('#explanation-district-2').text(" excluding");
+    $('#explanation-district-3').text(" " + "those two types of expenditures this is your school's most current breakdown: ");
+  }
+}
+
+function reverse_text(){
+  $('#highlight-salary-benefits').text("");
+  $('#charter-description').text("");
+  $('#explanation-charter-1').text("");
+  $('#explanation-charter-2').text("");
+  $('#explanation-district-1').text("");
+  $('#explanation-district-2').text("");
+  $('#explanation-district-3').text("");
 }
 
 // customize texts
