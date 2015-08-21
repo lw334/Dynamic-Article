@@ -9,6 +9,7 @@ body {
 
 /*   <--- typography --->  */
 
+
 h1 {
     font-size: 70px;
     position: relative;
@@ -177,7 +178,6 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   /*background-clip: padding-box;*/
   /**border-right-width: 0.5px;*/
   /**border-bottom-width: 0.5px;*/
-  border-radius: 6px;
   color: #ffffff;
   width: 400px;
 }
@@ -327,13 +327,45 @@ select {
 
 /*the game*/
 
+.game {
+  background-color: #d3d3d3;
+  box-shadow: inset 0 0 10px #b0adad;
+}
+
+#direction-game{
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px 150px;
+}
+
 ul.priority{
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
+    padding: 0 5%;
     display: inline-block;
     zoom: 1;
+    width: 90%;
+    padding: auto;
 }
+
+/*
+.ranking {
+ position: relative;
+}*/
+
+
+/*.ranking li {
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff  !important;
+  font-size: 25px;
+  padding: 10px 20px;
+  border: 2px solid #c1272d ;
+  background: #c1272d ;
+  margin:24px;
+  margin-left:100px;
+  border-radius: 6px;
+}
+*/
 
 .priority {
   position: relative;
@@ -345,7 +377,7 @@ ul.priority{
   font-size: 15px;
   color: #333333;
   font-weight: 300;
-
+  display: block;
 }
 
 .card {
@@ -357,8 +389,7 @@ ul.priority{
   margin-left: 5px;
   margin-bottom: 5px;
   border-radius: 6px;
-  width: 90%;
-  display: inline-block;
+  display: block;
 }
 
 .card:hover{
@@ -378,12 +409,69 @@ ul.priority{
   border-color: #C1272D;
   font-size: 15px;
   margin: 0px;
+  border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
   padding-left: 10px;
   padding-right: 10px;
 }
 
+.caret-up,
+.caret-down {
+  position: relative;
+  width: 40px;
+  height: 20px;
+}
 
+.caret-up {
+    margin: 10px auto 0 auto;
+}
+
+.caret-down {
+      margin: 0 auto 10px auto;
+}
+
+
+
+.caret-down:before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  border-top: 12px solid #999;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+}
+
+.caret-down:after {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 1px;
+  border-top: 11px solid #fff;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+}
+
+.caret-up:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #999;
+  }
+
+.caret-up:after {
+  content: '';
+  position: absolute;
+  /*top: 25%;*/
+  left: 1px;
+  top: 1px;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-bottom: 11px solid #ffffff;
+  }
+
+/*
 .arrow {
   width: 4%;
   display: inline-block;
@@ -394,19 +482,19 @@ ul.priority{
   border-style: solid;
   border-bottom-right-radius: 6px;
   border-top-right-radius: 6px;
-}
+}*/
 
-.arrow-up {
+/*.arrow-up {
   width: 0; 
   height: 0; 
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
+  border-left: 8px solid black;
+  border-right: 8px solid black;
   border-bottom: 8px solid #ffffff;
   margin-bottom: 10px;
   margin-left: 2px;
-}
+}*/
 
-.arrow-down {
+/*.arrow-down {
   width: 0; 
   height: 0; 
   border-left: 8px solid transparent;
@@ -414,7 +502,7 @@ ul.priority{
   border-top: 8px solid #ffffff;
   margin-left: 2px;
 
-}
+}*/
 
 .budget_categories{
   padding-left: 10px;
@@ -439,8 +527,7 @@ ul.priority{
   padding: 10px 20px;
   text-decoration: none;
   font-family: "Roboto Slab",serif;
-  margin-left: 280px;
-  margin-top: 10px;
+  margin: 10px auto 20px auto;
 }
 
 #rank:hover {
@@ -458,6 +545,7 @@ ul.priority{
   height: 40%;
 }
 
+<<<<<<< HEAD
 .scatterPlot{
   margin-left:100px;
 }
@@ -473,8 +561,10 @@ ul.priority{
   font-size:35px;
 }
 
+=======
+>>>>>>> 1b48a989f29dff607e12bf9d26a77319689556de
 #lineChart{
-  margin-left: 0px;
+  margin-left: 100px;
 }
 
 #scatterPlot{
@@ -484,8 +574,11 @@ ul.priority{
 
 #pie {
   margin-left: 250px;
-  margin-top: -100px;
 }
+/*#lineChart, #scatterPlot, #pie {
+  margin-left: 350px;
+}
+*/
 
 .label, .tick text{
   font-size: 15px;
@@ -608,15 +701,14 @@ border-radius: 6px;
   padding-right: 0;
   border-color:black;
   padding: 7px 1px;
-  width: 99px;
+  width: 115px;
   height: 15px;
-  left: 350px;
+  left: 200px;
   z-index: 998;
   -webkit-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
   -moz-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
   box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
   background-color: #f2f2f2;
-  margin-top:0px;
 }
 
 .text-blocks-scatter {
@@ -630,7 +722,7 @@ border-radius: 6px;
   height: 175px;
   position: absolute;
   z-index: 998;
-  left: 350px;
+  left: 200px;
   margin-top:30px;
   background-color:#f2f2f2;
 }
@@ -677,12 +769,39 @@ border-radius: 6px;
   transition:opacity 0.5s linear;
 }
 
-.active-step {
-  background-color: #c1272d;
-  color: white;
-  font-weight: bold !important;
+.Michelle {
+  background: url("http://i1341.photobucket.com/albums/o744/patygomeslima/Michelle_cortada_zpssodhw9yv.gif");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
 }
 
+.overview {
+  background: url("http://i1341.photobucket.com/albums/o744/patygomeslima/overview_3_zpsbvwmusfv.gif");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
+
+
+.quote {
+}
+
+.teens {
+  background: url("http://i1341.photobucket.com/albums/o744/patygomeslima/Teens_cortada_zps8owasx1w.gif");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
 
 @media screen and (max-width: 1240px){
   #main-nav {
