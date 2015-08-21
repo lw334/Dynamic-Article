@@ -393,7 +393,8 @@ ul.priority{
 }
 
 .card:hover{
-  background-color: #d0d0d0;
+  background-color: #C1272D;
+  color:#ffffff;
   cursor:pointer;
 }
 
