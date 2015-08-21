@@ -113,6 +113,16 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
     .style("stroke-width","2px")
     .style("fill","none")
     .style("stroke", "#4879CE");
+
+  //draw trendline, numbers from analysis
+    svg.append("line")
+      .attr("class", "trendline")
+      .attr("x1", XScale(-61))
+      .attr("y1", YScale(-152))
+      .attr("x2", XScale(116))
+      .attr("y2", YScale(290))
+      .attr("stroke", "black")
+      .attr("stroke-width", 1);
          
   // // add the tooltip area to the webpage
   var tooltip = d3.select("body").select("#scatterPlot").append("div")
