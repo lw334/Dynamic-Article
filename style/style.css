@@ -552,7 +552,8 @@ ul.priority{
 #explain-pie {
   width:300px;
 }
-#explanation-district-2 {
+
+#explanation-district-2, #explanation-charter-1{
   font-weight:bold;
 }
 
