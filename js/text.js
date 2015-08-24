@@ -141,7 +141,7 @@ function toPercent(num){
 }
 
 function charter(school){ 
-  console.log("Called!!!!!");
+  console.log("Charter called!");
   if (school["Governance"] == 'Charter' || school["Governance"] == "Contract") {
     $('#charter-description').text("However, because " + school["School Name"] + " is a " + decapitalize(String(school['Governance'])) + " school, "
       + "most of the expenditures including salaries, benefits, and commodities are combined into spending on contract. " + 
@@ -152,14 +152,15 @@ function charter(school){
 
 function charter_pie_explanation(school){ 
   if (school["Governance"] == 'Charter' || school["Governance"] == "Contract") {
-    $('#explanation-charter-1').text("Excluding ");
-    $('#explanation-charter-2').text("salaries and benefits which are contained in spending on contract this is your school's most current breakdown: ");
+    $('#explanation-charter-1').text("Salaries and benefits which are ");
+    $('#explanation-charter-2').text("contained in spending on contract ");
+    $('#explanation-charter-3').text("this is your school's most current breakdown:")
   }
   else {
     $('#highlight-salary-benefits').text(toPercent(parseFloat(school['2015Benefit%'])+ parseFloat(school["2015Salary%"]))+ " ");
     $('#explanation-district-1').text(" of your school budget was spent on salaries and benefits,");
     $('#explanation-district-2').text(" excluding");
-    $('#explanation-district-3').text(" " + "those two types of expenditures this is your school's most current breakdown: ");
+    $('#explanation-district-3').text(" " + "those two types of expenditures this is your school's most current breakdown:");
   }
 }
 

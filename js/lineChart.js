@@ -42,23 +42,23 @@ var svg = d3.select("body").select('#lineChart').append("svg")
 
 //crudly drawing up the legend
 svg.append("text")
-   .attr("x", width-50)
+   .attr("x", width-30)
    .attr("y", height-450)
    .attr("class","legend")
    .text("your school");
 svg.append("text")
-   .attr("x",width-50)
+   .attr("x",width-30)
    .attr("y", height-430)
    .attr("class","legend")
    .text("similar schools");
 svg.append('rect')
-  .attr("x",width-70)
+  .attr("x",width-50)
   .attr("y",height-460)
   .attr("width",10)
   .attr("height",10)
   .style("fill", "#c1272d");
 svg.append('rect')
-  .attr("x",width-70)
+  .attr("x",width-50)
   .attr("y",height-440)
   .attr("width",10)
   .attr("height",10)

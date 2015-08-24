@@ -484,6 +484,10 @@ ul.priority{
   margin: 10px auto;
 }
 
+#understanding {
+  font-weight:bold;
+}
+
 #rank:hover {
   background: #e1696e;
   text-decoration: none;
@@ -499,6 +503,10 @@ ul.priority{
   height: 40%;
 }
 
+.LineGraph {
+  margin-left:-100px;
+}
+
 .scatterPlot{
   margin-left:100px;
 }
@@ -507,7 +515,7 @@ ul.priority{
   width:300px;
 }
 
-#explanation-district-2, #explanation-charter-1{
+#explanation-district-2, #explanation-charter-2{
   font-weight:bold;
 }
 
@@ -515,12 +523,9 @@ ul.priority{
   font-size:35px;
 }
 
-#lineChart{
-  margin-left: 100px;
-}
 
 #scatterPlot{
-  margin-left:200px;
+  margin-left:100px;
   margin-top:100px;
 }
 
@@ -541,7 +546,14 @@ ul.priority{
   opacity: 0.15;
   stroke-width: 1.5px;
 }
+/*
+.trendline {
+  visibility: hidden;
+  color:blue;
+  stroke-width:2px;
+}
 
+*/
 .legend {
   font-size:15px;
   font-family:'Roboto', sans-serif;
@@ -703,23 +715,22 @@ border-radius: 6px;
   padding:5px 8px;
 }
 
-.rect-graph {
-  visibility: hidden;
-  opacity:0.5;
-}
-
 .active-explanation {
   visibility: visible !important;
   opacity:1;
   transition:opacity 0.5s linear;
 }
 
-
 .active-step {
   background-color: #c1272d;
   color:#ffffff;
   font-weight: bold;
   transition:opacity 0.5s linear;
+}
+
+.graph-exp {
+  visibility: hidden;
+  opacity:0.5;
 }
 
 .active-graph {

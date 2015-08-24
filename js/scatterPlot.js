@@ -116,14 +116,16 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
 
   //draw trendline, numbers from analysis
     svg.append("line")
-      .attr("class", "trendline")
+      .attr("class","graph-exp")
+      .attr("id","graph-step2")
       .attr("x1", XScale(-61))
       .attr("y1", YScale(-152))
       .attr("x2", XScale(116))
       .attr("y2", YScale(290))
-      .attr("stroke", "black")
-      .attr("stroke-width", 1);
-         
+      .attr("stroke", "gray")
+      .attr("stroke-width", 40);
+
+
   // // add the tooltip area to the webpage
   var tooltip = d3.select("body").select("#scatterPlot").append("div")
       .attr("class", "tooltip");
@@ -140,6 +142,14 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
      .data(scatterdata)
      .enter()
      .append("circle")
+     .attr("class", function(d) {
+      if (d["Governance"] == 'District') {
+        return "district-dot";
+      }
+      else if (d["Governance"] == "Charter" || d["Governance"] == "Contract"){
+        return "charter-dot";
+      }
+     })
      .attr("cx",function(d){
         return XScale(+d["% Change from FY 15"]*100);
        })
@@ -219,19 +229,19 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
            .style("opacity", 0);
     });
 
-  svg.append('rect')
-     .attr("class","rect-graph")
-     .attr("id","rect-step2")
-     .attr("x",-400)
-     .attr("y",375)
-     .attr("width",1400)
-     .attr("height",150)
-     .attr("transform","rotate(330, 220, 80)")
-     .style("color","gray");
+  // svg.append('rect')
+  //    .attr("class","graph-exp")
+  //    .attr("id","rect-step2")
+  //    .attr("x",-400)
+  //    .attr("y",375)
+  //    .attr("width",1400)
+  //    .attr("height",150)
+  //    .attr("transform","rotate(330, 220, 80)")
+  //    .style("color","gray");
 
   svg.append('rect')
-     .attr("class","rect-graph")
-     .attr("id","rect-step3")
+     .attr("class","graph-exp")
+     .attr("id","graph-step3")
      .attr("x",40)
      .attr("y",360)
      .attr("width",800)
@@ -239,8 +249,8 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
      .style("color","gray");
 
    svg.append('rect')
-    .attr("class","rect-graph")
-    .attr("id","rect-step4")
+    .attr("class","graph-exp")
+    .attr("id","graph-step4")
     .attr("x",180)
     .attr("y",10)
     .attr("width",300)
