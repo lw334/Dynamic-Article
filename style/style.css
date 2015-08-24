@@ -317,12 +317,22 @@ select {
 .game {
   background-color: #d3d3d3;
   box-shadow: inset 0 0 10px #b0adad;
+  width: 1200px;
+  height: 757px;
+  margin: auto;
+  margin-top: 40px;
 }
 
 #direction-game{
   text-align: center;
   margin: 0 auto;
-  padding: 10px 150px;
+  padding: 10px 150px 0;
+  text-transform: uppercase;
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: #191919;
+
 }
 
 ul.priority{
@@ -334,7 +344,6 @@ ul.priority{
     width: 90%;
     padding: auto;
 }
-
 
 .priority {
   position: relative;
@@ -351,14 +360,14 @@ ul.priority{
 
 .card {
   background-color: #ffffff;
+  width: 75%;
+  margin: 15px auto;
   border-color: #C1272D;
   border-style: dashed;
   border-width: thin;
-  margin-top: 5px;
-  margin-left: 5px;
-  margin-bottom: 5px;
-  border-radius: 6px;
-  display: block;
+/*  border-radius: 6px;
+*/  display: block;
+  position: relative;
 }
 
 .card:hover{
@@ -379,28 +388,36 @@ ul.priority{
   border-color: #C1272D;
   font-size: 15px;
   margin: 0px;
-  border-top-right-radius: 6px;
+/*  border-top: 1px solid white;
+*/  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+/*  border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
-  padding-left: 10px;
+*/  padding-left: 10px;
   padding-right: 10px;
+}
+
+.carrets {
+  float: right;
+  width: 35px;
+  height: 100%;
+  position: relative;
 }
 
 .caret-up,
 .caret-down {
-  position: relative;
+  position: absolute;
   width: 40px;
   height: 20px;
 }
 
 .caret-up {
-    margin: 10px auto 0 auto;
+    top: 10px; 
 }
 
 .caret-down {
-      margin: 0 auto 10px auto;
+    bottom: 10px;
 }
-
-
 
 .caret-down:before {
   content: '';
@@ -444,27 +461,27 @@ ul.priority{
 .budget_categories{
   padding-left: 10px;
   font-weight: bolder;
-  color: #C1272D;
+  color: #191919;
 }
  
  .description {
-  padding-left: 44px;
+  padding-left: 39px;
   padding-bottom: 10px;
   padding-top: 5px;
-  padding-right: 5px;
- }
+  width: 75%; 
+}
 
 
 /*the button*/
 #rank {    
-  border-radius: 6px;
-  color: #FFF;
+/*  border-radius: 6px;
+*/  color: #FFF;
   font-size: 22px;
   background: #C1272D none repeat scroll 0% 0%;
   padding: 10px 20px;
   text-decoration: none;
   font-family: "Roboto Slab",serif;
-  margin: 10px auto 20px auto;
+  margin: 10px auto;
 }
 
 #rank:hover {
