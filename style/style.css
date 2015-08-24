@@ -711,6 +711,8 @@ border-radius: 6px;
   transition:opacity 0.5s linear;
 }
 
+/*Photo Collage*/
+
 .protest-image{
   position: relative;
   width: 1200px;
@@ -751,17 +753,18 @@ border-radius: 6px;
 
 
 .quote {
+    font-family: "Roboto", sans-serif;
     text-transform: uppercase;
+    font-weight: 300;
+    font-size: 20px;
     font-style: italic;
     color: #ffffff;
-    font-size: 45px;
-    width: 60%;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-top: 420px;
     display: block;
-    line-height: 1.5em;
+    line-height: 1.6em;
     bottom: 0;
-    left: 600px;
+    margin-left: 630px;
+    margin-right: 330px;  
 }
 
 .teens {
@@ -778,6 +781,8 @@ border-radius: 6px;
   background-size: cover;
 
 }
+
+/*Media Queries*/
 
 @media screen and (max-width: 1240px){
   #main-nav {
