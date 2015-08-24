@@ -734,6 +734,8 @@ border-radius: 6px;
   background-size: cover;
   top: 0; 
   left: 0;
+  border-right: 10px solid #f2f2f2;
+  z-index: 998;
   }
 
 
@@ -749,6 +751,8 @@ border-radius: 6px;
   background-size: cover;
   top: 0; 
   right: 0;
+  border-bottom: 10px solid #f2f2f2;
+  z-index: 997;
 }
 
 
@@ -779,6 +783,7 @@ border-radius: 6px;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  border-left: 10px solid #f2f2f2;
 
 }
 
