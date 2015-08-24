@@ -486,6 +486,10 @@ ul.priority{
   height: 40%;
 }
 
+.LineGraph {
+  margin-left:-100px;
+}
+
 .scatterPlot{
   margin-left:100px;
 }
@@ -502,12 +506,9 @@ ul.priority{
   font-size:35px;
 }
 
-#lineChart{
-  margin-left: 100px;
-}
 
 #scatterPlot{
-  margin-left:200px;
+  margin-left:100px;
   margin-top:100px;
 }
 
