@@ -40,11 +40,10 @@ h3 {
 }
 
 
-.budget-2015, .budget_2015_analysis, .budget-2016, .capital-budget, .CTU, .history, .methodology, .contact-info{
+.budget-2015, .budget-2015-analysis, .budget-2016, .capital-budget, .CTU, .history, .methodology, .contact-info {
     min-width: 200px;
-    margin-left: 60%;
-    margin-left: 350px;
-    margin-right: 200px;
+    width: 60%;
+    margin: 40px auto;
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
     font-weight: 300;
@@ -377,9 +376,11 @@ ul.priority{
 }
 
 .card-placeholder {
-    background: #999;
-    border-radius: 6px;
-    border: 2px dashed #757575;
+  background:  #f2f2f2;
+  box-shadow: 10px 10px 5px;
+  width: 80%;
+  margin-right: 40%
+
 }
 
 .number {
@@ -398,10 +399,12 @@ ul.priority{
 }
 
 .carrets {
-  float: right;
   width: 35px;
-  height: 100%;
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 5px 0;
 }
 
 .caret-up,
@@ -411,12 +414,8 @@ ul.priority{
   height: 20px;
 }
 
-.caret-up {
-    top: 10px; 
-}
-
 .caret-down {
-    bottom: 10px;
+    bottom: 3px;
 }
 
 .caret-down:before {
@@ -461,7 +460,11 @@ ul.priority{
 .budget_categories{
   padding-left: 10px;
   font-weight: bolder;
-  color: #191919;
+  color: #C1272D;
+}
+
+.budget_categories:hover{
+  color: #ffffff;
 }
  
  .description {
@@ -480,8 +483,11 @@ ul.priority{
   background: #C1272D none repeat scroll 0% 0%;
   padding: 10px 20px;
   text-decoration: none;
-  font-family: "Roboto Slab",serif;
-  margin: 10px auto;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: auto;
+  display: block;
 }
 
 #understanding {
@@ -614,24 +620,6 @@ border-radius: 6px;
   stroke: #59606A;
   stroke-width:1px;
   shape-rendering: crispEdges;
-}
-
-.budget_2015_analysis{
-    min-width: 200px;
-    margin-left: 60%;
-    margin-left: 350px;
-    margin-right: 200px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 20px;
-} 
-
-.budget-2016 {
-    min-width: 200px;
-    margin-left: 60%;
-    margin-left: 350px;
-    margin-right: 200px;
-    font-family: 'Roboto Slab', serif;
-    font-size: 20px;
 }
 
 .grid .tick {
