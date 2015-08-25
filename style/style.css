@@ -518,10 +518,15 @@ color: #FFF;
 }
 
 /*graph styles*/
-.lineGraph .scatterPlot {
+.lineGraph {
   width: 80%;
   height: 40%;
   margin: auto;
+}
+
+.scatterPlot {
+margin: 20px 200px;
+
 }
 
 #explain-pie {
@@ -574,6 +579,7 @@ color: #FFF;
   font-size:15px;
   font-family:'Roboto', sans-serif;
   font-weight:300;
+  display: inline;
 }
 
 circle {
@@ -582,15 +588,13 @@ circle {
 
 .tooltip {
 position: absolute;
-width: 250px;
-height: 40px;
+max-width: 250px;
 pointer-events: none;
 font-family: 'Roboto Slab', serif;
 color: #FFFFFF;
 background: #C1272D;
 border-radius: 6px;
-padding-left: 13px;
-padding-top: 5px;
+padding: 5px 13px;
 font-size:12px;
 opacity: 0.95;
 visibility: hidden;
