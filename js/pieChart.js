@@ -50,18 +50,28 @@ function draw_pie_chart(school_name, total) {
             }
           });
 
+
     g.append("text")
-        .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+        .attr("transform", function(d) { var c = arc.centroid(d),
+            x = c[0],
+            y = c[1],
+            // pythagorean theorem for hypotenuse
+            h = Math.sqrt(x*x + y*y);
+        return "translate(" + (x/h * 120) +  ',' +
+           (y/h * 120) +  ")"; })
         .attr("dy", ".35em")
-        .style("text-anchor", "middle")
+        .style("text-anchor", function(d){ return (d.endAngle + d.startAngle)/2 > Math.PI ?
+            "end" : "start";})
         .style("font-family", "sans-serif")
         .style("font-size", "12px") 
-        .style("fill","white")
+        .style("fill","black")
         .text(function(d) { 
-          if (d.value > 0.0001) {
-            return d.data["2015Expenditures"]; 
-          }
-        });
+          // if (d.value > 0.0001) {
+          //   return d.data["2015Expenditures"]; 
+          // }
+          console.log(5*Math.PI/180)
+          if(d.endAngle - d.startAngle< 4*Math.PI/90) { return ""; }
+          return d.data["2015Expenditures"]});
 
   //prepare tooltips
   var tooltip_pie = d3.select("body").select("#pie").append("div")
