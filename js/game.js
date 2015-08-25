@@ -35,7 +35,7 @@ $(document).ready(function(){
     }
     $('html, body').animate({scrollTop: $('.budget-2015').offset().top}, 500);
     $content = $('.game-content');
-    $content.slideToggle(100, function() {
+    $content.slideToggle(500, function() {
       $('#rank').text(function(){
         return $content.is(":visible")? "I think I got it!" :"Play Again";
       })
