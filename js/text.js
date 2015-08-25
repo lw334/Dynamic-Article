@@ -27,6 +27,7 @@ function select_school(school_name) {
     for (i = 0; i < dataset.length; i++){
       if (dataset[i]['Unit Name'] == school_name) {
         school = dataset[i];
+        school_short = school["School Name"];
         total_budget = school["FY2015ApprovedBudget"];
         similars = school["SimilarNames"].trim().split(",");
         for (j = 0; j < similars.length; j ++){
@@ -35,7 +36,7 @@ function select_school(school_name) {
       }
     }   
     update_text(school); 
-    draw_line_chart(school_name,similars,dataset);
+    draw_line_chart(school_short,school_name,similars,dataset);
     draw_pie_chart(school_name,total_budget);
     draw_scatter_plot(school,similars,dataset);
   });   

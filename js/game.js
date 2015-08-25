@@ -34,9 +34,12 @@ $(document).ready(function(){
       $("#understanding").text("If money equals priority, it seems that the budget of your children’s school is being spent with a different mindset.");
     }
     $('html, body').animate({scrollTop: $('.budget-2015').offset().top}, 500);
-    $(".priority").hide();
-    $(".direction").hide();
-    $('#rank').hide();
+    $content = $('.game-content');
+    $content.slideToggle(100, function() {
+      $('#rank').text(function(){
+        return $content.is(":visible")? "I think I got it!" :"Play Again";
+      })
+    })
   });
 
   updateRankings();
