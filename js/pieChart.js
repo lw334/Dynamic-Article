@@ -55,7 +55,6 @@ function draw_pie_chart(school_name, total) {
         .attr("transform", function(d) { var c = arc.centroid(d),
             x = c[0],
             y = c[1],
-            // pythagorean theorem for hypotenuse
             h = Math.sqrt(x*x + y*y);
         return "translate(" + (x/h * 120) +  ',' +
            (y/h * 120) +  ")"; })
@@ -66,9 +65,6 @@ function draw_pie_chart(school_name, total) {
         .style("font-size", "12px") 
         .style("fill","black")
         .text(function(d) { 
-          // if (d.value > 0.0001) {
-          //   return d.data["2015Expenditures"]; 
-          // }
           console.log(5*Math.PI/180)
           if(d.endAngle - d.startAngle< 4*Math.PI/90) { return ""; }
           return d.data["2015Expenditures"]});

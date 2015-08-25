@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <title>Test Paragraph</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+    </head>
+    <script>
+    var dataset;
+    var school = "";
+    var similars = "";
+      d3.csv('./test.csv', function(error, data) {
+        console.log("HI")
+        if (error) throw error;
+        dataset = data;
+        // for (i = 0; i < dataset.length; i++){
+        //   if (dataset[i]['Unit Name'] == school_name) {
+        //     var school = dataset[i];
+        //     simi = school["SimilarNames"];
+        //     similars = simi.trim().split(",");
+        //     for (j = 0; j < similars.length; j ++){
+        //     similars[j] = similars[j].trim().replace("'","").replace("[","").replace("]","").replace("'","");
+        //     }
+        //   }
+        // }   
+        console.log(dataset);
+        plot(school,similars,dataset);
+      }); 
+
+function plot(school,similars,dataset){
+    console.log("ploting");
+  var margin = {top: 20, right: 20, bottom: 30, left: 80},
+        width = 700 - margin.left - margin.right,
+        height = 400 - margin.top - margin.bottom;
+
+  var XScale = d3.scale.linear().domain([-1,1]).range([0,width]);
+      xAxis = d3.svg.axis().scale(XScale).orient("bottom");
+
+  var YScale = d3.scale.linear().domain([-1,1]).range([height,0]);
+      yAxis = d3.svg.axis().scale(YScale).orient("left");
+  
+  var svg = d3.select("body")
+              .append("svg")
+              .attr("width", width + margin.left + margin.right)
+              .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+              .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  //draw X-axis
+  svg.append("g")
+      .attr("class", "x_axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", -6)
+      .style("text-anchor", "end")
+      .text("x");
+
+  //draw Y-axis
+  svg.append("g")
+      .attr("class", "y_axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("y");
+
+  //drawing default dots
+  svg.selectAll("circle")
+     .data(dataset)
+     .enter()
+     .append("circle")
+     .attr("cx",function(d){
+        console.log("drawing")
+        return (+d["% Change from FY 15"]);
+       })
+     .attr("cy", function(d){
+        console.log("drwaing y")
+        return (+d["LOW-INCOME SCHOOL %"]);
+       })
+     .attr("r", 2);
+}
+    </script>
+    <body>
+        
+<!-- relations between enrollment and funding -->
+    <div class = 'scatterPlot'>
+    </div>
+
+    </body>
+
+</html>

@@ -1,4 +1,4 @@
-function draw_scatter_plot(school,similars,dataset, graphStep){
+function draw_scatter_plot(school,similars,dataset){
 
   var margin = {top: 20, right: 20, bottom: 30, left: 80},
         width = 900 - margin.left - margin.right,
@@ -71,7 +71,7 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
      .attr("x", 5)
      .attr("y", height-410)
      .attr("class","legend")
-     .text("Your School");
+     .text(school["School Name"]);
   svg.append("text")
      .attr("x", 5)
      .attr("y", height-380)
@@ -113,17 +113,6 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
     .style("stroke-width","2px")
     .style("fill","none")
     .style("stroke", "#4879CE");
-
-  //draw trendline, numbers from analysis
-    svg.append("line")
-      .attr("class","graph-exp")
-      .attr("id","graph-step2")
-      .attr("x1", XScale(-61))
-      .attr("y1", YScale(-152))
-      .attr("x2", XScale(116))
-      .attr("y2", YScale(290))
-      .attr("stroke", "gray")
-      .attr("stroke-width", 40);
 
 
   // // add the tooltip area to the webpage
@@ -229,15 +218,16 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
            .style("opacity", 0);
     });
 
-  // svg.append('rect')
-  //    .attr("class","graph-exp")
-  //    .attr("id","rect-step2")
-  //    .attr("x",-400)
-  //    .attr("y",375)
-  //    .attr("width",1400)
-  //    .attr("height",150)
-  //    .attr("transform","rotate(330, 220, 80)")
-  //    .style("color","gray");
+//draw trendline, numbers from analysis
+  svg.append("line")
+    .attr("class","graph-exp")
+    .attr("id","graph-step2")
+    .attr("x1", XScale(-61))
+    .attr("y1", YScale(-152))
+    .attr("x2", XScale(116))
+    .attr("y2", YScale(290))
+    .attr("stroke", "gray")
+    .attr("stroke-width", 40);
 
   svg.append('rect')
      .attr("class","graph-exp")
@@ -258,4 +248,19 @@ function draw_scatter_plot(school,similars,dataset, graphStep){
     .style("color","gray");
 
 }
+
+function update_scatter(graphStep) {
+  console.log("UPDATE GRAPH")
+  if (graphStep == 3){
+    //enlarge the dots
+    svg.selectAll('.district-dot')
+      .style("fill","black");
+  }
+  else if (graphStep == 4) {
+    svg.selectAll('.charter-dot')
+      .style("fill","yellow");
+  }
+}
+
+
 
