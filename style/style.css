@@ -293,45 +293,30 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 .arc:hover{
   opacity:0.8;
 }
-/*selection bars*/
-
-
-select {
-  display: inline-block;
-  padding: 4px 3px 3px 5px;
-  margin: 0;
-  font: 'Roboto', sans-serif;
-  outline:none; 
-  line-height: 1.2;
-  background:#c1272d;
-  color:#ffffff;
-  font-size:15px;
-  border-color: #c1272d;
-  border-radius:6px;
-  -moz-appearance: none;
-}
 
 /*the game*/
 
-.game {
+.game-content {
   background-color: #d3d3d3;
   box-shadow: inset 0 0 10px #b0adad;
   width: 1200px;
   height: 757px;
   margin: auto;
-  margin-top: 40px;
+  padding-bottom:30px;
+  border-radius: 6px;
 }
 
-#direction-game{
+.game .direction {
+  width: 1200px;
+  background-color: #d3d3d3;
+  margin: auto;
+  font-weight: bold;
+  font-size:20px;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
-  margin: 0 auto;
-  padding: 10px 150px 0;
-  text-transform: uppercase;
-  font-family: 'Roboto Slab', serif;
-  font-size: 15px;
-  font-weight: 300;
-  color: #191919;
-
+  padding-bottom:20px;
+  padding-top:30px;
+  border-radius:6px;
 }
 
 ul.priority{
@@ -374,11 +359,7 @@ ul.priority{
   cursor:pointer;
   color:#ffffff;
 }
-/*
-.content:hover{
-  color:#ffffff;
-}
-*/
+
 .card-placeholder {
   background:  #f2f2f2;
   box-shadow: 10px 10px 5px;
@@ -480,7 +461,7 @@ ul.priority{
 /*the button*/
 
 #rank {    
-color: #FFF;
+  color: #FFF;
   font-size: 22px;
   background: #C1272D none repeat scroll 0% 0%;
   padding: 10px 20px;
@@ -490,6 +471,7 @@ color: #FFF;
   text-transform: uppercase;
   margin: auto;
   display: block;
+  margin-top:15px;
 }
 
 #understanding {
@@ -539,16 +521,6 @@ color: #FFF;
   font-size:35px;
 }
 
-
-/*#scatterPlot{
-  margin-left:100px;
-  margin-top:100px;
-}
-
-#pie {
-  margin-left: 250px;
-}
-*/
 .label, .tick text{
   font-size: 15px;
   font-weight:lighter;
@@ -562,14 +534,7 @@ color: #FFF;
   opacity: 0.15;
   stroke-width: 1.5px;
 }
-/*
-.trendline {
-  visibility: hidden;
-  color:blue;
-  stroke-width:2px;
-}
 
-*/
 .legend {
   font-size:15px;
   font-family:'Roboto', sans-serif;
