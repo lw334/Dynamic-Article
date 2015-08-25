@@ -286,9 +286,9 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     font-size: 18px;
     font-family: 'Roboto Slab', serif;
     padding: 4px;
-    margin-left: 300px;
-    margin-right: 300px;
     color: #333333;
+    margin-left: 400px;
+    display: inline-block;
 }
 .arc:hover{
   opacity:0.8;
@@ -371,16 +371,18 @@ ul.priority{
 
 .card:hover{
   background-color: #C1272D;
-  color:#ffffff;
   cursor:pointer;
+  color:#ffffff;
 }
-
+/*
+.content:hover{
+  color:#ffffff;
+}
+*/
 .card-placeholder {
   background:  #f2f2f2;
   box-shadow: 10px 10px 5px;
   width: 80%;
-  margin-right: 40%
-
 }
 
 .number {
@@ -476,9 +478,9 @@ ul.priority{
 
 
 /*the button*/
+
 #rank {    
-/*  border-radius: 6px;
-*/  color: #FFF;
+color: #FFF;
   font-size: 22px;
   background: #C1272D none repeat scroll 0% 0%;
   padding: 10px 20px;
@@ -494,8 +496,20 @@ ul.priority{
   font-weight:bold;
 }
 
+#rank {
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  font-size: 15px;
+  background: #C1272D;
+  padding: 7px 15px 7px 15px;
+  text-decoration: none;
+}
+
 #rank:hover {
-  background: #e1696e;
+  background: #f75959;
   text-decoration: none;
 }
 
@@ -507,18 +521,14 @@ ul.priority{
 .lineGraph .scatterPlot {
   width: 80%;
   height: 40%;
-}
-
-.LineGraph {
-  margin-left:-100px;
-}
-
-.scatterPlot{
-  margin-left:100px;
+  margin: auto;
 }
 
 #explain-pie {
   width:300px;
+  display:inline-block;
+  position: absolute;
+  padding-top: 20px;
 }
 
 #explanation-district-2, #explanation-charter-2{
@@ -530,7 +540,7 @@ ul.priority{
 }
 
 
-#scatterPlot{
+/*#scatterPlot{
   margin-left:100px;
   margin-top:100px;
 }
@@ -538,7 +548,7 @@ ul.priority{
 #pie {
   margin-left: 250px;
 }
-
+*/
 .label, .tick text{
   font-size: 15px;
   font-weight:lighter;
@@ -576,7 +586,6 @@ width: 250px;
 height: 40px;
 pointer-events: none;
 font-family: 'Roboto Slab', serif;
-text-transform: uppercase;
 color: #FFFFFF;
 background: #C1272D;
 border-radius: 6px;
