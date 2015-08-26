@@ -121,7 +121,7 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
   sch.append("path")
       .attr("class", "line")
       .attr("d", function(d) { return line(d.values); })
-      .style("stroke", function(d) {         
+      .style("stroke", function(d) {
           if (d.name == school_name){
             return "#c1272d";
           }
@@ -130,7 +130,7 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
           return "#4879CE";
           }
       })
-      .style("stroke-width", function(d) {         
+      .style("stroke-width", function(d) {
         if ((d.name == school_name) || (similars.indexOf(d.name)!= -1)){
           return "3px";
         }
@@ -138,7 +138,7 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
           return "1.5px";
         }
       })
-      .style("opacity", function(d) {         
+      .style("opacity", function(d) {
         if ((d.name == school_name) || (similars.indexOf(d.name)!= -1)){
           return "1";
         }
@@ -148,23 +148,34 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
       });
 
 //prepare tooltips
-var tooltip = d3.select("body").select("#lineChart").append("div")
-    .attr("class", "tooltip");
+var tooltip = d3.select("body")
+                .select("#lineChart")
+                .append("div")
+                .attr("class", "tooltip");
 
 //formating lines
   sch.append("text")
       .datum(function(d) { return {name: d.name, value: d.values[d.values.length - 1]}; })
       .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.budget) + ")"; })
-      .attr("x", 3) 
+      .attr("x", 3)
       .attr("dy", ".35em");
 
 
-  svg.selectAll(".line").on("mouseover", function(d) { 
-      console.log("mouseOVER!")
-          tooltip.style("visibility","visible")
-               .transition()
-               .duration(200)
-               .style("opacity", .9);
+  svg.selectAll(".line").on("mouseover", function(d) {
+        tooltip.style("background-color", function() {
+              if (d.name == school_name){
+                return "#c1272d";
+              } else if (similars.indexOf(d.name)!= -1){
+              console.log("similar school found!")
+              return "#4879CE";
+              } else {
+                return "#7e7e7e";
+              }
+            })
+           .style("visibility","visible")
+           .transition()
+           .duration(200)
+           .style("opacity", .9);
           tooltip.html(d["name"])
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");

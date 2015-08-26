@@ -52,6 +52,7 @@ h3 {
 .custom-formal-school-name {
   font-weight:bolder;
 }
+
 .custom-school-name {
   font-weight:bolder;
 }
@@ -557,7 +558,8 @@ max-width: 250px;
 pointer-events: none;
 font-family: 'Roboto Slab', serif;
 color: #FFFFFF;
-background: #C1272D;
+/*background: #C1272D;*/
+border: solid 1px #999;
 border-radius: 6px;
 padding: 5px 13px;
 font-size:12px;
