@@ -138,10 +138,10 @@ function draw_scatter_plot(school,similars,dataset){
       else if (similars.indexOf(d["Unit Name"])!= -1) {
         return "similar-schools"
       }
-      else if (d["Governance"] == 'District') {
+      else if ((d["Governance"] == 'District') && (+d['Change in Enrollment'] < 0)) {
         return "district-dot";
       }
-      else if (d["Governance"] == "Charter" || d["Governance"] == "Contract"){
+      else if ((d["Governance"] == "Charter" || d["Governance"] == "Contract") && d["% Change from FY 15"] > 0){
         return "charter-dot";
       }
      })
