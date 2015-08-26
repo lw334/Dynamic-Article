@@ -132,7 +132,13 @@ function draw_scatter_plot(school,similars,dataset){
      .enter()
      .append("circle")
      .attr("class", function(d) {
-      if (d["Governance"] == 'District') {
+      if (d["Unit Name"] == school["Unit Name"]) {
+        return "my-school";
+      }
+      else if (similars.indexOf(d["Unit Name"])!= -1) {
+        return "similar-schools"
+      }
+      else if (d["Governance"] == 'District') {
         return "district-dot";
       }
       else if (d["Governance"] == "Charter" || d["Governance"] == "Contract"){
@@ -189,7 +195,7 @@ function draw_scatter_plot(school,similars,dataset){
           return 1;
         }
         else {
-          return 0.3;
+          return 0.2;
         }
     }); 
 
@@ -249,18 +255,6 @@ function draw_scatter_plot(school,similars,dataset){
 
 }
 
-function update_scatter(graphStep) {
-  console.log("UPDATE GRAPH")
-  if (graphStep == 3){
-    //enlarge the dots
-    svg.selectAll('.district-dot')
-      .style("fill","black");
-  }
-  else if (graphStep == 4) {
-    svg.selectAll('.charter-dot')
-      .style("fill","yellow");
-  }
-}
 
 
 
