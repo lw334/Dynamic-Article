@@ -178,7 +178,7 @@ function reverse_text(){
 // customize texts
 function consistency_comparison_result(school){
   if (school['Consistency'] == school['MajorityConsistency']){
-    return 'in line of';
+    return 'in line with';
   }
   else {
     return 'the oppoosed of';

@@ -209,7 +209,16 @@ function draw_scatter_plot(school,similars,dataset){
      })
     .on("mouseover", function(d) {
       console.log("TIP");
-      tooltip.style("visibility","visible")
+      tooltip.style("background-color", function() {
+              if (d["Unit Name"] == school["Unit Name"]){
+                return "#c1272d";
+              } else if (similars.indexOf(d["Unit Name"])!= -1){
+              return "#4879CE";
+              } else {
+                return "#7e7e7e";
+              }
+            })
+           .style("visibility","visible")
            .transition()
            .duration(200)
            .style("opacity", .9);
