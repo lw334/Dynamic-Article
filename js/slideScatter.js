@@ -28,29 +28,30 @@ $(function getStep(){
 function update_scatter(graphStep) {
   console.log("UPDATE GRAPH");
   if (graphStep == 1) {
-	$('.charter_dot').css("strokeWidth","0");
   	$('.my-school').css("opacity","1");
   	$('.similars').css("opacity","1");
-  	$('.district-dot').css("opacity","0.2");
-  	$('.charter-dot').css("opacity","0.2");
+  	// $('.district-dot').css("opacity","0.2");
+  	// $('.charter-dot').css("opacity","0.2");
   }
   else if (graphStep == 2){
-  	$('.my-school').css("opacity","1");
-  	$('.similars').css("opacity","1");
-  	$('.district-dot').css("opacity","0.4");
-  	$('.charter-dot').css("opacity","0.4");
+  	// $('.my-school').css("opacity","1");
+  	// $('.similars').css("opacity","1");
+  	// $('.district-dot').css("opacity","0.4");
+  	// $('.charter-dot').css("opacity","0.4");
   }
   else if (graphStep == 3) {
   	var district_style = {
-  		strokeWidth: "5",
-  		stroke: "#FFAE15"
+  		//strokeWidth: "5",
+  		stroke: "#FFAE15",
+  		opacity:"1"
   	}
   	$('.district-dot').css(district_style);
   }
   else if (graphStep == 4) {
   	var charter_style = {
-  		strokeWidth:"5",
-  		stroke:"#7243A2"
+  		//strokeWidth:"5",
+  		stroke:"#7243A2",
+  		opacity:"1"
   	}
   	$('.charter-dot').css(charter_style);
   }
