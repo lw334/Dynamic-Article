@@ -119,6 +119,14 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
 
 //draw default lines
   sch.append("path")
+      // .attr("class", function(d){
+      //   if ( (d["Unit Name"] == school_name)||(similars.indexOf(d["Unit Name"])!= -1) ) {
+      //     return "front_line";
+      //     }
+      //   else {
+      //     return "line";
+      //   }
+      //})
       .attr("class", "line")
       .attr("d", function(d) { return line(d.values); })
       .style("stroke", function(d) {
@@ -126,7 +134,6 @@ d3.csv("./js/data/yearlyBudget.csv", function(error, data) {
             return "#c1272d";
           }
           else if (similars.indexOf(d.name)!= -1){
-          console.log("similar school found!")
           return "#4879CE";
           }
       })
