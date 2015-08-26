@@ -40,7 +40,7 @@ h3 {
 }
 
 
-.budget-2015, .budget-2015-analysis, .budget-2016, .capital-budget, .CTU, .history, .methodology, .contact-info {
+.budget-2015, .budget-2015-analysis, .game, .budget-2016, .capital-budget, .CTU, .history, .methodology, .contact-info {
     min-width: 200px;
     width: 60%;
     margin: 40px auto;
@@ -295,46 +295,29 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   opacity:0.8;
 }
 
-/*the game*/
-
-.game-content {
-  background-color: #d3d3d3;
-  box-shadow: inset 0 0 10px #b0adad;
-  width: 1200px;
-  height: 757px;
-  margin: auto;
-  padding-bottom:30px;
-  border-radius: 6px;
-}
-
-.game .direction {
-  width: 1200px;
-  background-color: #d3d3d3;
-  margin: auto;
+.direction {
   font-weight: bold;
-  font-size:20px;
+  font-size: 15px;
+  color: #191919;
   font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  width: 50%;
+  margin: auto;
   text-align: center;
-  padding-bottom:20px;
-  padding-top:30px;
-  border-radius:6px;
 }
 
 ul.priority{
     list-style-type: none;
-    margin: 0 auto;
-    padding: 0 5%;
-    display: inline-block;
     zoom: 1;
-    width: 90%;
-    padding: auto;
+    margin: auto;
+    padding: 0;
+    width: 80%;
 }
 
 .priority {
   position: relative;
-  width:70%;
-  margin-left: 100px;
 }
+
 .priority li {
   font-family: 'Roboto Slab', serif;
   font-size: 15px;
@@ -345,26 +328,29 @@ ul.priority{
 
 .card {
   background-color: #ffffff;
-  width: 75%;
   margin: 15px auto;
   border-color: #C1272D;
   border-style: dashed;
   border-width: thin;
-/*  border-radius: 6px;
-*/  display: block;
+  display: block;
   position: relative;
 }
 
-.card:hover{
+.card:hover {
   background-color: #C1272D;
   cursor:pointer;
   color:#ffffff;
 }
 
+.card:hover .budget_categories{
+  color: #ffffff;
+}
+
+
 .card-placeholder {
-  background:  #f2f2f2;
+  background:  #ffffff;
   box-shadow: 10px 10px 5px;
-  width: 80%;
+  width: 90%;
 }
 
 .number {
@@ -388,7 +374,7 @@ ul.priority{
   top: 0;
   right: 0;
   bottom: 0;
-  padding: 5px 0;
+  padding: 10px 5px;
 }
 
 .caret-up,
@@ -399,7 +385,7 @@ ul.priority{
 }
 
 .caret-down {
-    bottom: 3px;
+    bottom: 5px;
 }
 
 .caret-down:before {
@@ -446,16 +432,12 @@ ul.priority{
   font-weight: bolder;
   color: #C1272D;
 }
-
-.budget_categories:hover{
-  color: #ffffff;
-}
  
  .description {
   padding-left: 39px;
   padding-bottom: 10px;
   padding-top: 5px;
-  width: 75%; 
+  width: 85%; 
 }
 
 
