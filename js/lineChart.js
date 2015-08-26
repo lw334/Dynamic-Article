@@ -169,7 +169,7 @@ var tooltip = d3.select("body")
               console.log("similar school found!")
               return "#4879CE";
               } else {
-                return "#d0d0d0";
+                return "#7e7e7e";
               }
             })
            .style("visibility","visible")
