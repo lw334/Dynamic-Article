@@ -296,8 +296,8 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     font-family: 'Roboto Slab', serif;
     padding: 4px;
     color: #333333;
-    margin-left: 350px;
     display: inline-block;
+    width: 65%;
 }
 .arc:hover{
   opacity:0.8;
@@ -497,16 +497,18 @@ ul.priority{
   margin: 0 auto;
 }*/
 
-/*.scatterPlot {
+.scatterPlot {
 margin: 20px 200px;
 
 }
-*/
+.chart-container {
+    width: 80%;
+    margin: auto;
+}
+
 #explain-pie {
-  width:250px;
-  margin-left: 90px;
+  width:30%;
   display:inline-block;
-  position: absolute;
   padding-top: 20px;
 }
 
@@ -793,12 +795,24 @@ border-radius: 6px;
   #main-nav ul li::after { 
     content: "";
   }
+   .chart-container {
+      width: 100%;
+      font-size: 15px;
+   }
+
+   #explain-pie {
+      margin-top: 0px;
+      padding-top: 0px;
+   }
+
+   #highlight-salary-benefits{
+      font-size: 20px;
+   }
+
 }
 
 @media screen and (max-width: 945px){
    #main-nav ul{
     display: none;
-   } 
-
-
-
+   }
+}
