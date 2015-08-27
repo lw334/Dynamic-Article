@@ -491,11 +491,9 @@ ul.priority{
 }
 
 /*graph styles*/
-/*.lineGraph {
-  width: 100%;
-  height: 40%;
-  margin: 0 auto;
-}*/
+.LineGraph {
+    margin-left: -80px; 
+}
 
 .scatterPlot {
 margin: 20px 200px;

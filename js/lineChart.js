@@ -1,7 +1,11 @@
 function draw_line_chart(school_short,school_name,similars,dataset){
   console.log("LineCHART!")
+var containerWidth = document.getElementsByClassName('LineGraph')[0].offsetWidth;
 var margin = {top: 20, right: 100, bottom: 30, left: 80},
-    width = 900 - margin.left - margin.right,
+    width = 900 >= containerWidth ? (
+      containerWidth
+     ) : (
+      900 - margin.left - margin.right ),
     height = 500 - margin.top - margin.bottom;
 
 
