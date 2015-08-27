@@ -79,6 +79,14 @@ h3 {
   font-weight: bolder;
 }
 
+a:link {
+    color: #191919;;
+}
+
+a:visited {
+    color: #191919;
+}
+
 
 /*   <--- main page --->  */
 .main-image {
