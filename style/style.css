@@ -74,6 +74,17 @@ h3 {
     line-height: 1.5em;
   }
 
+.share-wrapper {
+  width:10px;
+  margin:5px;
+}
+
+ul.share-buttons{
+  list-style: none;
+  width:10px;
+  float:left;
+}
+
 .bio {
   text-transform: uppercase;
   font-weight: bolder;
