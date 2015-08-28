@@ -51,7 +51,11 @@ function init_autocomplete() {
     };
 
     $(".search #user_school").autocomplete({
-      minLength: 1,
+      minLength: 4,
+      delay: 300,
+      focus: function () {
+        $(".search #user_school").autocomplete("option", "delay", 0);
+      },
       source: ac_data,
       select: function( event, ui ) {
         var school_name = event.target.value;
