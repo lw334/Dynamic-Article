@@ -52,13 +52,13 @@ function init_autocomplete() {
 
     $(".search #user_school").autocomplete({
       minLength: 4,
-      delay: 300,
+      delay: 400,
       focus: function () {
         $(".search #user_school").autocomplete("option", "delay", 0);
       },
       source: ac_data,
       select: function( event, ui ) {
-        var school_name = event.target.value;
+        var school_name = ui.item.value;
         console.log("select handler user selected " + school_name + " aka " + name_to_unit[school_name]);
           for (i = 0; i < dataset.length; i++){
             if (ac_data[i] == school_name) {
