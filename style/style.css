@@ -40,7 +40,7 @@ h3 {
 }
 
 
-.budget-2015, .budget-2015-analysis, .game, .budget-2016, .capital-budget, .CTU, .history, .methodology, .contact-info {
+.budget-2015, .budget-2015-analysis, .game, .budget-2016, .capital-budget, .CTU, .history, .methodology, .contact-info, .lineGraph {
     min-width: 200px;
     width: 60%;
     margin: 40px auto;
@@ -296,8 +296,8 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     font-family: 'Roboto Slab', serif;
     padding: 4px;
     color: #333333;
-    margin-left: 400px;
     display: inline-block;
+    width: 65%;
 }
 .arc:hover{
   opacity:0.8;
@@ -400,7 +400,7 @@ ul.priority{
   content: '';
   position: absolute;
   top: 25%;
-  border-top: 12px solid #999;
+  border-top: 12px solid #C1272D;
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
 }
@@ -421,7 +421,7 @@ ul.priority{
   top: 0;
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
-  border-bottom: 12px solid #999;
+  border-bottom: 12px solid #C1272D;
   }
 
 .caret-up:after {
@@ -491,21 +491,22 @@ ul.priority{
 }
 
 /*graph styles*/
-.lineGraph {
-  width: 80%;
-  height: 40%;
-  margin: auto;
+.LineGraph {
+    margin-left: -80px; 
 }
 
 .scatterPlot {
 margin: 20px 200px;
 
 }
+.chart-container {
+    width: 80%;
+    margin: auto;
+}
 
 #explain-pie {
-  width:300px;
+  width:30%;
   display:inline-block;
-  position: absolute;
   padding-top: 20px;
 }
 
@@ -792,12 +793,24 @@ border-radius: 6px;
   #main-nav ul li::after { 
     content: "";
   }
+   .chart-container {
+      width: 100%;
+      font-size: 15px;
+   }
+
+   #explain-pie {
+      margin-top: 0px;
+      padding-top: 0px;
+   }
+
+   #highlight-salary-benefits{
+      font-size: 20px;
+   }
+
 }
 
 @media screen and (max-width: 945px){
    #main-nav ul{
     display: none;
-   } 
-
-
-
+   }
+}

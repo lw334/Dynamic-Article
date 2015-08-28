@@ -1,8 +1,11 @@
 function draw_scatter_plot(school,similars,dataset){
-
+  var containerWidth = document.getElementsByClassName('scatterPlot')[0].offsetWidth;
   var margin = {top: 20, right: 20, bottom: 30, left: 80},
-        width = 900 - margin.left - margin.right,
-        height = 700- margin.top - margin.bottom;
+      width = 900 >= containerWidth ? (
+        containerWidth
+       ) : (
+      900 - margin.left - margin.right ),
+      height = 700 - margin.top - margin.bottom;
 
   var XScale = d3.scale.linear().domain([-60,40]).range([0,width]);
       xAxis = d3.svg.axis().scale(XScale).orient("bottom");
