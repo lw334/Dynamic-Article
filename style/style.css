@@ -715,7 +715,7 @@ border-radius: 6px;
   min-width: 400px;
   max-width: 600px;
   height: 757px;
-  border-right: 10px solid #f2f2f2;
+  border-right: 29px solid #f2f2f2;
   z-index: 998;
   float: left;
   }
@@ -725,7 +725,8 @@ border-radius: 6px;
   min-width: 400px;
   max-width: 600px;
   height: 50%;
-  border-bottom: 10px solid #f2f2f2;
+  border-bottom: 29px solid #f2f2f2;
+  border-left: 18px solid #f2f2f2;
   z-index: 997;
   float: left;
   margin-left: 601px;
@@ -745,18 +746,25 @@ border-radius: 6px;
     display: block;
     line-height: 1.6em;
     bottom: 0;
-    margin-left: 630px;
-    margin-right: 330px;  
+    margin-left: 660px;
+    margin-right: 310px;  
 }
 
 .teens {
-  width: auto;
-  height:auto;
+  width: 25%;
+  height:50%;
   min-width: 200px;
   max-width: 300px;
-  border-left: 10px solid #f2f2f2;
-
+  border-left: 29px solid #f2f2f2;
+  margin-left: 930px;
+  margin-top: -326px;
 }
+
+#lingwei, #paty {
+  float:left;
+  padding-right: 20px
+}
+
 
 /*Media Queries*/
 
@@ -797,4 +805,62 @@ border-radius: 6px;
    #main-nav ul{
     display: none;
    }
+
+   .protest-image{
+  position: relative;
+  width: 1209px;
+  height: 757px;
+  min-width: 250px;
+  margin: auto;
+  background-color: #C1272D;
+}
+
+.michelle {
+  width: 50%;
+  min-width: 400px;
+  max-width: 600px;
+  height: 757px;
+  border-right: 10px solid #f2f2f2;
+  z-index: 998;
+  float: left;
+  }
+
+.overview {
+  width: 50%;
+  min-width: 400px;
+  max-width: 600px;
+  height: 50%;
+  border-bottom: 10px solid #f2f2f2;
+  z-index: 997;
+  float: left;
+  margin-left: 601px;
+  margin-top: -757px;
+  padding-left: 9px;
+  padding-bottom: 10px; 
+}
+
+.quote {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 20px;
+    font-style: italic;
+    color: #ffffff;
+    padding-top: 420px;
+    display: block;
+    line-height: 1.6em;
+    bottom: 0;
+    margin-left: 630px;
+    margin-right: 330px;  
+}
+
+.teens {
+  width: 25%;
+  height:50%;
+  min-width: 200px;
+  max-width: 300px;
+  border-left: 10px solid #f2f2f2;
+  margin-left: 930px;
+  margin-top: -342px;
+}
 }
