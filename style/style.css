@@ -80,7 +80,7 @@ h3 {
 }
 
 a:link {
-    color: #191919;;
+    color: #191919;
 }
 
 a:visited {
@@ -448,7 +448,6 @@ ul.priority{
   width: 85%; 
 }
 
-
 /*the button*/
 
 #rank {    
@@ -507,7 +506,7 @@ margin: 20px 200px;
 #explain-pie {
   width:30%;
   display:inline-block;
-  padding-top: 20px;
+  padding-top: 0px;
 }
 
 #explanation-district-2, #explanation-charter-2{
@@ -629,6 +628,7 @@ border-radius: 6px;
   box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
   background-color: #f2f2f2;
   margin-top: 0px;
+  margin-left: 75px;
   border-radius: 3px;
 }
 
@@ -646,6 +646,7 @@ border-radius: 6px;
   z-index: 998;
   left: 200px;
   margin-top:30px;
+  margin-left: 75px;
   background-color:#f2f2f2;
 }
 
@@ -704,44 +705,30 @@ border-radius: 6px;
   position: relative;
   width: 1200px;
   height: 757px;
+  min-width: 250px;
   margin: auto;
   background-color: #C1272D;
 }
 
 .michelle {
-  background: url("http://i1341.photobucket.com/albums/o744/patygomeslima/Michelle_cortada_zpssodhw9yv.gif");
-  background-repeat: no-repeat;
-
-  width: 600px;
+  width: 50%;
+  min-width: 400px;
+  max-width: 600px;
   height: 757px;
-  position: absolute;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  top: 0; 
-  left: 0;
   border-right: 10px solid #f2f2f2;
   z-index: 998;
+  float: right;
   }
 
-
 .overview {
-  background: url("http://i1341.photobucket.com/albums/o744/patygomeslima/overview_3_zpsbvwmusfv.gif");
-  background-repeat: no-repeat;
-  width: 600px;
+  width: 50%;
+  min-width: 400px;
+  max-width: 600px;
   height: 411px;
-  position: absolute;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  top: 0; 
-  right: 0;
   border-bottom: 10px solid #f2f2f2;
   z-index: 997;
+  float: right;
 }
-
 
 .quote {
     font-family: "Roboto", sans-serif;
@@ -759,17 +746,10 @@ border-radius: 6px;
 }
 
 .teens {
-  background: url("http://i1341.photobucket.com/albums/o744/patygomeslima/Teens_cortada_zps8owasx1w.gif");
-  background-repeat: no-repeat;
-  width: 300px;
+  width: 25%;
+  min-width: 200px;
+  max-width: 300px;
   height: 346px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   border-left: 10px solid #f2f2f2;
 
 }
