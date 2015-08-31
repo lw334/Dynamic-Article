@@ -10,12 +10,10 @@ var name_to_unit = {}
 var school;
 var similars;
 var total_budget;
-var school_name = 'Stephen F Gale Community Academy'; //default school
 
 //Autocomplete bar
 d3.csv("./js/data/unitList.csv",function (csv) {
     school_data=csv;
-    select_school(school_name);
     init_autocomplete();
 });
 
