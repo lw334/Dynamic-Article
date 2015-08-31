@@ -48,7 +48,8 @@ h3 {
 .CTU,
 .game,
 .history,
-.methodology {
+.methodology,
+.scatterPlotContainer {
     min-width: 200px;
     width: 60%;
     margin: 40px auto;
@@ -518,16 +519,11 @@ ul.priority{
 }
 
 /*graph styles*/
-.LineGraph {
-  /*position:relative;*/
-  /*margin-left:-10px;*/
+.LineGraph,
+#scatterPlot {
   width: 80%;
 }
 
-.scatterPlot {
-margin-left:325px;
-
-}
 .chart-container {
     width: 80%;
     margin: auto;
@@ -638,56 +634,30 @@ border-radius: 6px;
       stroke-width: 0;
 }
 
-.scatter-steps ul {
-  cursor: pointer;
-  cursor: hand;
+#scatter-plot-explainer {
   position: absolute;
-  border-style: solid;
-  border-color: #564332;
-  border-width:1px;
-  padding-left: 0;
-  padding-right: 0;
-  border-color:black;
-  padding: 7px 1px;
-  width: 100px;
-  height: 15px;
-  left: 200px;
+}
+.scatter-steps ul {
+    position: relative;
   z-index: 998;
+  cursor: pointer;
+  border: solid 1px #564332;
+  display: inline-block;
   -webkit-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
   -moz-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
   box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
   background-color: #f2f2f2;
-  margin-top: 0px;
-  margin-left: 75px;
-  border-radius: 3px;
+  border-radius: 3px 3px 0 0;
+  padding-left: 0;
+  margin: 0;
 }
-
-.text-blocks-scatter {
-  border-radius: 3px;
-  border-style: solid;
-  border-width: 1px;
-  -webkit-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
-  -moz-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
-  box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
-  border-color: #7E6652;
-  width: 300px;
-  height: 175px;
-  position: absolute;
-  z-index: 998;
-  left: 200px;
-  margin-top:30px;
-  margin-left: 75px;
-  background-color:#f2f2f2;
-}
-
 .scatter-steps ul li{
-    font: 8px sans-serif;
+    font-family: sans-serif;
     font-weight:lighter;
-    display: inline;
+    display: inline-block;
     list-style-type: none;
     font-size: 15px;
-    border-left: solid;
-    border-color: #564332;
+    border-left: 1px solid #564332;
     padding: 7px 8px;
     border-width: 1px;
     text-align:center;
@@ -696,6 +666,21 @@ border-radius: 6px;
 .scatter-steps ul #step1 {
   border-left:none;
 }
+
+.text-blocks-scatter {
+  border-radius: 0 0 3px 3px;
+  border: solid 1px #564332;
+  -webkit-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
+  -moz-box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
+  box-shadow: 1px 5px 5px 3px rgba(99,86,99,0.45);
+  width: 300px;
+  height: 175px;
+  position: relative;
+  z-index: 999;
+  background-color:#f2f2f2;
+  margin-top: -1px;
+}
+
 
 .text-blocks-scatter p {
   position:absolute;

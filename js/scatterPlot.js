@@ -1,5 +1,5 @@
 function draw_scatter_plot(school,similars,dataset){
-  var containerWidth = document.getElementsByClassName('scatterPlot')[0].offsetWidth;
+  var containerWidth = document.getElementById('scatterPlot').offsetWidth;
   var margin = {top: 20, right: 20, bottom: 30, left: 80},
       width = 900 >= containerWidth ? (
         containerWidth
