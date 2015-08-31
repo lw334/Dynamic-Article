@@ -41,7 +41,7 @@ function draw_scatter_plot(school,similars,dataset){
   //draw Y-axis
   svg.append("g")
       .attr("class", "y_axis")
-      .attr("transform", "translate(" + (width - 320) + "," + "0" + ")")
+      .attr("transform", "translate(" + (width - (width/3+width/15)) + "," + "0" + ")")
       .call(yAxis)
     .append("text")
       .attr("class", "label")
@@ -259,9 +259,9 @@ function draw_scatter_plot(school,similars,dataset){
    svg.append('rect')
     .attr("class","graph-exp")
     .attr("id","graph-step4")
-    .attr("x",180)
+    .attr("x",width/5)
     .attr("y",10)
-    .attr("width",300)
+    .attr("width",width/2.5)
     .attr("height",600)
     .style("color","gray");
 
