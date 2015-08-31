@@ -180,13 +180,19 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: 300;
+  color: #ffffff;
   padding: 5px;
   list-style: none;
   background-color: #c1272d;
   border-color: rgba(0, 0, 0, 0.2);
   border-style: solid;
-  color: #ffffff;
   width: 400px;
+}
+
+::-webkit-input-placeholder {
+color: #ffffff;
+font-size: 15px;
+padding-top: 4px;
 }
 
 .fixed-height {
