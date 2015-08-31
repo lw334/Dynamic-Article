@@ -59,6 +59,7 @@ function init_autocomplete() {
       source: ac_data,
       select: function( event, ui ) {
         var school_name = ui.item.value;
+        window.location.hash = school_name;
         console.log("select handler user selected " + school_name + " aka " + name_to_unit[school_name]);
           for (i = 0; i < dataset.length; i++){
             if (ac_data[i] == school_name) {
@@ -72,6 +73,14 @@ function init_autocomplete() {
     // //default school
     select_school('Stephen F Gale Community Academy');
 }
+
+function share_select_school(){
+  var school_selected = window.location.hash;
+  school_selected = school_selected.substring(1);
+  console.log(school_selected);
+  select_school(school_selected);
+}
+
 
 function update_text(school){
     reverse_text();
