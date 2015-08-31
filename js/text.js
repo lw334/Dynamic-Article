@@ -62,7 +62,6 @@ function init_autocomplete() {
         console.log("select handler user selected " + school_name + " aka " + name_to_unit[school_name]);
           for (i = 0; i < dataset.length; i++){
             if (ac_data[i] == school_name) {
-              console.log("SCROLL");
               $('html, body').animate({scrollTop: $('#main-nav').offset().top}, 1000);
             }
           }
