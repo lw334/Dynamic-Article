@@ -83,6 +83,7 @@ ul.share-buttons{
   list-style: none;
   width:10px;
   float:left;
+  z-index: 800;
 }
 
 .bio {
@@ -727,7 +728,6 @@ border-radius: 6px;
   max-width: 600px;
   height: 757px;
   border-right: 29px solid #f2f2f2;
-  z-index: 998;
   float: left;
   }
 
@@ -738,7 +738,6 @@ border-radius: 6px;
   height: 50%;
   border-bottom: 29px solid #f2f2f2;
   border-left: 18px solid #f2f2f2;
-  z-index: 997;
   float: left;
   margin-left: 601px;
   margin-top: -757px;
@@ -768,7 +767,7 @@ border-radius: 6px;
   max-width: 300px;
   border-left: 29px solid #f2f2f2;
   margin-left: 930px;
-  margin-top: -326px;
+  margin-top: -332px;
 }
 
 #lingwei, #paty {
@@ -832,7 +831,7 @@ border-radius: 6px;
   max-width: 600px;
   height: 757px;
   border-right: 10px solid #f2f2f2;
-  z-index: 998;
+  /*z-index: 998;*/
   float: left;
   }
 
@@ -842,7 +841,7 @@ border-radius: 6px;
   max-width: 600px;
   height: 50%;
   border-bottom: 10px solid #f2f2f2;
-  z-index: 997;
+/*  z-index: 997;*/
   float: left;
   margin-left: 601px;
   margin-top: -757px;
