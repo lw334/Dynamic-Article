@@ -108,7 +108,7 @@ a:visited {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  position: relative;
+  overflow: auto;
 }
 
 #credit {
@@ -134,12 +134,12 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 #intro {
   width: 33%;
   min-width: 200px;
-  margin-left: 60%;
+  float: right;
   padding-top: 10px;
   padding-bottom: 50px;
-  background-color: rgba(0,0,0,0.4);
   padding-right: 50px;
   padding-left: 50px;
+  background-color: rgba(0,0,0,0.4);
 }
 
 
@@ -728,61 +728,55 @@ border-radius: 6px;
 
 /*Photo Collage*/
 
+.share-wrapper { display: none; }
 .protest-image{
-  position: relative;
-  width: 1209px;
-  height: 757px;
+  max-height: 757px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1209px;
   min-width: 250px;
   margin: auto;
-  background-color: #C1272D;
+  background: #f2f2f2;
 }
 
 .michelle {
   width: 50%;
+  margin: 0 1% 0 0;
   min-width: 400px;
   max-width: 600px;
-  height: 757px;
-  border-right: 29px solid #f2f2f2;
   float: left;
-  }
+}
 
 .overview {
-  width: 50%;
+  width: 49%;
+  margin: 0;
   min-width: 400px;
   max-width: 600px;
-  height: 50%;
-  border-bottom: 29px solid #f2f2f2;
-  border-left: 18px solid #f2f2f2;
-  float: left;
-  margin-left: 601px;
-  margin-top: -757px;
-  padding-left: 9px;
-  padding-bottom: 10px; 
+  float: right;
 }
 
 .quote {
+    width: 22%;
+    margin: 1% 1% 0 0;
+    padding: 2% 1%;
+    float: right;
+    /*clear: right;*/
+    background-color: #C1272D;
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     font-weight: 300;
     font-size: 20px;
     font-style: italic;
     color: #ffffff;
-    padding-top: 420px;
-    display: block;
     line-height: 1.6em;
-    bottom: 0;
-    margin-left: 660px;
-    margin-right: 310px;  
 }
 
 .teens {
-  width: 25%;
-  height:50%;
+  width: 24%;
+  margin: 1% 0 0 0;
   min-width: 200px;
   max-width: 300px;
-  border-left: 29px solid #f2f2f2;
-  margin-left: 930px;
-  margin-top: -332px;
+  float: right;
 }
 
 #lingwei, #paty {
