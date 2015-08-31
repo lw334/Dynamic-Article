@@ -66,22 +66,22 @@ h3 {
   font-weight:bolder;
 }
 
-  blockquote {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    text-transform: uppercase;
-    font-style: italic;
-    color: #808080;
-    font-size: 25px;
-    width: 60%;
-    margin-left: -200px;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    padding-left: 1em;
-    display: block;
-    float: left;
-    line-height: 1.5em;
-  }
+blockquote {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  text-transform: uppercase;
+  font-style: italic;
+  color: #808080;
+  font-size: 25px;
+  width: 60%;
+  margin-left: -200px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  display: block;
+  float: left;
+  line-height: 1.5em;
+}
 
 .share-wrapper {
   width:10px;
@@ -100,12 +100,21 @@ ul.share-buttons{
   font-weight: bolder;
 }
 
-a:link {
+p a:link{
+    text-decoration: none;
+    color:#191919;
+    box-shadow: inset 0 0px 0 white, inset 0 -1px 0 #191919;
+}
+.capital-budget p a:link{
+  text-decoration: none;
+    color:#191919;
+    box-shadow: inset 0 0px 0 white, inset 0 -2px 0 #191919;
+}
+p a:visited{
     color: #191919;
 }
-
-a:visited {
-    color: #191919;
+.capital-budget p a:visited{
+  color:#191919;
 }
 
 
@@ -166,11 +175,14 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 #helpuser {
     font-size: 15px;
     text-transform: uppercase;
+    font-style: italic;
     position: relative;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     text-align: left;
     color: #ffffff;
+    width: 80%;
+    opacity: 0.5;
 }
 
 
@@ -202,6 +214,7 @@ filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 color: #ffffff;
 font-size: 15px;
 padding-top: 4px;
+opacity: 0.7;
 }
 
 .fixed-height {
@@ -525,6 +538,12 @@ ul.priority{
 }
 
 /*graph styles*/
+.LineGraph {
+  width: 80%;
+  margin: 0;
+  padding-left: 42px;
+}
+
 .LineGraph,
 #scatterPlot {
   width: 80%;
@@ -539,6 +558,7 @@ ul.priority{
   width:30%;
   display:inline-block;
   padding-top: 0px;
+  padding-right: 21px;
 }
 
 #explanation-district-2, #explanation-charter-2{
@@ -682,7 +702,7 @@ border-radius: 6px;
   width: 300px;
   height: 175px;
   position: relative;
-  z-index: 999;
+  z-index: 998;
   background-color:#f2f2f2;
   margin-top: -1px;
 }
@@ -778,6 +798,10 @@ border-radius: 6px;
   padding-right: 20px
 }
 
+.photobio {
+  border-radius: 6px;
+  padding-top: 15px;
+}
 
 /*Media Queries*/
 
@@ -805,7 +829,9 @@ border-radius: 6px;
 
    #explain-pie {
       margin-top: 0px;
-      padding-top: 0px;
+      padding-top: 60px;
+      display: block;
+      float: left;
    }
 
    #highlight-salary-benefits{
@@ -843,4 +869,13 @@ border-radius: 6px;
     .quote {
         display: none;
     }
+}
+
+@media screen and (max-width: 1000px){
+
+blockquote {
+    width: 90%;
+    margin: 10px auto 20px;
+    font-size: 18px;
+}
 }
