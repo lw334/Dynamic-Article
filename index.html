@@ -7,6 +7,7 @@
         <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <script src="http://d3js.org/d3.v3.min.js"></script>
         <script src="js/nav.js"></script>
+        <script src="js/share.js"></script>
         <script type='text/javascript' src='js/text.js'></script>
         <script type='text/javascript' src='js/slideScatter.js'></script>
         <link href='http://fonts.googleapis.com/css?family=Stardos+Stencil:400,700|Roboto+Slab:400,300|Roboto:400,300,300italic,500,500italic' rel='stylesheet' type='text/css'>
@@ -220,30 +221,26 @@
 
 
 <!-- relations between enrollment and funding -->
-    <div class = 'scatterPlot'>
+    <div class='scatterPlotContainer'>
 <!--     <p id="scatterFilter">
     <p class="direction">Pick Schools You Are Interested In:</p>
     </p> -->
+        <div id="scatter-plot-explainer">
+          <div class="scatter-steps">
+              <ul id="steps">
+              <li id="step1" class="active-step">1</li><li id="step2">2</li><li id="step3">3</li><li id="step4">4</li>
+              </ul>
+          </div>
+          <div class="text-blocks-scatter">
+              <p id="explanation1" class="active-explanation">YOUR SCHOOL</br></br>This graph plots the change in enrollment against the change in budget from 2015 to 2016. Did you find your school?</p>
 
-    <!-- section in testing -->
-            <div class = "scatter-steps">
-                <ul id = "steps">
-                <li id="step1" class="active-step">1</li><li id="step2">2</li><li id="step3">3</li><li id="step4">4</li>
-                </ul>
-            </div>
-            <!-- end of test -->
+              <p id="explanation2">FUNDING MODEL</br></br>The "Student Based Budgeting" model means that schools having increases in enrollment will also see rises in budgets, whereas schools that lost students will be less funded. The ascendent straight line in the center of the graph shows this pattern.</p>
+              <p id="explanation3">LESS STUDENTS IN REGULAR SCHOOLS...</br></br>On average, each CPS school will have 6 students less in 2016 in comparison to 2015. This trend is represented at the bottom part of the graph. Regular schools are losing more students than charters.</p>
 
-        <!-- section in testing -->
-        <div class="text-blocks-scatter">
-            <p id="explanation1" class="active-explanation">YOUR SCHOOL</br></br>This graph plots the change in enrollment against the change in budget from 2015 to 2016. Did you find your school?</p>
-
-            <p id="explanation2">FUNDING MODEL</br></br>The "Student Based Budgeting" model means that schools having increases in enrollment will also see rises in budgets, whereas schools that lost students will be less funded. The ascendent straight line in the center of the graph shows this pattern.</p>
-            <p id="explanation3">LESS STUDENTS IN REGULAR SCHOOLS...</br></br>On average, each CPS school will have 6 students less in 2016 in comparison to 2015. This trend is represented at the bottom part of the graph. Regular schools are losing more students than charters.</p>
-
-            <p id="explanation4">AND MORE MONEY FOR CHARTERS</br></br>Each school will have $ 93,337 less in its budget than last year on average. The concentration of dots at the left part of the graph represents this trend. Proportionally, more charter schools received more money, as showed by the purple dots. </p>
+              <p id="explanation4">AND MORE MONEY FOR CHARTERS</br></br>Each school will have $ 93,337 less in its budget than last year on average. The concentration of dots at the left part of the graph represents this trend. Proportionally, more charter schools received more money, as showed by the purple dots. </p>
+          </div>
         </div>
-        <!-- end of testing -->
-    <p id='scatterPlot'></p>  
+    <div id='scatterPlot'></div>
     </div>
 
     <div class='capital-budget'>
@@ -258,11 +255,15 @@
 
     <div class="protest-image">
         <img class="michelle" src="http://i1341.photobucket.com/albums/o744/patygomeslima/Michelle_cortada_zpssodhw9yv.gif">
-        <img class="overview" src="http://i1341.photobucket.com/albums/o744/patygomeslima/overview_3_zpsbvwmusfv.gif">
-        <img class="teens" src="http://i1341.photobucket.com/albums/o744/patygomeslima/Teens_menor5_zpsygylycmi.gif" border="0" alt=" photo Teens_menor5_zpsygylycmi.gif"/>
-        <div class="quote">
-            <p>"Can you imagine a principal trying to open up a school building and trying to staff it with the highest quality people when you do not even know which positions you have available?"
-            </p>
+        <div class="collage">
+          <img class="overview" src="http://i1341.photobucket.com/albums/o744/patygomeslima/overview_3_zpsbvwmusfv.gif">
+          <div class="collage-inner">
+            <img class="teens" src="http://i1341.photobucket.com/albums/o744/patygomeslima/Teens_menor5_zpsygylycmi.gif" border="0" alt=" photo Teens_menor5_zpsygylycmi.gif"/>
+            <div class="quote">
+                <p>"Can you imagine a principal trying to open up a school building and trying to staff it with the highest quality people when you do not even know which positions you have available?"
+                </p>
+              </div>
+          </div>
         </div>
     </div>
 

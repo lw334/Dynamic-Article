@@ -49,7 +49,6 @@ function init_autocomplete() {
       ac_data.push(school_data[i]['Unit Name'])
       name_to_unit[school_data[i]['Unit Name']] = school_data[i]['Unit']
     };
-
     $(".search #user_school").autocomplete({
       minLength: 4,
       delay: 400,
@@ -58,7 +57,8 @@ function init_autocomplete() {
       },
       source: ac_data,
       select: function( event, ui ) {
-        var school_name = ui.item.value;
+        school_name = ui.item.value;
+        window.location.hash = school_name;
         console.log("select handler user selected " + school_name + " aka " + name_to_unit[school_name]);
           for (i = 0; i < dataset.length; i++){
             if (ac_data[i] == school_name) {
@@ -69,8 +69,6 @@ function init_autocomplete() {
         select_school(school_name);
       }
     }).autocomplete("widget").addClass("fixed-height");
-    // //default school
-    select_school('Stephen F Gale Community Academy');
 }
 
 function update_text(school){
