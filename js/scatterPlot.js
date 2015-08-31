@@ -92,26 +92,26 @@ function draw_scatter_plot(school,similars,dataset){
      .text("Charter School");
      //school types
   svg.append('circle')
-    .attr("cx",120)
+    .attr("cx",width/5)
     .attr("cy",height-355)
     .attr("r", 4)
     .style("fill", "#FFAE15");
   svg.append('circle')
-    .attr("cx",120)
+    .attr("cx",width/5)
     .attr("cy",height-325)
     .attr("r",4)
     .style("fill", "#7243A2");
     //your and similar schools
   svg.append('circle')
     .attr("r", 10)
-    .attr("cx", 120)
+    .attr("cx", width/5)
     .attr("cy", height-415)
     .style("stroke-width","2px")
     .style("fill", "none")
     .style("stroke", "#c1272d");
   svg.append('circle')
     .attr("r", 7)
-    .attr("cx", 120)
+    .attr("cx", width/5)
     .attr("cy", height-385)
     .style("stroke-width","2px")
     .style("fill","none")
