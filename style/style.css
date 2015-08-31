@@ -84,11 +84,6 @@ ul.share-buttons{
   margin-top:100px;
   width:10px;
   float:left;
-<<<<<<< HEAD
-  z-index:800;
-=======
-  z-index: 800;
->>>>>>> dfbc3cb994bc2173bd988f972cfaac2fcd2587a4
 }
 
 .bio {
@@ -516,11 +511,12 @@ ul.priority{
 
 /*graph styles*/
 .LineGraph {
-    margin-left: -80px; 
+  position:relative;
+  margin-left:-10px;
 }
 
 .scatterPlot {
-margin: 20px 200px;
+margin-left:325px;
 
 }
 .chart-container {
